@@ -207,11 +207,11 @@ Reference: `docs/design/c2-home.html`. Sections top to bottom:
 - Eyebrow: "Proof, ordered for everyone" (the "who" swaps with the door state). Right-aligned caption: "Every claim links to the live product, so you can check it yourself."
 - Three `ProofCard`s, default order sprout, priming, sproat-systems. Rank numbers follow the current order.
 
-| Slug           | Kind     | Title                                   | Text                                                                                                  | Live link (first)                                      | Page link      |
-| -------------- | -------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | -------------- |
-| sprout         | Win      | FNB Challenge winner, HackPSU Fall 2026 | Sprout, a goals-first AI money coach that hands students to a banker. 353 participants, 122 projects. | "Try Sprout live" to https://getsprout.tech            | "Case study"   |
-| priming        | Startup  | Technical co-founder, Priming Labs      | Readiness testing for coaches and physical therapists. Web app live, iOS app in beta.                 | "See Priming live" to https://priminglabs.com          | "Project page" |
-| sproat-systems | Business | Founder, Sproat Systems                 | Websites, CRMs and AI automation for healthcare practices and small businesses, since 2025.           | "See Sproat Systems live" to https://sproatsystems.com | "Project page" |
+| Slug           | Kind     | Title                                   | Text                                                                                                        | Live link (first)                                      | Page link      |
+| -------------- | -------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | -------------- |
+| sprout         | Win      | FNB Challenge winner, HackPSU Fall 2026 | Sprout, a goals-first AI money coach that hands students to a banker. 353 participants, 122 projects.       | "Try Sprout live" to https://getsprout.tech            | "Case study"   |
+| priming        | Startup  | Technical co-founder, Priming Labs      | Readiness testing for coaches and physical therapists. Web app live in private beta, iOS app in TestFlight. | "See Priming live" to https://priminglabs.com          | "Project page" |
+| sproat-systems | Business | Founder, Sproat Systems                 | Websites, CRMs and AI automation for healthcare practices and small businesses, since 2025.                 | "See Sproat Systems live" to https://sproatsystems.com | "Project page" |
 
 **Doors**
 
@@ -243,7 +243,7 @@ For startup partners and investors. Layout: page title block, "Now building" car
 - Eyebrow: "For partners and investors". H1: "I build the product. Fast, with proof you can click."
 - Lede: "Three things I'm building now, and the way I build them."
 - **Now building** (three `Card`s with a live link first):
-  1. Priming Labs: "Readiness testing for coaches and physical therapists. Technical co-founder, with Dr. Jessica Visintainer, PT, DPT. Maryland LLC, web app live, iOS app in beta, Happy Valley LaunchBox Idea TestLab completed." Links: "See Priming live" (ExternalLink, priminglabs.com), "Project page" (`/projects/priming`).
+  1. Priming Labs: "Readiness testing for coaches and physical therapists. Technical co-founder, with Dr. Jessica Visintainer, PT, DPT. Maryland LLC, web app live in private beta, iOS app in TestFlight, Happy Valley LaunchBox Idea TestLab completed." Links: "See Priming live" (ExternalLink, priminglabs.com), "Project page" (`/projects/priming`).
   2. OT Directory: "A public directory of occupational therapy clinics across the mid-Atlantic, in testing before launch. Built on a pipeline that finds clinics in the NPI registry, verifies ownership and extracts details with Claude. Joint venture." Links: "Project page" (`/projects/ai-data-systems`). No live link and no counts until launch.
   3. Sprout: "Goals-first AI money coach that hands students to a banker. Won the FNB Challenge at HackPSU Fall 2026. A 90-day pilot at FNB's Penn State HUB branch is proposed." Links: "Try Sprout live" (ExternalLink), "Case study".
 - **How I build** (H2 "How I build", two columns):
@@ -339,16 +339,19 @@ Template per section 3.1. Five project files in C3:
 - sections.footnote: "Sprout is an educational prototype built for HackPSU Fall 2026. It is not affiliated with or endorsed by FNB. Product details came from FNB's public pages, there is no bank account linking, and shared plans live in a demo store for 30 days. Planning method adapted from Ramit Sethi's I Will Teach You to Be Rich, with no affiliation."
 - Footer heading override on this page: "Want to see the engine?"
 
-**priming** (project page, no sections yet)
+**priming** (project page)
 
-- title: Priming Labs. pillar: founder. featured: true. order: 2. status: in-progress. statusText: "Web app live, iOS app in beta".
-- oneLineResult: "Daily readiness testing for coaches and physical therapists, built with a Doctor of Physical Therapy. Technical co-founder."
-- summary: "Technical co-founder. Daily readiness testing for coaches and physical therapists, built with a Doctor of Physical Therapy."
-- role: "Technical co-founder: product, web app and iOS app". team: "Co-founded with Dr. Jessica Visintainer, PT, DPT". when: "June 2026 to now". dates: start 2026-06.
-- stack: `[PRIMING_STACK]` (Ben confirms; the web app was built on Lovable, the iOS app ships through TestFlight). tags: Web app, iOS beta.
-- live: "See Priming live" https://priminglabs.com. links: site https://priminglabs.com.
-- metrics: "Jul 2026" "Maryland LLC formed"; "TestFlight" "iOS app in beta"; "LaunchBox" "Happy Valley Idea TestLab completed, Fall 2026".
-- No claims about users, practices or revenue.
+- title: Priming Labs. pillar: founder. featured: true. order: 2. status: in-progress. statusText: "Web app live in private beta; iOS app in TestFlight testing".
+- oneLineResult: "A daily training-readiness app for coaches and sport-performance physical therapists. Technical co-founder, with Dr. Jessica Visintainer, PT, DPT."
+- summary: "Technical co-founder. A daily training-readiness app for coaches and sport-performance physical therapists, built with Dr. Jessica Visintainer, PT, DPT."
+- role: "Technical co-founder: the web app, the iOS app and the scoring engine". team: "Co-founded with Dr. Jessica Visintainer, PT, DPT". when: "June 2026 to now". dates: start 2026-06.
+- stack: TanStack Start, React 19, Vite, Capacitor 8, Apple Health, Codemagic. tags: Web app, iOS, Apple Health. Frameworks and build tools only: hosting, database and auth providers stay off the site.
+- live: "See Priming live" https://priminglabs.com. links: site https://priminglabs.com only. No link to the app itself and none to its privacy or terms pages.
+- metrics: 57 "server functions"; 151 "automated tests"; "Jul 2026" "Maryland LLC formed"; "TestFlight" "iOS app in testing".
+- sections.built: heading "What it does". Paragraph: "Athletes complete a short check-in and a quick cognitive test. Combined with sleep and heart data from their watch, that gives a clear green, yellow or red read on whether to push, ease off or recover."
+- sections.how: heading "What I built". Columns: "The web app" ("The check-in flow, the cognitive tests and the scoring engine that implements a readiness model designed with Dr. Visintainer."); "The iOS app" ("Capacitor around the web app, with Apple Health import for sleep, HRV, resting heart rate and workouts, and a Codemagic build pipeline that ships to TestFlight."); "The backend" ("57 server functions covered by 151 automated tests.").
+- sections.visuals: `public/images/projects/priming-*.jpg` when Ben supplies them (welcome screen, Today screen in green, Today screen in red, all from the demo account); omitted while empty.
+- Keep off this page and every other page: user or tester counts, tester, patient and practice names, pricing or revenue, grant amounts or outcomes, scoring weights or thresholds, where health data is hosted or how it is handled, any legal or agreement status, beta plans. Say "cognitive test," never a specific test name.
 
 **sproat-systems** (project page)
 
@@ -453,21 +456,21 @@ Two builders can run #2 and #3 in parallel; #4 follows #3; #5 to #9 can run in p
 
 ## 7. What Ben owes (not builder work)
 
-| Item                                       | Where it lands                                    | Status                                                                                                               |
-| ------------------------------------------ | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Availability line                          | `content/home.yaml` and `content/pages/hire.yaml` | Done (Nov 6, 2026): "Available for Summer 2027 internships and projects." Ben will revisit the wording before summer |
-| Sprout role split (Ben versus Ethan)       | `content/projects/sprout.yaml` role and team      | Done (Nov 6, 2026): Ben owned everything except the front-end design                                                 |
-| Now line and the /now bullets              | `content/home.yaml`, `content/now.mdx`            | Draft in 4.10                                                                                                        |
-| "What I'm looking for" on /ventures        | `content/pages/ventures.yaml`                     | Pending                                                                                                              |
-| Priming co-founder name                    | `content/projects/priming.yaml`                   | Done (Nov 6, 2026): Dr. Jessica Visintainer, PT, DPT, with Ben's OK                                                  |
-| Priming stack                              | `content/projects/priming.yaml`                   | Pending (Ben is asking the Priming Labs project chat)                                                                |
-| Client naming permissions                  | `content/projects/sproat-systems.yaml`            | Done (Nov 6, 2026) for the five names in 4.6; one client still described, not named, pending confirmation            |
-| What was built for Mobility Health PT      | `content/projects/sproat-systems.yaml`            | Pending: one line from Ben                                                                                           |
-| Booking URL                                | `content/pages/contact.yaml`                      | Open decision (GoHighLevel calendar or Cal.com)                                                                      |
-| Three resume PDFs                          | `public/resumes/`, `content/resumes.yaml`         | Lead agent builds them from the content bank after Ben's corrections                                                 |
-| Photos: headshot, about field, about grass | `public/images/`                                  | Files delivered to Ben on Nov 6, 2026; Ben drops them in                                                             |
-| Sprout screenshots and demo clip           | `public/images/projects/`                         | Pending                                                                                                              |
-| Priming and Sproat Systems covers          | `public/images/projects/`                         | Pending                                                                                                              |
-| Expected graduation year                   | `content/pages/hire.yaml`                         | Confirm 2030                                                                                                         |
+| Item                                                                                                    | Where it lands                                    | Status                                                                                                               |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Availability line                                                                                       | `content/home.yaml` and `content/pages/hire.yaml` | Done (Nov 6, 2026): "Available for Summer 2027 internships and projects." Ben will revisit the wording before summer |
+| Sprout role split (Ben versus Ethan)                                                                    | `content/projects/sprout.yaml` role and team      | Done (Nov 6, 2026): Ben owned everything except the front-end design                                                 |
+| Now line and the /now bullets                                                                           | `content/home.yaml`, `content/now.mdx`            | Draft in 4.10                                                                                                        |
+| "What I'm looking for" on /ventures                                                                     | `content/pages/ventures.yaml`                     | Pending                                                                                                              |
+| Priming co-founder name                                                                                 | `content/projects/priming.yaml`                   | Done (Nov 6, 2026): Dr. Jessica Visintainer, PT, DPT, with Ben's OK                                                  |
+| Priming stack                                                                                           | `content/projects/priming.yaml`                   | Done (Nov 6, 2026): frameworks and build tools only, from the Priming Labs project                                   |
+| Client naming permissions                                                                               | `content/projects/sproat-systems.yaml`            | Done (Nov 6, 2026) for the five names in 4.6; one client still described, not named, pending confirmation            |
+| What was built for Mobility Health PT                                                                   | `content/projects/sproat-systems.yaml`            | Pending: one line from Ben                                                                                           |
+| Booking URL                                                                                             | `content/pages/contact.yaml`                      | Open decision (GoHighLevel calendar or Cal.com)                                                                      |
+| Three resume PDFs                                                                                       | `public/resumes/`, `content/resumes.yaml`         | Lead agent builds them from the content bank after Ben's corrections                                                 |
+| Photos: headshot, about field, about grass                                                              | `public/images/`                                  | Files delivered to Ben on Nov 6, 2026; Ben drops them in                                                             |
+| Sprout screenshots and demo clip                                                                        | `public/images/projects/`                         | Pending                                                                                                              |
+| Priming screenshots (welcome, Today green, Today red, from the demo account) and a Sproat Systems cover | `public/images/projects/`                         | Pending                                                                                                              |
+| Expected graduation year                                                                                | `content/pages/hire.yaml`                         | Confirm 2030                                                                                                         |
 
 Pages ship without the pending items (the fields are optional). Nothing in square brackets ever renders.

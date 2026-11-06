@@ -25,3 +25,5 @@ Append-only. One line per decision: date, decision, who decided. Newest at the b
 - 2026-11-06: Sprout role: Ben owned everything except the front-end design; Ethan Cooper owned the front-end design. (Ben)
 - 2026-11-06: Priming Labs co-founder may be named on the site: Dr. Jessica Visintainer, PT, DPT. (Ben)
 - 2026-11-06: Sproat Systems clients may be named: Canyon Kids (with the family disclosure), Kentuckiana Mobile Therapy, Mobility Health PT, Hydes Group, Cloud Surfing Media. One client stays described, not named, until Ben confirms. (Ben)
+- 2026-11-06: Priming Labs public facts come from the Priming Labs project: stack names frameworks and build tools only; hosting, database and auth providers, scoring details, counts, names, legal status and beta plans stay off the site. (Ben, via the Priming Labs project)
+- 2026-11-06: Overnight unattended build of issues #2 to #11 authorized. The builder posts each plan but does not wait for approval, decides ambiguities itself and records them, labels anything it cannot resolve `status:blocked` and moves on. (Ben)
