@@ -21,12 +21,14 @@
 - App: layout.tsx, page.tsx, about, ventures, hire, projects, projects/[slug], resume, contact, links, now, not-found.tsx, sitemap.ts, robots.ts, \_components/coming-soon.tsx.
 - Verified locally: lint and build pass, all routes 200, /card 308 to /links?src=card, JSON-LD present, Lighthouse 96 to 100 (only miss: Vercel analytics script 404s off-Vercel).
 
+- Repo created and main pushed: https://github.com/beansprout21/bensproat-site (public).
+- Vercel project sproat1/bensproat-site created, folder linked, GitHub repo connected (pushes to main deploy production).
+
 **Next**
 
-1. (Ask first) `gh repo create beansprout21/bensproat-site --public --source . --push`.
-2. (Ask first) Link and deploy to Vercel with the GitHub integration.
-3. (Ask first) Add bensproat.com and www.bensproat.com; ask registrar; give DNS records.
-4. Verify HTTPS, www redirect, /card redirect, JSON-LD, Lighthouse on live site.
+1. Confirm first production deploy.
+2. (Ask first) Add bensproat.com and www.bensproat.com; ask registrar; give DNS records.
+3. Verify HTTPS, www redirect, /card redirect, JSON-LD, Lighthouse on live site.
 
 **Blockers**
 
