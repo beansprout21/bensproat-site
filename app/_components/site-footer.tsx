@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { getLinks, getProfile } from "@/lib/content";
+import {
+  getFooterHeadings,
+  getHome,
+  getLinks,
+  getProfile,
+} from "@/lib/content";
 import { FooterHeading } from "./footer-heading";
 
 const REPO_URL = "https://github.com/beansprout21/bensproat-site";
@@ -11,19 +16,15 @@ const headingClass =
 const linkClass =
   "inline-flex min-h-[44px] items-center px-2.5 text-[15px] font-medium text-on-dark no-underline underline-offset-4 hover:underline";
 
-export type SiteFooterProps = {
-  /** Default heading. Until issue #4 moves footer copy into content/home.yaml it lives here. */
-  heading?: string;
-  /** Per-page overrides keyed by pathname. */
-  headings?: Record<string, string>;
-};
-
-/** Dark footer band (brief 1.5): heading and email, profile links, built-in-public line. */
-export function SiteFooter({
-  heading = "Let's build something.",
-  headings = {},
-}: SiteFooterProps) {
+/**
+ * Dark footer band (brief 1.5): heading and email, profile links, the
+ * built-in-public line. The default heading comes from content/home.yaml and
+ * per-page overrides from the page and project files (getFooterHeadings).
+ */
+export function SiteFooter() {
   const profile = getProfile();
+  const fallback = getHome().footer.heading;
+  const headings = getFooterHeadings();
   const profileLinks = getLinks().filter((link) =>
     PROFILE_LINK_ICONS.includes(link.icon),
   );
@@ -32,10 +33,10 @@ export function SiteFooter({
     <footer className="bg-ink text-on-dark">
       <div className="container-x flex flex-col gap-9 pt-16 pb-10">
         <div className="flex flex-wrap items-center justify-between gap-x-10 gap-y-6">
-          <Suspense fallback={<h2 className={headingClass}>{heading}</h2>}>
+          <Suspense fallback={<h2 className={headingClass}>{fallback}</h2>}>
             <FooterHeading
               headings={headings}
-              fallback={heading}
+              fallback={fallback}
               className={headingClass}
             />
           </Suspense>
