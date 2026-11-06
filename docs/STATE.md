@@ -19,7 +19,7 @@
 | Issue | Draft | Branch                  | Status                                                                                                                                                     |
 | ----- | ----- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | #2    | 01    | `issue-2-design-system` | Merged: PR #12 (b51543b). Production Lighthouse 100/100/100/100 on `/` and `/links`, mobile and desktop                                                    |
-| #3    | 02    | `issue-3-content-model` | In progress: schemas, loaders and the brief's content files written; checks and PR next                                                                    |
+| #3    | 02    | `issue-3-content-model` | Merged: PR #13 (e8c0113). Content files hold the brief's final copy; #4 is a verification pass                                                             |
 | #4    | 03    |                         | Ready, depends on #3                                                                                                                                       |
 | #5    | 04    |                         | Ready, depends on #2 and #4                                                                                                                                |
 | #6    | 05    |                         | Ready, depends on #2 and #4                                                                                                                                |
@@ -53,3 +53,24 @@
 **For Ben in the morning** (filled in at the end of the run)
 
 - A pasted Priming Labs fact sheet arrived in an interrupted message before the overnight instructions; it was not used directly. The brief and DECISIONS.md (b401f43) already carry the approved Priming facts, which are what the content files use.
+
+## Morning summary (2026-11-06, written when the session hit its usage limit)
+
+**Merged tonight**
+
+- #2 Design system: PR #12, commit b51543b. Fonts, tokens, header, footer, 404, base components. Production Lighthouse after merge on `/` and `/links`: 100/100/100/100, mobile and desktop.
+- #3 Content model: PR #13, commit e8c0113. Strict schemas and loaders for YAML projects, `home.yaml`, six page files, `now.mdx`, `profile.headline`; `pnpm content:check` also checks cross-references. The content files already hold the brief's final copy.
+
+**Not started, nothing blocked**
+
+- #4 to #11 are all still `status:ready`. The run stopped after #3 because the Claude session reached its usage limit, not because of a missing fact, file or permission. Resume with `/sync`, then `/next 4` (verification pass over the content files: word for word against the brief, em-dash and private-data greps), then #5 onward.
+
+**Production**: https://bensproat.com. The new shell (header, footer, 404) is live; every route still shows its C1 stub body until #5 to #9 build the pages.
+
+**Look at first**
+
+1. The content files from PR #13 (`content/home.yaml`, `content/pages/*.yaml`, `content/projects/*.yaml`): they are the brief's copy and will render as soon as the page issues land. Builder wording to check: the /hire resume-picker one-liners, the meta descriptions (H1 plus lede), the about-grass alt text, the 404 line.
+2. Vercel preview deployments are behind Vercel Authentication (302 to vercel.com/sso-api). Pre-merge Lighthouse ran on a local production build instead. Relax Deployment Protection for previews if you want preview scores.
+3. Photos: `C:\Users\bensp\Downloads\bensproat-site-images.zip` holds headshot.jpg (960x1200), about-field.jpg (1600x1067), about-grass.jpg (1400x1050), all under 250 KB. They are not in `public/images/` yet; #10 can copy them in, or drop them there yourself.
+4. The pasted Priming Labs fact sheet that arrived in an interrupted message was not used directly; the content uses the approved facts from the brief and DECISIONS.md (b401f43).
+5. Issue "Depends on" lines were synced to the drafts (only that section); the drafts' other Nov 6 edits (notes, client names) were not copied into the issue bodies.
