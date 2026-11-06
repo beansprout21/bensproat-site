@@ -2,6 +2,8 @@
 
 Personal website for Ben Sproat, served at https://bensproat.com. Phase briefs live in `docs/brief-*.md`; session state lives in `docs/STATE.md`.
 
+Start every session by reading `docs/PLAN.md` (overall plan, owned by the planning chat; do not edit it) and `docs/COMMS.md` (how this session and the planning chat communicate through GitHub issues and PRs). Then read the current phase issue (`gh issue list --label phase`) and its brief.
+
 ## Standing rules
 
 - Never put a phone number, street address or other personal data in the repo or on the site. The one deliberate exception is the public contact email in `content/profile.yaml` and `content/links.yaml`.
