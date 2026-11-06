@@ -1,0 +1,3 @@
+# bensproat-site
+
+The source for [bensproat.com](https://bensproat.com), the personal website of Ben Sproat, built with Next.js (App Router), TypeScript and Tailwind CSS and hosted on Vercel. To run it locally, install Node 24 and pnpm, then run `pnpm install` and `pnpm dev` and open http://localhost:3000 (`pnpm build` makes a production build). All site content lives in `/content` as YAML and MDX files: edit those files, run `pnpm content:check` to validate them against the zod schemas in `lib/content.ts`, and commit; invalid content fails the build, and pushes to `main` deploy automatically.

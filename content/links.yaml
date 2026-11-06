@@ -1,0 +1,16 @@
+- label: LinkedIn
+  url: https://www.linkedin.com/in/benjamin-s-a39622385
+  icon: linkedin
+  order: 1
+- label: GitHub
+  url: https://github.com/beansprout21
+  icon: github
+  order: 2
+- label: Devpost
+  url: https://devpost.com/beansprout21
+  icon: devpost
+  order: 3
+- label: Email
+  url: mailto:ben.c.sproat@gmail.com
+  icon: email
+  order: 4
