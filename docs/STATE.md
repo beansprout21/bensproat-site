@@ -1,40 +1,53 @@
 # STATE
 
-**Objective**: Phase C1 (Foundation) complete as of 2026-11-05. Next phase per `docs/PLAN.md` is C2 (Design, owned by the planning chat). Claude Code resumes when a phase issue with the `phase` label exists, following `docs/COMMS.md`.
+**Objective**: Overnight unattended build (authorized by Ben, 2026-11-06) of issues #2 to #11 from `docs/brief-c3.md`, in number order, each on its own branch and PR, squash-merged after the Vercel check. If context resets: read `docs/PLAN.md`, `docs/brief-c3.md` and this file, then continue with the lowest-numbered open `status:ready` issue. Blocked issues carry `status:blocked` and a comment with the exact blocker.
 
-**Decisions**
+**Per-issue flow** (CLAUDE.md, `/next`, `/ship`, Ben's overnight rules)
 
-- 2026-11-05: Project folder moved out of OneDrive to `C:\Users\bensp\projects\bensproat-site` (resolves PLAN.md open decision 6). `node_modules` reinstalled from the lockfile; build, git remote and Vercel link verified there.
-- 2026-11-05: Repo-local git identity set to `Ben Sproat <287818870+beansprout21@users.noreply.github.com>`. Earlier commits (sproatsystems) left unchanged.
-- 2026-11-05: `pnpm format:check` failure on `docs/PLAN.md` and `docs/COMMS.md` resolved by the planning chat in commit 874670e (Prettier formatting only, no content change). Lint, format:check and build all pass at that commit.
-- 2026-11-05: This Claude Code session follows `docs/COMMS.md`: `cN-<topic>` branches, PRs that close the phase issue, plans, questions and reports as issue comments, decisions put to Ben in the issue, no edits to PLAN.md or briefs. Direct pushes to main were limited to C1 and Ben's explicit cleanup instructions.
-- 2026-11-05: Planning chat added `docs/PLAN.md` and `docs/COMMS.md` (PR #1). `phase` label created.
-- 2026-11-05: Vercel project created via CLI defaulted to preset "Other" (all routes 404). Set preset to Next.js and Node to 24.x; enabled Web Analytics; redeployed.
-- 2026-11-05: www.bensproat.com redirect (308 to apex) is a Vercel domain setting, not app code.
-- 2026-11-05: DNS in Cloudflare (registrar and DNS host): apex and www point to Vercel, proxy off.
-- 2026-11-05: Kept scaffold's Cache Components + Partial Prefetching. `dynamicParams` is unsupported with it, so `/projects/[slug]` calls `notFound()` for unknown slugs (first hit is a streamed soft 404 with noindex; cached hits return 404).
-- 2026-11-05: Favicon is `public/favicon.svg` (plain monogram), no .ico.
-- 2026-11-05: Added `NowSchema` ({ updated: ISO date }) for now.mdx; brief had no schema for it.
-- 2026-11-05: `package.json` is `"type": "module"`; content check runs via Node type stripping, no tsx.
-- 2026-11-05: Project `dates` = { start: YYYY-MM, end?: YYYY-MM }. Schemas are strict objects.
-- 2026-11-05: Published email is ben.c.sproat@gmail.com (owner's choice).
+1. `gh issue edit N --add-label status:in-progress --remove-label status:ready`
+2. `git checkout main && git pull --rebase origin main && git checkout -b issue-N-<slug>`
+3. Plan comment (max 8 bullets) on the issue; treated as approved, no waiting.
+4. Build. Then `pnpm lint`, `pnpm format:check`, `pnpm build`; paste the real output in the PR body.
+5. `git add -A && git commit -m "<type>(#N): <summary>"`, `git fetch origin && git rebase origin/main`, `git push -u origin HEAD` (bare `git push` is denied; never push to main).
+6. `gh pr create --base main --title "<type>(#N): <summary>. Closes #N" --body-file <file>` using `.github/pull_request_template.md`.
+7. `gh pr checks <PR> --watch`; Lighthouse (mobile and desktop) on the Vercel preview for the pages touched; 375px and 1280px check; post results as a PR comment.
+8. `gh pr merge <PR> --squash --delete-branch`; issue comment: "Shipped in PR #<PR>. <two lines>. Preview/production: <url>. Open questions: <none or list>."
+9. Update this file and append decisions to `docs/DECISIONS.md` inside the same PR.
 
-**Done**
+**Issue status**
 
-- Repo: https://github.com/beansprout21/bensproat-site (public, MIT detected by GitHub).
-- Vercel: sproat1/bensproat-site, GitHub-connected, pushes to main deploy production.
-- Live: https://bensproat.com over HTTPS; http to https 308; www to apex 308 (path and query kept); /card 308 to /links?src=card.
-- All routes 200; unknown path 404; sitemap.xml and robots.txt live.
-- JSON-LD on / validated by validator.schema.org: 0 errors, 0 warnings. /about emits the same ProfilePage/Person.
-- Live Lighthouse (/, /links, /about): mobile 99/100/100/100, desktop 100/100/100/100 (Perf/A11y/BP/SEO).
-- Visual check in a browser: home and /links on 375px and desktop, skip link on first Tab, 404 page.
-- Checks at 874670e in the new folder: `pnpm lint` clean, `pnpm format:check` clean, `pnpm build` 15 pages prerendered.
+| Issue | Draft | Branch                  | Status                                                                                                                                                     |
+| ----- | ----- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| #2    | 01    | `issue-2-design-system` | In progress: code done, PR being opened                                                                                                                    |
+| #3    | 02    |                         | Ready                                                                                                                                                      |
+| #4    | 03    |                         | Ready, depends on #3                                                                                                                                       |
+| #5    | 04    |                         | Ready, depends on #2 and #4                                                                                                                                |
+| #6    | 05    |                         | Ready, depends on #2 and #4                                                                                                                                |
+| #7    | 06    |                         | Ready, depends on #2 and #4                                                                                                                                |
+| #8    | 07    |                         | Ready, depends on #2 and #4                                                                                                                                |
+| #9    | 08    |                         | Ready, depends on #2 and #4                                                                                                                                |
+| #10   | 09    |                         | Ready, depends on #2; photos are in `C:\Users\bensp\Downloads\bensproat-site-images.zip` (headshot, about-field, about-grass), not yet in `public/images/` |
+| #11   | 10    |                         | Ready, depends on #5 to #10                                                                                                                                |
+
+**Decisions this run** (one line each in `docs/DECISIONS.md`)
+
+- #2: footer copy stays in `site-footer.tsx` until #4; 404 line wording; header active state and footer heading overrides via small client components in Suspense; `type-*` utilities and `@theme` tokens; static font weights; full-width `main` with per-section `Container`.
+
+**Done before this run**
+
+- C1 live at https://bensproat.com (Vercel project sproat1/bensproat-site, pushes to main deploy production). Lighthouse 99 to 100 at C1.
+- Setup on 2026-11-05 and 06: folder moved out of OneDrive, repo-local git identity (Ben Sproat, GitHub noreply), labels (`phase`, `status:*`, `P0`, `P1`, `quick`), issues #2 to #11 imported from `docs/issues/`, "Depends on" lines synced to issue numbers.
 
 **Next**
 
-1. Wait for the planning chat to open the next phase issue (`gh issue list --label phase`) and its brief. Start by reading PLAN.md, COMMS.md, the brief and this file, then post the plan and questions as an issue comment.
-2. Replace placeholder values in content/projects/sprout.mdx and content/now.mdx when real content arrives (C3).
+1. Open PR for #2, wait for the Vercel check, run Lighthouse on `/` and `/links`, merge, comment, then #3.
+2. #3 content model, #4 content data, #5 home, #6 projects, #7 ventures and hire, #8 about, #9 utility pages, #10 images (extract the zip into `public/images/`), #11 quality pass.
+3. Morning summary at the end of this file: what merged, what is blocked and why, production URL, what Ben must look at first.
 
 **Blockers**
 
-- None.
+- None yet.
+
+**For Ben in the morning** (filled in at the end of the run)
+
+- A pasted Priming Labs fact sheet arrived in an interrupted message before the overnight instructions; it was not used directly. The brief and DECISIONS.md (b401f43) already carry the approved Priming facts, which are what the content files use.

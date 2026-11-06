@@ -1,5 +1,6 @@
 import { getLinks, getProfile } from "@/lib/content";
 import { buildProfilePage, serializeJsonLd } from "@/lib/jsonld";
+import { Container } from "./_components/container";
 
 const HOME_LINK_ICONS = ["linkedin", "github", "email"];
 
@@ -10,15 +11,15 @@ export default function Home() {
   );
 
   return (
-    <>
+    <Container className="py-16 md:py-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: serializeJsonLd(buildProfilePage(profile, "/")),
         }}
       />
-      <h1 className="text-4xl font-semibold">{profile.name}</h1>
-      <p className="mt-4 text-lg">{profile.oneLiner}</p>
+      <h1 className="type-title">{profile.name}</h1>
+      <p className="type-lede mt-4 text-ink-2">{profile.oneLiner}</p>
       <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
         {links.map((link) => (
           <li key={link.url}>
@@ -32,7 +33,7 @@ export default function Home() {
           </li>
         ))}
       </ul>
-      <p className="mt-12 text-neutral-600">Site in progress</p>
-    </>
+      <p className="mt-12 text-muted">Site in progress</p>
+    </Container>
   );
 }

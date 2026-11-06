@@ -1,12 +1,162 @@
 @import "tailwindcss";
 
+/*
+  Builder-craft design tokens (docs/brief-c3.md, section 1).
+  Everything in @theme is both a CSS variable (for example --color-ink) and a
+  Tailwind utility (bg-ground, text-ink-2, border-line, font-display, rounded-card).
+  The --font-* variables point at the next/font variables set on <html> in app/layout.tsx.
+*/
+@theme {
+  --color-ground: #fafaf8;
+  --color-ground-2: #f4f4f0;
+  --color-surface: #ffffff;
+  --color-line: #e4e2dc;
+  --color-line-strong: #c9c7c0;
+  --color-ink: #15171a;
+  --color-ink-2: #454a52;
+  --color-muted: #5f656e;
+  --color-accent: #1f7a4a;
+  --color-accent-strong: #175e3a;
+  --color-accent-tint: #eef6f0;
+  --color-accent-line: #bfe0cb;
+  --color-on-dark: #f3f2ed;
+  --color-on-dark-muted: #a9adb5;
+  --color-on-dark-accent: #8fd4a8;
+
+  --font-display:
+    var(--font-inter-tight), "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono:
+    var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, SFMono-Regular,
+    Menlo, monospace;
+
+  --radius-button: 8px;
+  --radius-card: 12px;
+  --radius-image: 16px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-ground);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  /* Focus rings on keyboard focus only (brief 1.4). */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+}
+
+/* Layout container (brief 1.4). */
+@utility container-x {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+/* Type scale (brief 1.3). */
+@utility type-display {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4.4vw, 58px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+@utility type-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+@utility type-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.8vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+@utility type-h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+@utility type-lede {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+
+@utility type-body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@utility type-stat {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+@utility type-mono-label {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* The sprout mark draws itself on first paint (brief 1.5). */
+@keyframes mark-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.mark path {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: mark-draw 700ms cubic-bezier(0.3, 0.7, 0.2, 1) forwards;
+}
+
+.mark path:nth-child(2) {
+  animation-delay: 220ms;
+}
+
+.mark path:nth-child(3) {
+  animation-delay: 420ms;
+}
+
+/* Reduced motion: no transitions, no draw-on animation (brief 0.6). */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
     scroll-behavior: auto !important;
+  }
+
+  .mark path {
+    stroke-dashoffset: 0 !important;
   }
 }
