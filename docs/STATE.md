@@ -19,7 +19,7 @@
 
 **Quality pass (#11)**
 
-- Lighthouse 13.6 on production after #10, ten routes, mobile and desktop: Accessibility, Best Practices and SEO 100 everywhere; Performance 100 except the three pages with an above-the-fold photo on mobile (`/` 98, `/about` 95, `/links` 99). Full table on PR and issue #11.
+- Lighthouse 13.6 on production after #10, ten routes, mobile and desktop: Accessibility, Best Practices and SEO 100 everywhere; Performance 100 on desktop everywhere and on mobile for the text-only pages; mobile on the photo pages: `/` 97, `/projects` 98, `/links` 99, `/sprout` 99, and `/about` 94 to 98 across five runs (median 96). Full table on PR and issue #11.
 - 375px and 390px: no horizontal overflow on any route; the archive table scrolls inside its own box.
 - No JavaScript: every route serves its H1, copy and links in the prerendered HTML.
 - Keyboard: Tab order on `/` runs skip link, header, hero buttons, proof links, doors, work links, footer; the ring is the 2px accent outline. Fixed: buttons and filter pills animated `outline-color` (Tailwind `transition-colors`), so the ring started in the text color (white on the primary button) and faded in; they now transition only color, background and border.
@@ -32,7 +32,7 @@
 
 **For Ben**
 
-1. `/about` mobile Performance sits at the 95 bar on production. The LCP element is the header photo; it is small (45 KB), and in Lighthouse's simulated slow 4G it competes with the three preloaded font files. Options for C7: fewer font weights, a lower `images.qualities` value in `next.config.ts`, or a smaller header crop on phones.
+1. `/about` mobile Performance passes with no margin (median 96, one run of 94). The LCP element is the header photo; it is small (45 KB), and in Lighthouse's simulated slow 4G it competes with the three preloaded font files. Options for C7: fewer font weights, a lower `images.qualities` value in `next.config.ts`, or a smaller header crop on phones.
 2. Builder wording to check (all in `docs/DECISIONS.md`): meta descriptions, the /hire resume-picker one-liners and "Resume page" fallback label, the 404 line, the about-grass alt text, the /now meta description.
 3. Still owed: resume PDFs (`resumes.yaml` is `[]`, so resume buttons go to `/resume`), `lookingFor` on /ventures, booking URL, project covers and Sprout and Priming screenshots, the now-line on the home page.
 4. Vercel previews are behind Vercel Authentication, so pre-merge Lighthouse ran on local production builds; relax Deployment Protection for previews if you want preview scores.
