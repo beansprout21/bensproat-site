@@ -24,6 +24,8 @@
       "Bash(pnpm start*)"
     ],
     "deny": [
+      "Bash(git push origin)",
+      "Bash(git push)",
       "Bash(git push --force*)",
       "Bash(git push -f*)",
       "Bash(git push origin main*)",
