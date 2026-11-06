@@ -1,0 +1,2237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sprout case study</title>
+    <script src="./support.js"></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+        />
+        <style>
+          body {
+            margin: 0;
+          }
+          a {
+            color: #1f7a4a;
+          }
+          a:hover {
+            color: #175e3a;
+          }
+          .bs-focus:focus-visible {
+            outline: 2px solid #1f7a4a;
+            outline-offset: 4px;
+          }
+          .bs-mark path {
+            stroke-dasharray: 40;
+            stroke-dashoffset: 40;
+            animation: bsdraw 700ms cubic-bezier(0.3, 0.7, 0.2, 1) forwards;
+          }
+          .bs-mark path:nth-child(2) {
+            animation-delay: 220ms;
+          }
+          .bs-mark path:nth-child(3) {
+            animation-delay: 420ms;
+          }
+          @keyframes bsdraw {
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .bs-mark path {
+              animation: none !important;
+              stroke-dashoffset: 0 !important;
+            }
+          }
+        </style>
+      </helmet>
+      <div
+        style="
+          container-type: inline-size;
+          background: #fafaf8;
+          color: #15171a;
+          font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+        "
+      >
+        <header style="border-bottom: 1px solid #e4e2dc">
+          <nav
+            aria-label="Primary"
+            style="
+              max-width: 1120px;
+              margin: 0 auto;
+              padding: 14px clamp(20px, 4vw, 40px);
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 14px 24px;
+            "
+          >
+            <a
+              href="Main.dc.html"
+              class="bs-focus"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                text-decoration: none;
+                color: #15171a;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-weight: 600;
+                font-size: 17px;
+                min-height: 44px;
+              "
+            >
+              <svg
+                class="bs-mark"
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="{{accent}}"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 21V10.5"></path>
+                <path
+                  d="M12 14.5C9 14.5 6.2 12.4 5.5 8.6C9.3 8.3 12 10.6 12 14.5Z"
+                ></path>
+                <path
+                  d="M12 10.5C12 6.6 14.8 4.2 18.6 4C18 7.9 15.2 10.5 12 10.5Z"
+                ></path>
+              </svg>
+              <span>Ben Sproat</span>
+            </a>
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 4px 6px;
+                margin-left: auto;
+              "
+            >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 12px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                "
+                >Work</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 12px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  color: #454a52;
+                  font-size: 15px;
+                  font-weight: 500;
+                "
+                >About</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 12px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  color: #454a52;
+                  font-size: 15px;
+                  font-weight: 500;
+                "
+                >Now</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 12px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  color: #454a52;
+                  font-size: 15px;
+                  font-weight: 500;
+                "
+                >Contact</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 16px;
+                  margin-left: 6px;
+                  border-radius: 8px;
+                  border: 1px solid #15171a;
+                  text-decoration: none;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                "
+                >Resume</a
+              >
+            </div>
+          </nav>
+        </header>
+
+        <section
+          aria-label="Project summary"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 48px clamp(20px, 4vw, 40px) 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+          "
+        >
+          <p
+            style="
+              margin: 0;
+              font-family: &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+              font-size: 12.5px;
+              letter-spacing: 0.04em;
+              color: #5f656e;
+            "
+          >
+            <a href="#" style="text-decoration: none; color: #5f656e"
+              >Projects</a
+            >
+            / Sprout
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 18px;
+              max-width: 64ch;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 14px;
+              "
+            >
+              <h1
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: clamp(40px, 5vw, 64px);
+                  line-height: 1;
+                  letter-spacing: -0.03em;
+                  font-weight: 700;
+                  color: #15171a;
+                "
+              >
+                Sprout
+              </h1>
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 30px;
+                  padding: 0 12px;
+                  border-radius: 999px;
+                  background: #eef6f0;
+                  border: 1px solid #bfe0cb;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12px;
+                  letter-spacing: 0.04em;
+                  color: #175e3a;
+                "
+                >FNB Challenge winner, HackPSU Fall 2026</span
+              >
+            </div>
+            <p
+              style="
+                margin: 0;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-size: clamp(20px, 2.2vw, 26px);
+                line-height: 1.35;
+                font-weight: 500;
+                letter-spacing: -0.01em;
+                color: #15171a;
+                text-wrap: pretty;
+              "
+            >
+              Won the FNB Challenge at HackPSU Fall 2026, out of 122 projects,
+              with a goals-first AI money coach that hands students to a banker.
+              Built and deployed in 24 hours by two students and a team of AI
+              agents.
+            </p>
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                padding-top: 4px;
+              "
+            >
+              <a
+                href="https://getsprout.tech"
+                class="bs-focus"
+                style="display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 8px; background: {{accent}}; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none"
+                >Try Sprout live<svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M6 3h7v7M13 3L6 10"></path></svg
+              ></a>
+              <a
+                href="https://github.com/beansprout21/hackpsu-f26"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 46px;
+                  padding: 0 18px;
+                  border-radius: 8px;
+                  border: 1px solid #c9c7c0;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  background: #ffffff;
+                "
+                >Code on GitHub</a
+              >
+              <a
+                href="https://devpost.com/beansprout21"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 46px;
+                  padding: 0 18px;
+                  border-radius: 8px;
+                  border: 1px solid #c9c7c0;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  background: #ffffff;
+                "
+                >Devpost</a
+              >
+            </div>
+          </div>
+          <dl
+            style="
+              margin: 0;
+              display: grid;
+              grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(200px, 100%), 1fr)
+              );
+              gap: 20px 28px;
+              padding-top: 8px;
+              border-top: 1px solid #e4e2dc;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding-top: 16px;
+              "
+            >
+              <dt
+                style="
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                Role
+              </dt>
+              <dd
+                style="
+                  margin: 0;
+                  font-size: 15px;
+                  line-height: 1.5;
+                  color: #15171a;
+                "
+              >
+                [CONFIRM: Ben's role, for example product, architecture and the
+                agent build system]
+              </dd>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding-top: 16px;
+              "
+            >
+              <dt
+                style="
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                Team
+              </dt>
+              <dd
+                style="
+                  margin: 0;
+                  font-size: 15px;
+                  line-height: 1.5;
+                  color: #15171a;
+                "
+              >
+                Ben Sproat and Ethan Cooper
+              </dd>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding-top: 16px;
+              "
+            >
+              <dt
+                style="
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                When
+              </dt>
+              <dd
+                style="
+                  margin: 0;
+                  font-size: 15px;
+                  line-height: 1.5;
+                  color: #15171a;
+                "
+              >
+                October 2026, a 24-hour hackathon build
+              </dd>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding-top: 16px;
+              "
+            >
+              <dt
+                style="
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                Status
+              </dt>
+              <dd
+                style="
+                  margin: 0;
+                  font-size: 15px;
+                  line-height: 1.5;
+                  color: #15171a;
+                "
+              >
+                Live prototype at
+                <a
+                  href="https://getsprout.tech"
+                  style="font-weight: 600; text-decoration: none"
+                  >getsprout.tech</a
+                >; pilot proposed to FNB
+              </dd>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding-top: 16px;
+              "
+            >
+              <dt
+                style="
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                Stack
+              </dt>
+              <dd
+                style="
+                  margin: 0;
+                  font-size: 15px;
+                  line-height: 1.5;
+                  color: #15171a;
+                "
+              >
+                Next.js, TypeScript, Tailwind, shadcn/ui, Auth0, Upstash Redis,
+                Claude Haiku and Sonnet, Vercel
+              </dd>
+            </div>
+          </dl>
+        </section>
+
+        <section
+          aria-label="Results in numbers"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 40px) 48px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(220px, 100%), 1fr)
+              );
+              gap: 16px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding: 22px;
+                background: #ffffff;
+                border: 1px solid #e4e2dc;
+                border-radius: 12px;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: 40px;
+                  line-height: 1;
+                  letter-spacing: -0.03em;
+                  font-weight: 700;
+                  color: #15171a;
+                "
+              >
+                3,084
+              </p>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.45;
+                  color: #454a52;
+                "
+              >
+                generated users run through the plan engine overnight
+              </p>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding: 22px;
+                background: #ffffff;
+                border: 1px solid #e4e2dc;
+                border-radius: 12px;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: 40px;
+                  line-height: 1;
+                  letter-spacing: -0.03em;
+                  font-weight: 700;
+                  color: #15171a;
+                "
+              >
+                600
+              </p>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.45;
+                  color: #454a52;
+                "
+              >
+                live AI outputs audited: 200 plans and 400 Ask Sprout answers
+              </p>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding: 22px;
+                background: #ffffff;
+                border: 1px solid #e4e2dc;
+                border-radius: 12px;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: 40px;
+                  line-height: 1;
+                  letter-spacing: -0.03em;
+                  font-weight: 700;
+                  color: #15171a;
+                "
+              >
+                3 to 0
+              </p>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.45;
+                  color: #454a52;
+                "
+              >
+                failing checks by morning, with zero crashes
+              </p>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding: 22px;
+                background: #ffffff;
+                border: 1px solid #e4e2dc;
+                border-radius: 12px;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: 40px;
+                  line-height: 1;
+                  letter-spacing: -0.03em;
+                  font-weight: 700;
+                  color: #15171a;
+                "
+              >
+                24 h
+              </p>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.45;
+                  color: #454a52;
+                "
+              >
+                from empty repo to a deployed product with sign-in, upload and a
+                banker view
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          aria-label="Hero image"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 40px) 64px;
+          "
+        >
+          <div
+            aria-hidden="true"
+            style="
+              aspect-ratio: 16 / 9;
+              border-radius: 16px;
+              border: 1px dashed #b9b7b0;
+              background: #eef6f0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-family: &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+              font-size: 13px;
+              color: #454a52;
+              text-align: center;
+              padding: 24px;
+            "
+          >
+            [Sprout screenshot: the plan view, with step one and the FNB product
+            fit beneath it]
+          </div>
+        </section>
+
+        <section
+          aria-label="The problem"
+          style="border-top: 1px solid #e4e2dc; background: #f4f4f0"
+        >
+          <div
+            style="
+              max-width: 1120px;
+              margin: 0 auto;
+              padding: 56px clamp(20px, 4vw, 40px);
+              display: grid;
+              grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(380px, 100%), 1fr)
+              );
+              gap: 40px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                min-width: 0;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12.5px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                01 / Problem
+              </p>
+              <h2
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: clamp(26px, 2.8vw, 34px);
+                  line-height: 1.12;
+                  letter-spacing: -0.02em;
+                  font-weight: 700;
+                  color: #15171a;
+                "
+              >
+                Students don't trust money advice, and most money apps start
+                from the wrong question.
+              </h2>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 16.5px;
+                  line-height: 1.6;
+                  color: #454a52;
+                  max-width: 60ch;
+                "
+              >
+                At the opening ceremony, FNB asked: for a big money decision,
+                who do you trust, a banker with 30 years of experience, a
+                finance personality on social media, or an AI agent? Most apps
+                track what you already spent. Sprout starts with what you want
+                and builds the plan backward, then hands you and your plan to a
+                banker.
+              </p>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                min-width: 0;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  gap: 16px;
+                  align-items: baseline;
+                  padding: 16px 18px;
+                  background: #ffffff;
+                  border: 1px solid #e4e2dc;
+                  border-radius: 12px;
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 30px;
+                    line-height: 1;
+                    letter-spacing: -0.02em;
+                    font-weight: 700;
+                    color: #15171a;
+                    flex: none;
+                    min-width: 96px;
+                  "
+                >
+                  63%
+                </p>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    color: #454a52;
+                  "
+                >
+                  of adults 18 to 29 said they were doing at least okay
+                  financially, against 73% of all adults (Federal Reserve SHED
+                  2025)
+                </p>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 16px;
+                  align-items: baseline;
+                  padding: 16px 18px;
+                  background: #ffffff;
+                  border: 1px solid #e4e2dc;
+                  border-radius: 12px;
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 30px;
+                    line-height: 1;
+                    letter-spacing: -0.02em;
+                    font-weight: 700;
+                    color: #15171a;
+                    flex: none;
+                    min-width: 96px;
+                  "
+                >
+                  61%
+                </p>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    color: #454a52;
+                  "
+                >
+                  of investors 18 to 34 have made an investment decision on a
+                  social media personality's recommendation (FINRA Foundation)
+                </p>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 16px;
+                  align-items: baseline;
+                  padding: 16px 18px;
+                  background: #ffffff;
+                  border: 1px solid #e4e2dc;
+                  border-radius: 12px;
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 30px;
+                    line-height: 1;
+                    letter-spacing: -0.02em;
+                    font-weight: 700;
+                    color: #15171a;
+                    flex: none;
+                    min-width: 96px;
+                  "
+                >
+                  3 in 10
+                </p>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 14px;
+                    line-height: 1.5;
+                    color: #454a52;
+                  "
+                >
+                  U.S. adults have confidence in AI to manage money, while about
+                  1 in 4 young adults who sought guidance used AI (Edward Jones
+                  and Gallup)
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          aria-label="What we built"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 64px clamp(20px, 4vw, 40px) 56px;
+            display: grid;
+            grid-template-columns: repeat(
+              auto-fit,
+              minmax(min(380px, 100%), 1fr)
+            );
+            gap: 40px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              min-width: 0;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: #5f656e;
+              "
+            >
+              02 / What we built
+            </p>
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-size: clamp(26px, 2.8vw, 34px);
+                line-height: 1.12;
+                letter-spacing: -0.02em;
+                font-weight: 700;
+                color: #15171a;
+              "
+            >
+              A plan that changes with what you value, not only with your
+              numbers.
+            </h2>
+            <p
+              style="
+                margin: 0;
+                font-size: 16.5px;
+                line-height: 1.6;
+                color: #454a52;
+                max-width: 60ch;
+              "
+            >
+              In the demo, Maya, a sophomore saving to study abroad in Japan,
+              gets a different first move and a different savings split when she
+              swipes for security instead of experiences. No account is needed
+              to build a plan.
+            </p>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                padding: 18px 20px;
+                background: #ffffff;
+                border: 1px solid #e4e2dc;
+                border-radius: 12px;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                My role
+              </p>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 15px;
+                  line-height: 1.55;
+                  color: #15171a;
+                "
+              >
+                [CONFIRM: what Ben owned, for example the plan engine, the AI
+                guards and the agent build system. What Ethan owned.]
+              </p>
+            </div>
+          </div>
+          <ol
+            style="
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              display: flex;
+              flex-direction: column;
+              gap: 14px;
+              counter-reset: step;
+              min-width: 0;
+            "
+          >
+            <li style="display: flex; gap: 16px; align-items: flex-start">
+              <span
+                style="flex: none; width: 32px; height: 32px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: {{accent}}; color: #FFFFFF; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 600"
+                >1</span
+              >
+              <p
+                style="
+                  margin: 0;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <strong style="color: #15171a; font-weight: 600"
+                  >Values first.</strong
+                >
+                Eight swipes reveal a money persona, such as Experience
+                Collector or Safety Builder.
+              </p>
+            </li>
+            <li style="display: flex; gap: 16px; align-items: flex-start">
+              <span
+                style="flex: none; width: 32px; height: 32px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: {{accent}}; color: #FFFFFF; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 600"
+                >2</span
+              >
+              <p
+                style="
+                  margin: 0;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <strong style="color: #15171a; font-weight: 600"
+                  >Goals, not a credit score.</strong
+                >
+                Studying abroad, a first home or building credit, placed on a
+                timeline.
+              </p>
+            </li>
+            <li style="display: flex; gap: 16px; align-items: flex-start">
+              <span
+                style="flex: none; width: 32px; height: 32px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: {{accent}}; color: #FFFFFF; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 600"
+                >3</span
+              >
+              <p
+                style="
+                  margin: 0;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <strong style="color: #15171a; font-weight: 600"
+                  >Money the way students have it.</strong
+                >
+                Summer savings, aid refunds, gig work or nothing coming in.
+                Upload a statement and the AI fills it in, then discards the
+                file.
+              </p>
+            </li>
+            <li style="display: flex; gap: 16px; align-items: flex-start">
+              <span
+                style="flex: none; width: 32px; height: 32px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: {{accent}}; color: #FFFFFF; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 600"
+                >4</span
+              >
+              <p
+                style="
+                  margin: 0;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <strong style="color: #15171a; font-weight: 600"
+                  >A first move today.</strong
+                >
+                Step one is personal and takes two minutes, with the FNB account
+                that fits right under it, fees shown. Every goal shows when you
+                get there.
+              </p>
+            </li>
+            <li style="display: flex; gap: 16px; align-items: flex-start">
+              <span
+                style="flex: none; width: 32px; height: 32px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: {{accent}}; color: #FFFFFF; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 600"
+                >5</span
+              >
+              <p
+                style="
+                  margin: 0;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <strong style="color: #15171a; font-weight: 600"
+                  >Ask Sprout.</strong
+                >
+                An agent that explains the plan with your real numbers, runs
+                what-ifs and remembers the conversation.
+              </p>
+            </li>
+            <li style="display: flex; gap: 16px; align-items: flex-start">
+              <span
+                style="flex: none; width: 32px; height: 32px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: {{accent}}; color: #FFFFFF; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 600"
+                >6</span
+              >
+              <p
+                style="
+                  margin: 0;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <strong style="color: #15171a; font-weight: 600"
+                  >Hand-off to a banker.</strong
+                >
+                Sign in to save a banker-ready PDF or opt in to share the plan.
+                A role-protected dashboard lets a banker see the goals before
+                the meeting.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section
+          aria-label="How it works"
+          style="border-top: 1px solid #e4e2dc; background: #f4f4f0"
+        >
+          <div
+            style="
+              max-width: 1120px;
+              margin: 0 auto;
+              padding: 56px clamp(20px, 4vw, 40px);
+              display: flex;
+              flex-direction: column;
+              gap: 28px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                max-width: 64ch;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12.5px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                03 / How it works
+              </p>
+              <h2
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: clamp(26px, 2.8vw, 34px);
+                  line-height: 1.12;
+                  letter-spacing: -0.02em;
+                  font-weight: 700;
+                  color: #15171a;
+                "
+              >
+                The AI explains. The engine decides every number. Guards check
+                both.
+              </h2>
+              <p
+                style="
+                  margin: 0;
+                  font-size: 16.5px;
+                  line-height: 1.6;
+                  color: #454a52;
+                "
+              >
+                Take the AI out and Sprout can't read your values, your
+                statements or your questions. Take the engine out and the AI
+                could invent numbers. Each part does what it does best.
+              </p>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(
+                  auto-fit,
+                  minmax(min(300px, 100%), 1fr)
+                );
+                gap: 16px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  padding: 24px;
+                  background: #ffffff;
+                  border: 1px solid #e4e2dc;
+                  border-radius: 12px;
+                "
+              >
+                <p
+                  style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: {{accent}}; font-weight: 600"
+                >
+                  AI understands and explains
+                </p>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    line-height: 1.55;
+                    color: #454a52;
+                  "
+                >
+                  Claude Haiku turns swipes and goals into a goal profile in the
+                  student's own words and reads uploaded statements. Claude
+                  Sonnet explains why each step fits and powers Ask Sprout.
+                </p>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  padding: 24px;
+                  background: #ffffff;
+                  border: 1px solid #e4e2dc;
+                  border-radius: 12px;
+                "
+              >
+                <p
+                  style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: {{accent}}; font-weight: 600"
+                >
+                  Engine decides
+                </p>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    line-height: 1.55;
+                    color: #454a52;
+                  "
+                >
+                  Every number is deterministic code with tests: income from
+                  irregular sources, the spending split, the safety cushion,
+                  goal timelines, and which FNB products fit and when they
+                  unlock.
+                </p>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  padding: 24px;
+                  background: #ffffff;
+                  border: 1px solid #e4e2dc;
+                  border-radius: 12px;
+                "
+              >
+                <p
+                  style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: {{accent}}; font-weight: 600"
+                >
+                  Guards verify
+                </p>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    line-height: 1.55;
+                    color: #454a52;
+                  "
+                >
+                  Any AI sentence with a number the engine didn't produce is
+                  replaced. Products outside FNB's catalog are dropped. Every AI
+                  call has a timeout and a template fallback, so the plan never
+                  breaks.
+                </p>
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                padding: 24px;
+                background: #ffffff;
+                border: 1px solid #e4e2dc;
+                border-radius: 12px;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                Built by a team of AI agents, coordinated through GitHub
+              </p>
+              <div
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-items: stretch;
+                  gap: 10px;
+                "
+              >
+                <div
+                  style="
+                    flex: 1 1 200px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    padding: 14px 16px;
+                    border: 1px solid #15171a;
+                    border-radius: 10px;
+                    min-width: 0;
+                  "
+                >
+                  <p
+                    style="
+                      margin: 0;
+                      font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                      font-size: 16px;
+                      font-weight: 600;
+                      color: #15171a;
+                    "
+                  >
+                    Lead Claude chat
+                  </p>
+                  <p
+                    style="
+                      margin: 0;
+                      font-size: 13.5px;
+                      line-height: 1.45;
+                      color: #454a52;
+                    "
+                  >
+                    Owned the spec, the contracts and the backlog. Triaged every
+                    hour overnight.
+                  </p>
+                </div>
+                <div
+                  style="
+                    flex: none;
+                    display: flex;
+                    align-items: center;
+                    color: #5f656e;
+                  "
+                  aria-hidden="true"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4"></path>
+                  </svg>
+                </div>
+                <div
+                  style="
+                    flex: 1 1 200px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    padding: 14px 16px;
+                    border: 1px solid #c9c7c0;
+                    border-radius: 10px;
+                    min-width: 0;
+                  "
+                >
+                  <p
+                    style="
+                      margin: 0;
+                      font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                      font-size: 16px;
+                      font-weight: 600;
+                      color: #15171a;
+                    "
+                  >
+                    GitHub issues, PRs, labels
+                  </p>
+                  <p
+                    style="
+                      margin: 0;
+                      font-size: 13.5px;
+                      line-height: 1.45;
+                      color: #454a52;
+                    "
+                  >
+                    The only channel between agents. Clear file ownership kept
+                    them from colliding.
+                  </p>
+                </div>
+                <div
+                  style="
+                    flex: none;
+                    display: flex;
+                    align-items: center;
+                    color: #5f656e;
+                  "
+                  aria-hidden="true"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4"></path>
+                  </svg>
+                </div>
+                <div
+                  style="
+                    flex: 1 1 200px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    padding: 14px 16px;
+                    border: 1px solid #c9c7c0;
+                    border-radius: 10px;
+                    min-width: 0;
+                  "
+                >
+                  <p
+                    style="
+                      margin: 0;
+                      font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                      font-size: 16px;
+                      font-weight: 600;
+                      color: #15171a;
+                    "
+                  >
+                    Up to 4 Claude Code sessions
+                  </p>
+                  <p
+                    style="
+                      margin: 0;
+                      font-size: 13.5px;
+                      line-height: 1.45;
+                      color: #454a52;
+                    "
+                  >
+                    Built features in parallel, each on its own issue and
+                    branch.
+                  </p>
+                </div>
+                <div
+                  style="
+                    flex: none;
+                    display: flex;
+                    align-items: center;
+                    color: #5f656e;
+                  "
+                  aria-hidden="true"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4"></path>
+                  </svg>
+                </div>
+                <div
+                  style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border: 1px solid {{accent}}; background: #EEF6F0; border-radius: 10px; min-width: 0"
+                >
+                  <p
+                    style="
+                      margin: 0;
+                      font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                      font-size: 16px;
+                      font-weight: 600;
+                      color: #15171a;
+                    "
+                  >
+                    Overnight loop: generate, fix, audit
+                  </p>
+                  <p
+                    style="
+                      margin: 0;
+                      font-size: 13.5px;
+                      line-height: 1.45;
+                      color: #454a52;
+                    "
+                  >
+                    One agent generated thousands of users and checked 25 rules,
+                    one fixed what it found, one audited live AI answers.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          aria-label="What failed and what changed"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 64px clamp(20px, 4vw, 40px) 56px;
+            display: grid;
+            grid-template-columns: repeat(
+              auto-fit,
+              minmax(min(380px, 100%), 1fr)
+            );
+            gap: 40px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              min-width: 0;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: #5f656e;
+              "
+            >
+              04 / What failed and what changed
+            </p>
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-size: clamp(26px, 2.8vw, 34px);
+                line-height: 1.12;
+                letter-spacing: -0.02em;
+                font-weight: 700;
+                color: #15171a;
+              "
+            >
+              The overnight test caught us giving bad advice. That is why the
+              engine is deterministic.
+            </h2>
+          </div>
+          <ul
+            style="
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              display: flex;
+              flex-direction: column;
+              gap: 0;
+              border-top: 1px solid #e4e2dc;
+              min-width: 0;
+            "
+          >
+            <li
+              style="
+                padding: 16px 0;
+                border-bottom: 1px solid #e4e2dc;
+                font-size: 15.5px;
+                line-height: 1.55;
+                color: #454a52;
+              "
+            >
+              <strong style="color: #15171a; font-weight: 600"
+                >The first plan felt like an ad.</strong
+              >
+              Step one was "open an account." We rebuilt it so step one is
+              always personal, with the FNB product underneath as the fit.
+            </li>
+            <li
+              style="
+                padding: 16px 0;
+                border-bottom: 1px solid #e4e2dc;
+                font-size: 15.5px;
+                line-height: 1.55;
+                color: #454a52;
+              "
+            >
+              <strong style="color: #15171a; font-weight: 600"
+                >Three bad recommendations surfaced overnight.</strong
+              >
+              A CD with a $100 minimum for students with no income, a retirement
+              account for a car fund, and a credit card matched to the safety
+              cushion. Each became a rule, a fix and a regression test before
+              morning.
+            </li>
+            <li
+              style="
+                padding: 16px 0;
+                border-bottom: 1px solid #e4e2dc;
+                font-size: 15.5px;
+                line-height: 1.55;
+                color: #454a52;
+              "
+            >
+              <strong style="color: #15171a; font-weight: 600"
+                >Irregular income had to be modeled honestly.</strong
+              >
+              Aid refunds, summer savings and "no money coming in" are
+              first-class inputs, without shaming anyone.
+            </li>
+            <li
+              style="
+                padding: 16px 0;
+                border-bottom: 1px solid #e4e2dc;
+                font-size: 15.5px;
+                line-height: 1.55;
+                color: #454a52;
+              "
+            >
+              <strong style="color: #15171a; font-weight: 600"
+                >One deliberate trade-off.</strong
+              >
+              The AI never produces a number, even though that makes it feel
+              less magical. A money coach that invents figures is worse than
+              none.
+            </li>
+          </ul>
+        </section>
+
+        <section
+          aria-label="Results"
+          style="border-top: 1px solid #e4e2dc; background: #f4f4f0"
+        >
+          <div
+            style="
+              max-width: 1120px;
+              margin: 0 auto;
+              padding: 56px clamp(20px, 4vw, 40px);
+              display: grid;
+              grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(380px, 100%), 1fr)
+              );
+              gap: 40px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                min-width: 0;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12.5px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                05 / Results
+              </p>
+              <h2
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: clamp(26px, 2.8vw, 34px);
+                  line-height: 1.12;
+                  letter-spacing: -0.02em;
+                  font-weight: 700;
+                  color: #15171a;
+                "
+              >
+                Won the FNB Challenge. Proposed a pilot.
+              </h2>
+            </div>
+            <ul
+              style="
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                min-width: 0;
+              "
+            >
+              <li
+                style="
+                  display: flex;
+                  gap: 12px;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <span
+                  style="flex: none; width: 8px; height: 8px; margin-top: 8px; border-radius: 999px; background: {{accent}}"
+                  aria-hidden="true"
+                ></span
+                ><span
+                  >Winner of the FNB Challenge, "Trust, Decisions &amp;
+                  Financial Confidence," at HackPSU Fall 2026: 353 participants,
+                  122 projects.</span
+                >
+              </li>
+              <li
+                style="
+                  display: flex;
+                  gap: 12px;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <span
+                  style="flex: none; width: 8px; height: 8px; margin-top: 8px; border-radius: 999px; background: {{accent}}"
+                  aria-hidden="true"
+                ></span
+                ><span
+                  >Also entered for the Grand Prize, the Nittany AI Challenge
+                  and MLH Best Use of Auth0.</span
+                >
+              </li>
+              <li
+                style="
+                  display: flex;
+                  gap: 12px;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <span
+                  style="flex: none; width: 8px; height: 8px; margin-top: 8px; border-radius: 999px; background: {{accent}}"
+                  aria-hidden="true"
+                ></span
+                ><span
+                  >Proposed a 90-day pilot at FNB's Penn State HUB branch:
+                  students scan a QR code, build a plan and book a banker who
+                  already knows their goals. Proposal only, not yet
+                  started.</span
+                >
+              </li>
+              <li
+                style="
+                  display: flex;
+                  gap: 12px;
+                  font-size: 15.5px;
+                  line-height: 1.55;
+                  color: #454a52;
+                "
+              >
+                <span
+                  style="flex: none; width: 8px; height: 8px; margin-top: 8px; border-radius: 999px; background: {{accent}}"
+                  aria-hidden="true"
+                ></span
+                ><span
+                  >Firsts for the team: a financial-planning engine, Auth0
+                  role-based access, and running AI agents as a coordinated
+                  team.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section
+          aria-label="Visuals"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 64px clamp(20px, 4vw, 40px) 56px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              max-width: 64ch;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: #5f656e;
+              "
+            >
+              06 / Visuals
+            </p>
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-size: clamp(26px, 2.8vw, 34px);
+                line-height: 1.12;
+                letter-spacing: -0.02em;
+                font-weight: 700;
+                color: #15171a;
+              "
+            >
+              Screens and the demo
+            </h2>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(300px, 100%), 1fr)
+              );
+              gap: 16px;
+            "
+          >
+            <div
+              aria-hidden="true"
+              style="
+                aspect-ratio: 4 / 3;
+                border-radius: 12px;
+                border: 1px dashed #b9b7b0;
+                background: #f1f1ec;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                color: #454a52;
+                text-align: center;
+                padding: 16px;
+              "
+            >
+              [Screenshot: values swipes and money persona]
+            </div>
+            <div
+              aria-hidden="true"
+              style="
+                aspect-ratio: 4 / 3;
+                border-radius: 12px;
+                border: 1px dashed #b9b7b0;
+                background: #f1f1ec;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                color: #454a52;
+                text-align: center;
+                padding: 16px;
+              "
+            >
+              [Screenshot: Ask Sprout with real numbers]
+            </div>
+            <div
+              aria-hidden="true"
+              style="
+                aspect-ratio: 4 / 3;
+                border-radius: 12px;
+                border: 1px dashed #b9b7b0;
+                background: #f1f1ec;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                color: #454a52;
+                text-align: center;
+                padding: 16px;
+              "
+            >
+              [Screenshot: banker dashboard, role-protected]
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="
+              aspect-ratio: 21 / 9;
+              border-radius: 12px;
+              border: 1px dashed #b9b7b0;
+              background: #f1f1ec;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-family: &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+              font-size: 12.5px;
+              color: #454a52;
+              text-align: center;
+              padding: 16px;
+            "
+          >
+            [Demo video: Maya builds a plan and shares it with FNB]
+          </div>
+        </section>
+
+        <section
+          aria-label="Links"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 40px) 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+          "
+        >
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <p
+              style="
+                margin: 0;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: #5f656e;
+              "
+            >
+              07 / Links
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px">
+              <a
+                href="https://getsprout.tech"
+                class="bs-focus"
+                style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 8px; background: {{accent}}; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none"
+                >Try Sprout at getsprout.tech</a
+              >
+              <a
+                href="https://github.com/beansprout21/hackpsu-f26"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 46px;
+                  padding: 0 18px;
+                  border-radius: 8px;
+                  border: 1px solid #c9c7c0;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  background: #ffffff;
+                "
+                >Code on GitHub</a
+              >
+              <a
+                href="https://devpost.com/beansprout21"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 46px;
+                  padding: 0 18px;
+                  border-radius: 8px;
+                  border: 1px solid #c9c7c0;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  background: #ffffff;
+                "
+                >Devpost</a
+              >
+            </div>
+          </div>
+          <p
+            style="
+              margin: 0;
+              font-size: 13.5px;
+              line-height: 1.6;
+              color: #5f656e;
+              max-width: 80ch;
+            "
+          >
+            Sprout is an educational prototype built for HackPSU Fall 2026. It
+            is not affiliated with or endorsed by FNB. Product details came from
+            FNB's public pages, there is no bank account linking, and shared
+            plans live in a demo store for 30 days. Planning method adapted from
+            Ramit Sethi's I Will Teach You to Be Rich, with no affiliation.
+          </p>
+        </section>
+
+        <footer style="background: #15171a; color: #f3f2ed">
+          <div
+            style="
+              max-width: 1120px;
+              margin: 0 auto;
+              padding: 64px clamp(20px, 4vw, 40px) 40px;
+              display: flex;
+              flex-direction: column;
+              gap: 36px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: 24px 40px;
+              "
+            >
+              <h2
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: clamp(30px, 3.4vw, 42px);
+                  line-height: 1.08;
+                  letter-spacing: -0.02em;
+                  font-weight: 700;
+                  color: #f3f2ed;
+                "
+              >
+                Want to see the engine?
+              </h2>
+              <a
+                href="mailto:ben.c.sproat@gmail.com"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 46px;
+                  padding: 0 20px;
+                  border-radius: 8px;
+                  background: #f3f2ed;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                  text-decoration: none;
+                "
+                >ben.c.sproat@gmail.com</a
+              >
+            </div>
+            <nav
+              aria-label="Profiles"
+              style="display: flex; flex-wrap: wrap; gap: 4px 8px"
+            >
+              <a
+                href="Main.dc.html"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >Home</a
+              >
+              <a
+                href="https://www.linkedin.com/in/benjamin-s-a39622385"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >LinkedIn</a
+              >
+              <a
+                href="https://github.com/beansprout21"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >GitHub</a
+              >
+              <a
+                href="https://devpost.com/beansprout21"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >Devpost</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >Resume</a
+              >
+            </nav>
+            <p
+              style="
+                margin: 0;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                line-height: 1.6;
+                color: #a9adb5;
+              "
+            >
+              Built by Ben with a team of Claude agents, in public:
+              <a
+                href="https://github.com/beansprout21/bensproat-site"
+                style="color: #8fd4a8"
+                >github.com/beansprout21/bensproat-site</a
+              >
+            </p>
+          </div>
+        </footer>
+      </div>
+    </x-dc>
+    <script
+      type="text/x-dc"
+      data-dc-script
+      data-props='{"accent":{"editor":"color","default":"#1F7A4A","options":["#1F7A4A","#1D5FB4","#B4541D","#15171A"],"section":"Look"},"$preview":{"width":1280,"height":4600}}'
+    >
+      class Component extends DCLogic {
+        renderVals() {
+          return { accent: this.props.accent || "#1F7A4A" };
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1648 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ben Sproat, home page</title>
+    <script src="./support.js"></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+        />
+        <style>
+          body {
+            margin: 0;
+          }
+          a {
+            color: #1f7a4a;
+          }
+          a:hover {
+            color: #175e3a;
+          }
+          .bs-move {
+            transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+          }
+          .bs-door {
+            transition:
+              border-color 180ms ease,
+              background-color 180ms ease,
+              opacity 180ms ease;
+          }
+          .bs-doorbtn:focus-visible,
+          .bs-focus:focus-visible {
+            outline: 2px solid #1f7a4a;
+            outline-offset: 4px;
+          }
+          .bs-mark path {
+            stroke-dasharray: 40;
+            stroke-dashoffset: 40;
+            animation: bsdraw 700ms cubic-bezier(0.3, 0.7, 0.2, 1) forwards;
+          }
+          .bs-mark path:nth-child(2) {
+            animation-delay: 220ms;
+          }
+          .bs-mark path:nth-child(3) {
+            animation-delay: 420ms;
+          }
+          @keyframes bsdraw {
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+          @container (max-width:720px) {
+            .bs-3 {
+              grid-template-columns: 1fr !important;
+            }
+            .bs-move {
+              transform: none !important;
+            }
+          }
+          @container (min-width:721px) {
+            .bs-move {
+              order: 0 !important;
+            }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .bs-move,
+            .bs-door {
+              transition: none !important;
+            }
+            .bs-mark path {
+              animation: none !important;
+              stroke-dashoffset: 0 !important;
+            }
+          }
+        </style>
+      </helmet>
+      <div
+        class="bs-root"
+        style="
+          container-type: inline-size;
+          background: #fafaf8;
+          color: #15171a;
+          font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+        "
+      >
+        <header style="border-bottom: 1px solid #e4e2dc">
+          <nav
+            aria-label="Primary"
+            style="
+              max-width: 1120px;
+              margin: 0 auto;
+              padding: 14px clamp(20px, 4vw, 40px);
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 14px 24px;
+            "
+          >
+            <a
+              href="#top"
+              class="bs-focus"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                text-decoration: none;
+                color: #15171a;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-weight: 600;
+                font-size: 17px;
+                min-height: 44px;
+              "
+            >
+              <svg
+                class="bs-mark"
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="{{accent}}"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 21V10.5"></path>
+                <path
+                  d="M12 14.5C9 14.5 6.2 12.4 5.5 8.6C9.3 8.3 12 10.6 12 14.5Z"
+                ></path>
+                <path
+                  d="M12 10.5C12 6.6 14.8 4.2 18.6 4C18 7.9 15.2 10.5 12 10.5Z"
+                ></path>
+              </svg>
+              <span>Ben Sproat</span>
+            </a>
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 4px 6px;
+                margin-left: auto;
+              "
+            >
+              <a
+                href="#work"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 12px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  color: #454a52;
+                  font-size: 15px;
+                  font-weight: 500;
+                "
+                >Work</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 12px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  color: #454a52;
+                  font-size: 15px;
+                  font-weight: 500;
+                "
+                >About</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 12px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  color: #454a52;
+                  font-size: 15px;
+                  font-weight: 500;
+                "
+                >Now</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 12px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  color: #454a52;
+                  font-size: 15px;
+                  font-weight: 500;
+                "
+                >Contact</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 16px;
+                  margin-left: 6px;
+                  border-radius: 8px;
+                  border: 1px solid #15171a;
+                  text-decoration: none;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                "
+                >Resume</a
+              >
+            </div>
+          </nav>
+        </header>
+
+        <section
+          id="top"
+          aria-label="Introduction"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 64px clamp(20px, 4vw, 40px) 56px;
+            display: grid;
+            grid-template-columns: repeat(
+              auto-fit,
+              minmax(min(380px, 100%), 1fr)
+            );
+            gap: 40px;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 22px;
+              min-width: 0;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                color: #15171a;
+              "
+            >
+              Ben Sproat
+            </p>
+            <h1
+              style="
+                margin: 0;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-size: clamp(38px, 4.4vw, 58px);
+                line-height: 1.04;
+                letter-spacing: -0.025em;
+                font-weight: 700;
+                text-wrap: balance;
+                color: #15171a;
+              "
+            >
+              I turn ideas into working AI products.
+            </h1>
+            <p
+              style="
+                margin: 0;
+                font-size: 20px;
+                line-height: 1.5;
+                color: #454a52;
+                max-width: 44ch;
+              "
+            >
+              Engineering student, Penn State Schreyer Honors College.
+            </p>
+            <p
+              style="
+                margin: 0;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                letter-spacing: 0.02em;
+                color: #454a52;
+              "
+            >
+              <span
+                style="width: 8px; height: 8px; border-radius: 999px; background: {{accent}}; flex: none"
+                aria-hidden="true"
+              ></span
+              >[AVAILABILITY: for example, open to Summer 2027 internships]
+            </p>
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 12px;
+                padding-top: 6px;
+              "
+            >
+              <a
+                href="{{cta.href}}"
+                class="bs-focus"
+                style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 8px; background: {{accent}}; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none"
+                >{{cta.label}}</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 46px;
+                  padding: 0 18px;
+                  border-radius: 8px;
+                  border: 1px solid #c9c7c0;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  background: #ffffff;
+                "
+                >Resume (PDF)</a
+              >
+              <a
+                href="mailto:ben.c.sproat@gmail.com"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 46px;
+                  padding: 0 10px;
+                  color: #454a52;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: underline;
+                  text-underline-offset: 4px;
+                "
+                >Email Ben</a
+              >
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; min-width: 0">
+            <img
+              src="/_blob/446da0a68f0a8a5728089fda1de5a9bd"
+              alt="Ben Sproat, smiling, in a navy shirt against a white wall"
+              style="
+                width: 100%;
+                max-width: 420px;
+                aspect-ratio: 4 / 5;
+                object-fit: cover;
+                border-radius: 16px;
+                border: 1px solid #e4e2dc;
+                display: block;
+              "
+            />
+          </div>
+        </section>
+
+        <section
+          aria-label="Proof"
+          style="
+            border-top: 1px solid #e4e2dc;
+            border-bottom: 1px solid #e4e2dc;
+            background: #f4f4f0;
+          "
+        >
+          <div
+            style="
+              max-width: 1120px;
+              margin: 0 auto;
+              padding: 44px clamp(20px, 4vw, 40px);
+              display: flex;
+              flex-direction: column;
+              gap: 22px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 8px 24px;
+                align-items: baseline;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12.5px;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  color: #5f656e;
+                "
+              >
+                Proof, ordered for {{who}}
+              </p>
+              <p style="margin: 0; font-size: 14px; color: #5f656e">
+                Every claim links to the live product, so you can check it
+                yourself.
+              </p>
+            </div>
+            <div
+              class="bs-3"
+              style="
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 20px;
+              "
+            >
+              <article
+                class="bs-move"
+                style="order: {{p.hackpsu.slot}}; transform: translateX(calc({{p.hackpsu.shift}} * (100% + 20px))); display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #FFFFFF; border: 1px solid #E4E2DC; border-radius: 12px; min-width: 0"
+              >
+                <p
+                  style="
+                    margin: 0;
+                    display: flex;
+                    gap: 10px;
+                    font-family:
+                      &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                    font-size: 12px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: #5f656e;
+                  "
+                >
+                  <span style="color: {{accent}}; font-weight: 600"
+                    >{{p.hackpsu.rank}}</span
+                  ><span>Win</span>
+                </p>
+                <h2
+                  style="
+                    margin: 0;
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 21px;
+                    line-height: 1.25;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                >
+                  FNB Challenge winner, HackPSU Fall 2026
+                </h2>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    line-height: 1.55;
+                    color: #454a52;
+                  "
+                >
+                  Sprout, a goals-first AI money coach that hands students to a
+                  banker. 353 participants, 122 projects.
+                </p>
+                <div
+                  style="
+                    margin-top: auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 4px 18px;
+                  "
+                >
+                  <a
+                    href="https://getsprout.tech"
+                    class="bs-focus"
+                    style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                    >Try Sprout live<svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 3h7v7M13 3L6 10"></path></svg
+                  ></a>
+                  <a
+                    href="Sprout.dc.html"
+                    class="bs-focus"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      min-height: 44px;
+                      font-size: 14.5px;
+                      font-weight: 500;
+                      color: #454a52;
+                      text-decoration: underline;
+                      text-underline-offset: 4px;
+                    "
+                    >Case study</a
+                  >
+                </div>
+              </article>
+              <article
+                class="bs-move"
+                style="order: {{p.priming.slot}}; transform: translateX(calc({{p.priming.shift}} * (100% + 20px))); display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #FFFFFF; border: 1px solid #E4E2DC; border-radius: 12px; min-width: 0"
+              >
+                <p
+                  style="
+                    margin: 0;
+                    display: flex;
+                    gap: 10px;
+                    font-family:
+                      &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                    font-size: 12px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: #5f656e;
+                  "
+                >
+                  <span style="color: {{accent}}; font-weight: 600"
+                    >{{p.priming.rank}}</span
+                  ><span>Startup</span>
+                </p>
+                <h2
+                  style="
+                    margin: 0;
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 21px;
+                    line-height: 1.25;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                >
+                  Technical co-founder, Priming Labs
+                </h2>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    line-height: 1.55;
+                    color: #454a52;
+                  "
+                >
+                  Readiness testing for coaches and physical therapists. Web app
+                  live, iOS app in beta.
+                </p>
+                <div
+                  style="
+                    margin-top: auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 4px 18px;
+                  "
+                >
+                  <a
+                    href="https://priminglabs.com"
+                    class="bs-focus"
+                    style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                    >See Priming live<svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 3h7v7M13 3L6 10"></path></svg
+                  ></a>
+                  <a
+                    href="#"
+                    class="bs-focus"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      min-height: 44px;
+                      font-size: 14.5px;
+                      font-weight: 500;
+                      color: #454a52;
+                      text-decoration: underline;
+                      text-underline-offset: 4px;
+                    "
+                    >Project page</a
+                  >
+                </div>
+              </article>
+              <article
+                class="bs-move"
+                style="order: {{p.sproat.slot}}; transform: translateX(calc({{p.sproat.shift}} * (100% + 20px))); display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #FFFFFF; border: 1px solid #E4E2DC; border-radius: 12px; min-width: 0"
+              >
+                <p
+                  style="
+                    margin: 0;
+                    display: flex;
+                    gap: 10px;
+                    font-family:
+                      &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                    font-size: 12px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: #5f656e;
+                  "
+                >
+                  <span style="color: {{accent}}; font-weight: 600"
+                    >{{p.sproat.rank}}</span
+                  ><span>Business</span>
+                </p>
+                <h2
+                  style="
+                    margin: 0;
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 21px;
+                    line-height: 1.25;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                >
+                  Founder, Sproat Systems
+                </h2>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    line-height: 1.55;
+                    color: #454a52;
+                  "
+                >
+                  Websites, CRMs and AI automation for healthcare practices and
+                  small businesses, since 2025.
+                </p>
+                <div
+                  style="
+                    margin-top: auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 4px 18px;
+                  "
+                >
+                  <a
+                    href="https://sproatsystems.com"
+                    class="bs-focus"
+                    style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                    >See Sproat Systems live<svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 3h7v7M13 3L6 10"></path></svg
+                  ></a>
+                  <a
+                    href="#"
+                    class="bs-focus"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      min-height: 44px;
+                      font-size: 14.5px;
+                      font-weight: 500;
+                      color: #454a52;
+                      text-decoration: underline;
+                      text-underline-offset: 4px;
+                    "
+                    >Project page</a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section
+          aria-label="Choose your path"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 64px clamp(20px, 4vw, 40px) 56px;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              max-width: 60ch;
+            "
+          >
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-size: clamp(28px, 3vw, 36px);
+                line-height: 1.1;
+                letter-spacing: -0.02em;
+                font-weight: 700;
+                color: #15171a;
+              "
+            >
+              What brings you here?
+            </h2>
+            <p
+              style="
+                margin: 0;
+                font-size: 17px;
+                line-height: 1.5;
+                color: #454a52;
+              "
+            >
+              Pick a door. The page reorders for you, and the resume stays one
+              click away.
+            </p>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(240px, 100%), 1fr)
+              );
+              gap: 16px;
+            "
+          >
+            <div
+              class="bs-door"
+              style="display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 12px; border: 1px solid {{d.building.border}}; background: {{d.building.bg}}; opacity: {{d.building.opacity}}; min-width: 0"
+            >
+              <button
+                type="button"
+                class="bs-doorbtn"
+                aria-pressed="{{d.building.pressed}}"
+                onClick="{{d.building.toggle}}"
+                onMouseEnter="{{d.building.enter}}"
+                onMouseLeave="{{d.building.leave}}"
+                onFocus="{{d.building.enter}}"
+                onBlur="{{d.building.leave}}"
+                style="
+                  all: unset;
+                  cursor: pointer;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  text-align: left;
+                  min-height: 44px;
+                  border-radius: 6px;
+                "
+              >
+                <span
+                  style="
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 22px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                  >Building something?</span
+                >
+                <span
+                  style="font-size: 14.5px; line-height: 1.5; color: #454a52"
+                  >Partners and investors: what I'm building, how I build, and
+                  what I'm looking for.</span
+                >
+              </button>
+              <sc-if
+                value="{{d.building.active}}"
+                hint-placeholder-val="{{ false }}"
+              >
+                <a
+                  href="#"
+                  class="bs-focus"
+                  style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                  >Continue to /ventures<svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4"></path></svg
+                ></a>
+              </sc-if>
+            </div>
+
+            <div
+              class="bs-door"
+              style="display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 12px; border: 1px solid {{d.hiring.border}}; background: {{d.hiring.bg}}; opacity: {{d.hiring.opacity}}; min-width: 0"
+            >
+              <button
+                type="button"
+                class="bs-doorbtn"
+                aria-pressed="{{d.hiring.pressed}}"
+                onClick="{{d.hiring.toggle}}"
+                onMouseEnter="{{d.hiring.enter}}"
+                onMouseLeave="{{d.hiring.leave}}"
+                onFocus="{{d.hiring.enter}}"
+                onBlur="{{d.hiring.leave}}"
+                style="
+                  all: unset;
+                  cursor: pointer;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  text-align: left;
+                  min-height: 44px;
+                  border-radius: 6px;
+                "
+              >
+                <span
+                  style="
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 22px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                  >Hiring?</span
+                >
+                <span
+                  style="font-size: 14.5px; line-height: 1.5; color: #454a52"
+                  >Recruiters and companies: engineering plus AI product skills,
+                  availability, case studies and three resume versions.</span
+                >
+              </button>
+              <sc-if
+                value="{{d.hiring.active}}"
+                hint-placeholder-val="{{ false }}"
+              >
+                <a
+                  href="#"
+                  class="bs-focus"
+                  style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                  >Continue to /hire<svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4"></path></svg
+                ></a>
+              </sc-if>
+            </div>
+
+            <div
+              class="bs-door"
+              style="display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 12px; border: 1px solid {{d.about.border}}; background: {{d.about.bg}}; opacity: {{d.about.opacity}}; min-width: 0"
+            >
+              <button
+                type="button"
+                class="bs-doorbtn"
+                aria-pressed="{{d.about.pressed}}"
+                onClick="{{d.about.toggle}}"
+                onMouseEnter="{{d.about.enter}}"
+                onMouseLeave="{{d.about.leave}}"
+                onFocus="{{d.about.enter}}"
+                onBlur="{{d.about.leave}}"
+                style="
+                  all: unset;
+                  cursor: pointer;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  text-align: left;
+                  min-height: 44px;
+                  border-radius: 6px;
+                "
+              >
+                <span
+                  style="
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 22px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                  >Who's Ben?</span
+                >
+                <span
+                  style="font-size: 14.5px; line-height: 1.5; color: #454a52"
+                  >The story in three pillars: builder, founder, impact. Plus
+                  the outdoors.</span
+                >
+              </button>
+              <sc-if
+                value="{{d.about.active}}"
+                hint-placeholder-val="{{ false }}"
+              >
+                <a
+                  href="#"
+                  class="bs-focus"
+                  style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                  >Continue to /about<svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4"></path></svg
+                ></a>
+              </sc-if>
+            </div>
+
+            <div
+              class="bs-door"
+              style="display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 12px; border: 1px solid {{d.automation.border}}; background: {{d.automation.bg}}; opacity: {{d.automation.opacity}}; min-width: 0"
+            >
+              <button
+                type="button"
+                class="bs-doorbtn"
+                aria-pressed="{{d.automation.pressed}}"
+                onClick="{{d.automation.toggle}}"
+                onMouseEnter="{{d.automation.enter}}"
+                onMouseLeave="{{d.automation.leave}}"
+                onFocus="{{d.automation.enter}}"
+                onBlur="{{d.automation.leave}}"
+                style="
+                  all: unset;
+                  cursor: pointer;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  text-align: left;
+                  min-height: 44px;
+                  border-radius: 6px;
+                "
+              >
+                <span
+                  style="
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 22px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                  >Need AI automation?</span
+                >
+                <span
+                  style="font-size: 14.5px; line-height: 1.5; color: #454a52"
+                  >Sproat Systems builds websites, CRMs and AI automation for
+                  healthcare practices and small businesses.</span
+                >
+              </button>
+              <sc-if
+                value="{{d.automation.active}}"
+                hint-placeholder-val="{{ false }}"
+              >
+                <a
+                  href="https://sproatsystems.com"
+                  class="bs-focus"
+                  style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                  >Visit sproatsystems.com<svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4"></path></svg
+                ></a>
+              </sc-if>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="work"
+          aria-label="Selected work"
+          style="
+            max-width: 1120px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 24px clamp(20px, 4vw, 40px) 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              align-items: baseline;
+              gap: 8px 24px;
+            "
+          >
+            <h2
+              style="
+                margin: 0;
+                font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                font-size: clamp(28px, 3vw, 36px);
+                line-height: 1.1;
+                letter-spacing: -0.02em;
+                font-weight: 700;
+                color: #15171a;
+              "
+            >
+              Selected work
+            </h2>
+            <a
+              href="#"
+              class="bs-focus"
+              style="display: inline-flex; align-items: center; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+              >All projects</a
+            >
+          </div>
+          <div
+            class="bs-3"
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+              gap: 20px;
+            "
+          >
+            <article
+              class="bs-move"
+              style="order: {{w.sprout.slot}}; transform: translateX(calc({{w.sprout.shift}} * (100% + 20px))); display: flex; flex-direction: column; gap: 14px; min-width: 0"
+            >
+              <div
+                aria-hidden="true"
+                style="
+                  aspect-ratio: 16 / 10;
+                  border-radius: 12px;
+                  border: 1px dashed #b9b7b0;
+                  background: #eef6f0;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12.5px;
+                  color: #454a52;
+                  text-align: center;
+                  padding: 16px;
+                "
+              >
+                [Sprout screenshot: plan view with the first move]
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <p
+                  style="
+                    margin: 0;
+                    font-family:
+                      &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                    font-size: 12px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: #5f656e;
+                  "
+                >
+                  Next.js, Auth0, Claude
+                </p>
+                <h3
+                  style="
+                    margin: 0;
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 22px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                >
+                  Sprout
+                </h3>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    line-height: 1.55;
+                    color: #454a52;
+                  "
+                >
+                  Won the FNB Challenge at HackPSU Fall 2026. Claude explains
+                  the plan, a deterministic engine owns every number, and 3,084
+                  generated users stress-tested it overnight.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 4px 18px;
+                  "
+                >
+                  <a
+                    href="https://getsprout.tech"
+                    class="bs-focus"
+                    style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                    >Try it live<svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 3h7v7M13 3L6 10"></path></svg
+                  ></a>
+                  <a
+                    href="Sprout.dc.html"
+                    class="bs-focus"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      min-height: 44px;
+                      font-size: 14.5px;
+                      font-weight: 500;
+                      color: #454a52;
+                      text-decoration: underline;
+                      text-underline-offset: 4px;
+                    "
+                    >Read the case study</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="bs-move"
+              style="order: {{w.priming.slot}}; transform: translateX(calc({{w.priming.shift}} * (100% + 20px))); display: flex; flex-direction: column; gap: 14px; min-width: 0"
+            >
+              <div
+                aria-hidden="true"
+                style="
+                  aspect-ratio: 16 / 10;
+                  border-radius: 12px;
+                  border: 1px dashed #b9b7b0;
+                  background: #f1f1ec;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12.5px;
+                  color: #454a52;
+                  text-align: center;
+                  padding: 16px;
+                "
+              >
+                [Priming Labs app screenshot]
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <p
+                  style="
+                    margin: 0;
+                    font-family:
+                      &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                    font-size: 12px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: #5f656e;
+                  "
+                >
+                  Web app, iOS beta
+                </p>
+                <h3
+                  style="
+                    margin: 0;
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 22px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                >
+                  Priming Labs
+                </h3>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    line-height: 1.55;
+                    color: #454a52;
+                  "
+                >
+                  Technical co-founder. Daily readiness testing for coaches and
+                  physical therapists, built with a Doctor of Physical Therapy.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 4px 18px;
+                  "
+                >
+                  <a
+                    href="https://priminglabs.com"
+                    class="bs-focus"
+                    style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                    >See it live<svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 3h7v7M13 3L6 10"></path></svg
+                  ></a>
+                  <a
+                    href="#"
+                    class="bs-focus"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      min-height: 44px;
+                      font-size: 14.5px;
+                      font-weight: 500;
+                      color: #454a52;
+                      text-decoration: underline;
+                      text-underline-offset: 4px;
+                    "
+                    >Project page</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="bs-move"
+              style="order: {{w.sproat.slot}}; transform: translateX(calc({{w.sproat.shift}} * (100% + 20px))); display: flex; flex-direction: column; gap: 14px; min-width: 0"
+            >
+              <div
+                aria-hidden="true"
+                style="
+                  aspect-ratio: 16 / 10;
+                  border-radius: 12px;
+                  border: 1px dashed #b9b7b0;
+                  background: #f1f1ec;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-family:
+                    &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                  font-size: 12.5px;
+                  color: #454a52;
+                  text-align: center;
+                  padding: 16px;
+                "
+              >
+                [Sproat Systems: client site or CRM screenshot]
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <p
+                  style="
+                    margin: 0;
+                    font-family:
+                      &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                    font-size: 12px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: #5f656e;
+                  "
+                >
+                  Websites, CRMs, automation
+                </p>
+                <h3
+                  style="
+                    margin: 0;
+                    font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                    font-size: 22px;
+                    line-height: 1.2;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: #15171a;
+                  "
+                >
+                  Sproat Systems
+                </h3>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    line-height: 1.55;
+                    color: #454a52;
+                  "
+                >
+                  Founder, since 2025. Websites, GoHighLevel CRMs and AI
+                  automation for healthcare practices and small businesses.
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 4px 18px;
+                  "
+                >
+                  <a
+                    href="https://sproatsystems.com"
+                    class="bs-focus"
+                    style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: {{accent}}; text-decoration: none"
+                    >See it live<svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 3h7v7M13 3L6 10"></path></svg
+                  ></a>
+                  <a
+                    href="#"
+                    class="bs-focus"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      min-height: 44px;
+                      font-size: 14.5px;
+                      font-weight: 500;
+                      color: #454a52;
+                      text-decoration: underline;
+                      text-underline-offset: 4px;
+                    "
+                    >Project page</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section aria-label="Now" style="border-top: 1px solid #e4e2dc">
+          <div
+            style="
+              max-width: 1120px;
+              margin: 0 auto;
+              padding: 28px clamp(20px, 4vw, 40px);
+              display: flex;
+              flex-wrap: wrap;
+              align-items: baseline;
+              gap: 10px 24px;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: #5f656e;
+              "
+            >
+              Now
+            </p>
+            <p
+              style="
+                margin: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                color: #454a52;
+                flex: 1 1 420px;
+              "
+            >
+              [NOW LINE: one sentence on what Ben is working on this month]
+              <a href="#" style="font-weight: 600; text-decoration: none"
+                >Full /now page</a
+              >
+            </p>
+          </div>
+        </section>
+
+        <footer style="background: #15171a; color: #f3f2ed">
+          <div
+            style="
+              max-width: 1120px;
+              margin: 0 auto;
+              padding: 64px clamp(20px, 4vw, 40px) 40px;
+              display: flex;
+              flex-direction: column;
+              gap: 36px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: 24px 40px;
+              "
+            >
+              <h2
+                style="
+                  margin: 0;
+                  font-family: &quot;Inter Tight&quot;, Inter, sans-serif;
+                  font-size: clamp(30px, 3.4vw, 42px);
+                  line-height: 1.08;
+                  letter-spacing: -0.02em;
+                  font-weight: 700;
+                  color: #f3f2ed;
+                "
+              >
+                Let's build something.
+              </h2>
+              <a
+                href="mailto:ben.c.sproat@gmail.com"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 46px;
+                  padding: 0 20px;
+                  border-radius: 8px;
+                  background: #f3f2ed;
+                  color: #15171a;
+                  font-size: 15px;
+                  font-weight: 600;
+                  text-decoration: none;
+                "
+                >ben.c.sproat@gmail.com</a
+              >
+            </div>
+            <nav
+              aria-label="Profiles"
+              style="display: flex; flex-wrap: wrap; gap: 4px 8px"
+            >
+              <a
+                href="https://www.linkedin.com/in/benjamin-s-a39622385"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >LinkedIn</a
+              >
+              <a
+                href="https://github.com/beansprout21"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >GitHub</a
+              >
+              <a
+                href="https://devpost.com/beansprout21"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >Devpost</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >Resume</a
+              >
+              <a
+                href="#"
+                class="bs-focus"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  min-height: 44px;
+                  padding: 0 10px;
+                  color: #f3f2ed;
+                  font-size: 15px;
+                  font-weight: 500;
+                  text-decoration: none;
+                "
+                >Phone version: /links</a
+              >
+            </nav>
+            <p
+              style="
+                margin: 0;
+                font-family:
+                  &quot;JetBrains Mono&quot;, ui-monospace, monospace;
+                font-size: 12.5px;
+                line-height: 1.6;
+                color: #a9adb5;
+              "
+            >
+              Built by Ben with a team of Claude agents, in public:
+              <a
+                href="https://github.com/beansprout21/bensproat-site"
+                style="color: #8fd4a8"
+                >github.com/beansprout21/bensproat-site</a
+              >
+            </p>
+          </div>
+        </footer>
+      </div>
+    </x-dc>
+    <script
+      type="text/x-dc"
+      data-dc-script
+      data-props='{"accent":{"editor":"color","default":"#1F7A4A","options":["#1F7A4A","#1D5FB4","#B4541D","#15171A"],"section":"Look"},"startDoor":{"editor":"enum","default":"none","options":["none","building","hiring","about","automation"],"section":"State"},"$preview":{"width":1280,"height":2600}}'
+    >
+      class Component extends DCLogic {
+        renderVals() {
+          var self = this;
+          var s = this.state || {};
+          var accent = this.props.accent || "#1F7A4A";
+          var start = this.props.startDoor || "none";
+          var door = s.preview || s.pinned || (start !== "none" ? start : null);
+          var DOORS = {
+            building: { label: "See what I'm building", href: "#", path: "/ventures", who: "partners and investors", proofs: ["priming", "hackpsu", "sproat"], work: ["priming", "sprout", "sproat"] },
+            hiring: { label: "Download the resume", href: "#", path: "/hire", who: "recruiters and companies", proofs: ["hackpsu", "priming", "sproat"], work: ["sprout", "priming", "sproat"] },
+            about: { label: "Read the story", href: "#", path: "/about", who: "anyone curious", proofs: ["hackpsu", "priming", "sproat"], work: ["sprout", "priming", "sproat"] },
+            automation: { label: "Visit Sproat Systems", href: "https://sproatsystems.com", path: "sproatsystems.com", who: "practices that need automation", proofs: ["sproat", "hackpsu", "priming"], work: ["sproat", "sprout", "priming"] }
+          };
+          var base = { label: "See the work", href: "#work", who: "everyone", proofs: ["hackpsu", "priming", "sproat"], work: ["sprout", "priming", "sproat"] };
+          var cfg = door ? DOORS[door] : base;
+          function slots(ids, order) {
+            var out = {};
+            ids.forEach(function (id, i) {
+              var slot = order.indexOf(id);
+              out[id] = { slot: slot, shift: slot - i, rank: "0" + (slot + 1) };
+            });
+            return out;
+          }
+          function mk(id) {
+            var active = door === id;
+            return {
+              active: active,
+              pressed: s.pinned === id,
+              border: active ? accent : "#E4E2DC",
+              bg: active ? "#EEF6F0" : "#FFFFFF",
+              opacity: door && !active ? "0.72" : "1",
+              enter: function () { self.setState({ preview: id }); },
+              leave: function () { self.setState({ preview: null }); },
+              toggle: function () {
+                var st = self.state || {};
+                self.setState({ pinned: st.pinned === id ? null : id, preview: null });
+              }
+            };
+          }
+          return {
+            accent: accent,
+            cta: { label: cfg.label, href: cfg.href },
+            who: cfg.who,
+            p: slots(["hackpsu", "priming", "sproat"], cfg.proofs),
+            w: slots(["sprout", "priming", "sproat"], cfg.work),
+            d: { building: mk("building"), hiring: mk("hiring"), about: mk("about"), automation: mk("automation") }
+          };
+        }
+      }
+    </script>
+  </body>
+</html>

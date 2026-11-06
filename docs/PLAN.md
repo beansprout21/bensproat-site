@@ -15,7 +15,10 @@ A personal site that routes each visitor to the part of Ben's work they care abo
 - **Pillars:** Builder, Founder, Impact. Leadership is evidence inside all three.
 - **Top 3 proofs, in this order:** HackPSU Fall 2026 FNB Challenge winner (Sprout), Priming Labs (technical co-founder), Sproat Systems (founder).
 - **Audience order:** startup partners and investors, companies, internship recruiters. Agency prospects go to sproatsystems.com.
-- **Headline and one-liner:** pending Ben's choice (see Open decisions).
+- **Headline:** "AI Product Builder | Engineering, Penn State Schreyer Honors College | HackPSU FNB Challenge Winner | Co-Founder, Priming Labs | Founder, Sproat Systems" (chosen Nov 5, 2026).
+- **One-liner (site hero):** "I turn ideas into working AI products." with the sub-line "Engineering student, Penn State Schreyer Honors College."
+- **Proof order rule:** win, startup, business (Sprout, Priming Labs, Sproat Systems) on every page and in every door state, except the "Need AI automation?" door, where Sproat Systems leads. Every proof links to the live product first and the project page second.
+- **Look:** builder-craft (polished product site, one accent, monospace labels, one signature interaction: the home page doors reorder the proof for each visitor). Specified in `docs/brief-c3.md`; references in `docs/design/`.
 
 ## Wording rules (every public claim must survive a click-through)
 
@@ -49,21 +52,21 @@ Case study order of sections: one-line result, problem, what Ben built and his r
 
 ## Phases
 
-| Phase | Scope                                                                               | Status               |
-| ----- | ----------------------------------------------------------------------------------- | -------------------- |
-| C1    | Foundation: repo, schemas, stub routes, deploy, domain                              | Done (Nov 5, 2026)   |
-| C2    | Design: mockups of home and one case study, approved by Ben                         | Next (planning chat) |
-| C3    | Content: real copy and project data in /content                                     | Planned              |
-| C4    | Core pages built to the approved design                                             | Planned              |
-| C5    | Search: profile markup, Open Graph images, Search Console                           | Planned              |
-| C6    | Extras: /now, build log, live metrics, "Ask Ben's agent," one signature interaction | Planned              |
-| C7    | QA: Lighthouse, accessibility, NFC and QR tests                                     | Planned              |
+| Phase | Scope                                                       | Status                                                     |
+| ----- | ----------------------------------------------------------- | ---------------------------------------------------------- |
+| C1    | Foundation: repo, schemas, stub routes, deploy, domain      | Done (Nov 5, 2026)                                         |
+| C2    | Design: mockups of home and one case study, approved by Ben | Done (Nov 5, 2026)                                         |
+| C3    | Content: real copy and project data in /content             | Ready: `docs/brief-c3.md`, drafts 01 to 03                 |
+| C4    | Core pages built to the approved design                     | Ready: `docs/brief-c3.md`, drafts 04 to 10                 |
+| C5    | Search: profile markup, Open Graph images, Search Console   | Planned                                                    |
+| C6    | Extras: build log, live metrics, "Ask Ben's agent"          | Planned (the signature interaction and /now moved into C4) |
+| C7    | QA: Lighthouse, accessibility, NFC and QR tests             | Planned                                                    |
 
 ## Open decisions (Ben)
 
-1. LinkedIn headline and site one-liner
-2. Which pillar leads the home page
-3. Client naming permissions
-4. Booking tool (GoHighLevel calendar or Cal.com)
-5. Public email: Gmail now; ben@bensproat.com forwarding is optional
-6. Move the local project folder out of OneDrive
+1. Client naming permissions (only Cloud Surfing Media is approved; describe the rest)
+2. Booking tool (GoHighLevel calendar or Cal.com)
+3. Public email: Gmail now; ben@bensproat.com forwarding is optional
+4. Facts the pages still need: see `docs/brief-c3.md` section 7
+
+Settled on Nov 5, 2026: headline and one-liner (above), Builder pillar leads the home page through the Sprout win, local folder moved out of OneDrive.
