@@ -24,8 +24,8 @@
 | #5    | 04    | issue-5-home-page       | Merged: PR #16 (58c181e). Production Lighthouse 100 on /                                                                                                   |
 | #6    | 05    | issue-6-projects        | Merged: PR #17 (4a187ea). Production Lighthouse 100 on /projects and /projects/sprout                                                                      |
 | #7    | 06    | issue-7-ventures-hire   | Merged: PR #18 (0f97f5a). Production Lighthouse 100 on both pages                                                                                          |
-| #8    | 07    | issue-8-about           | In progress: built and verified locally; PR open                                                                                                           |
-| #9    | 08    |                         | Ready, depends on #2 and #4                                                                                                                                |
+| #8    | 07    | issue-8-about           | Merged: PR #19 (ad836fa). Production Lighthouse 100                                                                                                        |
+| #9    | 08    | issue-9-utility-pages   | In progress: built and verified locally; PR open                                                                                                           |
 | #10   | 09    |                         | Ready, depends on #2; photos are in `C:\Users\bensp\Downloads\bensproat-site-images.zip` (headshot, about-field, about-grass), not yet in `public/images/` |
 | #11   | 10    |                         | Ready, depends on #5 to #10                                                                                                                                |
 

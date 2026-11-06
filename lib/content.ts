@@ -180,6 +180,9 @@ export const ResumeSchema = z.strictObject({
 
 export const NowSchema = z.strictObject({
   updated: z.iso.date(),
+  /** Page title and meta description; the page falls back to "Now" and the profile one-liner. */
+  title: text.optional(),
+  description: text.optional(),
   /** Bullet list rendered after the paragraphs. */
   items: textList.optional(),
 });
