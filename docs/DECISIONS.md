@@ -40,3 +40,4 @@ Append-only. One line per decision: date, decision, who decided. Newest at the b
 - 2026-11-06: Priming's `links` list is empty because its only approved link, priminglabs.com, is already the `live` link; rendering it twice would be noise. (builder, #3)
 - 2026-11-06: `LinkSchema.url` accepts site paths so /links can point at /resume while no PDF exists, and `note` carries the "Try it live" sub-line. (builder, #3)
 - 2026-11-06: about-grass.jpg alt text, written from the photo: "Ben Sproat crouching in tall dry grass, in a navy shirt". (builder, #3)
+- 2026-11-06: Content verified against the brief (#4): every quoted string in brief section 4 appears in `/content`; list items split from the brief's semicolon lists start with a capital letter, which is the only wording difference. `availability` holds the Nov 6 line rather than null, following the updated brief. (builder, #4)

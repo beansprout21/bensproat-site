@@ -20,7 +20,7 @@
 | ----- | ----- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | #2    | 01    | `issue-2-design-system` | Merged: PR #12 (b51543b). Production Lighthouse 100/100/100/100 on `/` and `/links`, mobile and desktop                                                    |
 | #3    | 02    | `issue-3-content-model` | Merged: PR #13 (e8c0113). Content files hold the brief's final copy; #4 is a verification pass                                                             |
-| #4    | 03    |                         | Ready, depends on #3                                                                                                                                       |
+| #4    | 03    | `issue-4-content-data`  | Verified against the brief, no content changes needed; shipped as a docs-only PR                                                                           |
 | #5    | 04    |                         | Ready, depends on #2 and #4                                                                                                                                |
 | #6    | 05    |                         | Ready, depends on #2 and #4                                                                                                                                |
 | #7    | 06    |                         | Ready, depends on #2 and #4                                                                                                                                |
@@ -42,7 +42,7 @@
 
 **Next**
 
-1. Finish #3: checks, PR, merge, comment. Then #4 (verify every content file word for word against the brief, em-dash and private-data greps, `updated` date in now.mdx).
+1. #5 home page (next), then #6 projects, #7 ventures and hire, #8 about, #9 utility pages.
 2. #5 home, #6 projects, #7 ventures and hire, #8 about, #9 utility pages, #10 images (extract the zip into `public/images/`; files are 960x1200, 1600x1067, 1400x1050 and under 250 KB), #11 quality pass.
 3. Morning summary at the end of this file: what merged, what is blocked and why, production URL, what Ben must look at first.
 
