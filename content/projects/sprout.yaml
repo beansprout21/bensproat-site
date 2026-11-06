@@ -2,6 +2,7 @@
 # screenshots exist in public/images/projects/.
 slug: sprout
 title: Sprout
+badge: FNB Challenge winner, HackPSU Fall 2026
 pillar: builder
 oneLineResult: Won the FNB Challenge at HackPSU Fall 2026, out of 122 projects, with a goals-first AI money coach that hands students to a banker. Built and deployed in 24 hours by two students and a team of AI agents.
 summary: Won the FNB Challenge at HackPSU Fall 2026. Claude explains the plan, a deterministic engine owns every number, and 3,084 generated users stress-tested it overnight.
