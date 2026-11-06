@@ -22,16 +22,16 @@ A personal site that routes each visitor to the part of Ben's work they care abo
 
 ## Wording rules (every public claim must survive a click-through)
 
-| Do not say                                          | Say                                                                               |
-| --------------------------------------------------- | --------------------------------------------------------------------------------- |
-| "Won HackPSU"                                       | "Won the FNB Challenge at HackPSU Fall 2026"                                      |
-| "One of the world's first varsity pickleball teams" | "Founding member and captain of Poolesville High's first varsity pickleball team" |
-| "Most accurate OT database"                         | "922 verified clinic listings" (only after the directory launches)                |
-| "Ran a cold email campaign"                         | "Built an AI-assisted acquisition sourcing pipeline"                              |
-| "Better at AI than my peers"                        | Concrete counts of people taught                                                  |
-| "Since 2023" (Sproat Systems)                       | "Since 2025"                                                                      |
-| "Mechanical Engineering"                            | "Engineering, Schreyer Honors College" until a major is declared                  |
-| Any client by name                                  | Only clients Ben has approved (list kept outside the repo)                        |
+| Do not say                                          | Say                                                                                                                                                                                              |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| "Won HackPSU"                                       | "Won the FNB Challenge at HackPSU Fall 2026"                                                                                                                                                     |
+| "One of the world's first varsity pickleball teams" | "Founding member and captain of Poolesville High's first varsity pickleball team"                                                                                                                |
+| "Most accurate OT database"                         | "922 verified clinic listings" (only after the directory launches)                                                                                                                               |
+| "Ran a cold email campaign"                         | "Built an AI-assisted acquisition sourcing pipeline"                                                                                                                                             |
+| "Better at AI than my peers"                        | Concrete counts of people taught                                                                                                                                                                 |
+| "Since 2023" (Sproat Systems)                       | "Since 2025"                                                                                                                                                                                     |
+| "Mechanical Engineering"                            | "Engineering, Schreyer Honors College" until a major is declared                                                                                                                                 |
+| Any client by name                                  | Only approved clients: Canyon Kids (say it is the family practice), Kentuckiana Mobile Therapy, Mobility Health PT, Hydes Group, Cloud Surfing Media. Every other client is described, not named |
 
 ## Sitemap
 
@@ -64,7 +64,7 @@ Case study order of sections: one-line result, problem, what Ben built and his r
 
 ## Open decisions (Ben)
 
-1. Client naming permissions (only Cloud Surfing Media is approved; describe the rest)
+1. Client naming: five clients approved on Nov 6, 2026 (see the wording rules); one more client is still described, not named, pending Ben's confirmation
 2. Booking tool (GoHighLevel calendar or Cal.com)
 3. Public email: Gmail now; ben@bensproat.com forwarding is optional
 4. Facts the pages still need: see `docs/brief-c3.md` section 7

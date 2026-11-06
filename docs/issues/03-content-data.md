@@ -29,6 +29,6 @@ Every content file holds the final copy from `docs/brief-c3.md` section 4, word 
 
 ## Notes
 
-- Wording rules in `docs/PLAN.md` apply. Approved client name: Cloud Surfing Media only. Everything else is described, not named.
-- The Sprout `role` field: use the string "To be confirmed" until Ben supplies it; the page component hides the Role cell when the value is that string. Note this in the PR.
+- Wording rules in `docs/PLAN.md` apply. Approved client names: Canyon Kids (always with the family disclosure), Kentuckiana Mobile Therapy, Mobility Health PT, Hydes Group, Cloud Surfing Media. Any other client stays described, not named.
+- The Sprout `role` is final in the brief (everything except the front-end design). Keep the "To be confirmed" convention for any other project whose role Ben has not supplied.
 - If a line in the brief looks wrong or contradicts PLAN.md, comment on the issue and label it `status:blocked` instead of rewording.

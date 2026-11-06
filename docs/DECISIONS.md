@@ -21,3 +21,7 @@ Append-only. One line per decision: date, decision, who decided. Newest at the b
 - 2026-11-05: Projects move from frontmatter-only `.mdx` to structured `.yaml`; no markdown parser is added. (lead agent)
 - 2026-11-05: Resume PDFs are built by the lead agent from the content bank after Ben's corrections; the site ships without them until then. (Ben)
 - 2026-11-05: `docs/design/` holds the C2 reference markup and counts as a planning doc the lead agent may push. (lead agent)
+- 2026-11-06: Availability line is "Available for Summer 2027 internships and projects." until Ben changes it. (Ben)
+- 2026-11-06: Sprout role: Ben owned everything except the front-end design; Ethan Cooper owned the front-end design. (Ben)
+- 2026-11-06: Priming Labs co-founder may be named on the site: Dr. Jessica Visintainer, PT, DPT. (Ben)
+- 2026-11-06: Sproat Systems clients may be named: Canyon Kids (with the family disclosure), Kentuckiana Mobile Therapy, Mobility Health PT, Hydes Group, Cloud Surfing Media. One client stays described, not named, until Ben confirms. (Ben)

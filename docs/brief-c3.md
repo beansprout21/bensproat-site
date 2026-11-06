@@ -198,7 +198,7 @@ Reference: `docs/design/c2-home.html`. Sections top to bottom:
 - Name line: "Ben Sproat" (display 600, 18px)
 - Headline: "I turn ideas into working AI products."
 - Sub: "Engineering student, Penn State Schreyer Honors College."
-- Availability line (mono, with an 8px accent dot): `[AVAILABILITY]`, omitted while null.
+- Availability line (mono, with an 8px accent dot): "Available for Summer 2027 internships and projects." (`home.hero.availability`; omitted while null).
 - Buttons: primary = the door-dependent button (default "See the work" to `/projects`); secondary "Resume (PDF)" to the default resume file, or to `/resume` while no file exists; text link "Email Ben" (mailto).
 - Photo: `headshot.jpg`, max width 420px, radius 16px, 1px `line` border.
 
@@ -243,7 +243,7 @@ For startup partners and investors. Layout: page title block, "Now building" car
 - Eyebrow: "For partners and investors". H1: "I build the product. Fast, with proof you can click."
 - Lede: "Three things I'm building now, and the way I build them."
 - **Now building** (three `Card`s with a live link first):
-  1. Priming Labs: "Readiness testing for coaches and physical therapists. Technical co-founder, with a Doctor of Physical Therapy. Maryland LLC, web app live, iOS app in beta, Happy Valley LaunchBox Idea TestLab completed." Links: "See Priming live" (ExternalLink, priminglabs.com), "Project page" (`/projects/priming`).
+  1. Priming Labs: "Readiness testing for coaches and physical therapists. Technical co-founder, with Dr. Jessica Visintainer, PT, DPT. Maryland LLC, web app live, iOS app in beta, Happy Valley LaunchBox Idea TestLab completed." Links: "See Priming live" (ExternalLink, priminglabs.com), "Project page" (`/projects/priming`).
   2. OT Directory: "A public directory of occupational therapy clinics across the mid-Atlantic, in testing before launch. Built on a pipeline that finds clinics in the NPI registry, verifies ownership and extracts details with Claude. Joint venture." Links: "Project page" (`/projects/ai-data-systems`). No live link and no counts until launch.
   3. Sprout: "Goals-first AI money coach that hands students to a banker. Won the FNB Challenge at HackPSU Fall 2026. A 90-day pilot at FNB's Penn State HUB branch is proposed." Links: "Try Sprout live" (ExternalLink), "Case study".
 - **How I build** (H2 "How I build", two columns):
@@ -259,7 +259,7 @@ For startup partners and investors. Layout: page title block, "Now building" car
 For recruiters and companies. Layout: title block with availability, three skill columns, evidence cards, education, resume picker, CTA.
 
 - Eyebrow: "For recruiters and companies". H1: "Engineering training, AI product skills, shipped work."
-- Availability line: `[AVAILABILITY]` (same field as home), omitted while null.
+- Availability line: "Available for Summer 2027 internships and projects." (same field as home), omitted while null.
 - **What I can do** (three `Card`s, H3 plus bullets):
   1. AI product engineering: Next.js and TypeScript; Claude API with deterministic engines and guards around the AI; Auth0 role-based access; Vercel; coordinated AI coding agents through GitHub.
   2. Engineering: CAD in Fusion 360 and Onshape; 3D printing (TPU, PETG-CF); PLTW capstone team lead, three prototypes in six weeks; energy modeling of 10+ homes in EnergyPro 9 at an MEP firm.
@@ -326,7 +326,7 @@ Template per section 3.1. Five project files in C3:
 - title: Sprout. pillar: builder. featured: true. order: 1. status: live. statusText: "Live prototype at getsprout.tech; pilot proposed to FNB".
 - oneLineResult: "Won the FNB Challenge at HackPSU Fall 2026, out of 122 projects, with a goals-first AI money coach that hands students to a banker. Built and deployed in 24 hours by two students and a team of AI agents."
 - summary: "Won the FNB Challenge at HackPSU Fall 2026. Claude explains the plan, a deterministic engine owns every number, and 3,084 generated users stress-tested it overnight."
-- role: `[SPROUT_ROLE: what Ben owned]`. team: "Ben Sproat and Ethan Cooper". when: "October 2026, a 24-hour hackathon build". dates: start 2026-10.
+- role: "Everything except the front-end design: product, the plan engine and its guards, sign-in and the banker role, and the agent build system". team: "Ben Sproat and Ethan Cooper (front-end design)". when: "October 2026, a 24-hour hackathon build". dates: start 2026-10.
 - stack: Next.js, TypeScript, Tailwind, shadcn/ui, Auth0, Upstash Redis, Claude Haiku and Sonnet, Vercel. tags: Next.js, Auth0, Claude.
 - live: "Try Sprout live" https://getsprout.tech. links: code https://github.com/beansprout21/hackpsu-f26 ("Code on GitHub"), devpost https://devpost.com/beansprout21 ("Devpost").
 - metrics: 3,084 "generated users run through the plan engine overnight"; 600 "live AI outputs audited: 200 plans and 400 Ask Sprout answers"; "3 to 0" "failing checks by morning, with zero crashes"; "24 h" "from empty repo to a deployed product with sign-in, upload and a banker view".
@@ -344,7 +344,7 @@ Template per section 3.1. Five project files in C3:
 - title: Priming Labs. pillar: founder. featured: true. order: 2. status: in-progress. statusText: "Web app live, iOS app in beta".
 - oneLineResult: "Daily readiness testing for coaches and physical therapists, built with a Doctor of Physical Therapy. Technical co-founder."
 - summary: "Technical co-founder. Daily readiness testing for coaches and physical therapists, built with a Doctor of Physical Therapy."
-- role: "Technical co-founder: product, web app and iOS app". team: "Co-founded with a Doctor of Physical Therapy `[CO_FOUNDER_NAME with her permission]`". when: "June 2026 to now". dates: start 2026-06.
+- role: "Technical co-founder: product, web app and iOS app". team: "Co-founded with Dr. Jessica Visintainer, PT, DPT". when: "June 2026 to now". dates: start 2026-06.
 - stack: `[PRIMING_STACK]` (Ben confirms; the web app was built on Lovable, the iOS app ships through TestFlight). tags: Web app, iOS beta.
 - live: "See Priming live" https://priminglabs.com. links: site https://priminglabs.com.
 - metrics: "Jul 2026" "Maryland LLC formed"; "TestFlight" "iOS app in beta"; "LaunchBox" "Happy Valley Idea TestLab completed, Fall 2026".
@@ -358,8 +358,8 @@ Template per section 3.1. Five project files in C3:
 - role: "Founder. I scope, build and teach every system I ship." when: "2025 to now". dates: start 2025-06.
 - stack: GoHighLevel, WordPress, Next.js, Claude, Supabase. tags: Websites, CRMs, automation.
 - live: "See Sproat Systems live" https://sproatsystems.com.
-- Body paragraphs (render as `summaryParagraphs: string[]` under `sections.built.paragraphs` with heading "What I build"): "It started in 2025 with my family's pediatric OT practice, my first client: a new website and booking flow, scheduling automation, and a therapist recruitment pipeline." "Since then: a WordPress rebuild with seven SEO articles at launch and Search Console reporting for a mobile therapy practice; a GoHighLevel seller-lead pipeline with call tracking and booking for a land-buying company; a social media and local-visibility program for a trades business; an 85-field client intake system; and ongoing consulting for Cloud Surfing Media on GoHighLevel systems and AI for its clients." "Every client learns to use AI in their own work before I leave."
-- Clients are described, not named, until Ben confirms permission (section 7). Cloud Surfing Media is approved.
+- Body paragraphs (render as `summaryParagraphs: string[]` under `sections.built.paragraphs` with heading "What I build"): "It started in 2025 with Canyon Kids, my family's pediatric OT practice and my first client: a new website and booking flow, scheduling automation, and a therapist recruitment pipeline." "Since then: a WordPress rebuild for Kentuckiana Mobile Therapy, with seven SEO articles at launch and Search Console reporting; systems setup and onboarding for Mobility Health PT, a physical therapy practice; a social media and local-visibility program for Hydes Group; a GoHighLevel seller-lead pipeline with call tracking and booking for a land-buying company; an 85-field client intake system; and ongoing consulting for Cloud Surfing Media on GoHighLevel systems and AI for its clients." "Every client learns to use AI in their own work as part of the engagement."
+- Approved client names (Ben, Nov 6, 2026): Canyon Kids (always with the family disclosure), Kentuckiana Mobile Therapy, Mobility Health PT, Hydes Group, Cloud Surfing Media. The land-buying client stays described, not named, until Ben confirms.
 
 **floating-sunglasses** (project page)
 
@@ -451,20 +451,21 @@ Two builders can run 01 and 02 in parallel; 03 follows 02; 04 to 08 can run in p
 
 ## 7. What Ben owes (not builder work)
 
-| Item                                                              | Where it lands                                    | Status                                                               |
-| ----------------------------------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------- |
-| Availability line (for example "Open to Summer 2027 internships") | `content/home.yaml` and `content/pages/hire.yaml` | Pending                                                              |
-| Sprout role split (Ben versus Ethan)                              | `content/projects/sprout.yaml` role               | Pending                                                              |
-| Now line and the /now bullets                                     | `content/home.yaml`, `content/now.mdx`            | Draft in 4.10                                                        |
-| "What I'm looking for" on /ventures                               | `content/pages/ventures.yaml`                     | Pending                                                              |
-| Priming co-founder name, with her permission                      | `content/projects/priming.yaml`                   | Pending                                                              |
-| Priming stack                                                     | `content/projects/priming.yaml`                   | Pending                                                              |
-| Client naming permissions                                         | `content/projects/sproat-systems.yaml`            | Only Cloud Surfing Media is approved                                 |
-| Booking URL                                                       | `content/pages/contact.yaml`                      | Open decision (GoHighLevel calendar or Cal.com)                      |
-| Three resume PDFs                                                 | `public/resumes/`, `content/resumes.yaml`         | Lead agent builds them from the content bank after Ben's corrections |
-| Photos: headshot, about field, about grass                        | `public/images/`                                  | Lead agent prepares the optimized files; Ben drops them in           |
-| Sprout screenshots and demo clip                                  | `public/images/projects/`                         | Pending                                                              |
-| Priming and Sproat Systems covers                                 | `public/images/projects/`                         | Pending                                                              |
-| Expected graduation year                                          | `content/pages/hire.yaml`                         | Confirm 2030                                                         |
+| Item                                       | Where it lands                                    | Status                                                                                                               |
+| ------------------------------------------ | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Availability line                          | `content/home.yaml` and `content/pages/hire.yaml` | Done (Nov 6, 2026): "Available for Summer 2027 internships and projects." Ben will revisit the wording before summer |
+| Sprout role split (Ben versus Ethan)       | `content/projects/sprout.yaml` role and team      | Done (Nov 6, 2026): Ben owned everything except the front-end design                                                 |
+| Now line and the /now bullets              | `content/home.yaml`, `content/now.mdx`            | Draft in 4.10                                                                                                        |
+| "What I'm looking for" on /ventures        | `content/pages/ventures.yaml`                     | Pending                                                                                                              |
+| Priming co-founder name                    | `content/projects/priming.yaml`                   | Done (Nov 6, 2026): Dr. Jessica Visintainer, PT, DPT, with Ben's OK                                                  |
+| Priming stack                              | `content/projects/priming.yaml`                   | Pending (Ben is asking the Priming Labs project chat)                                                                |
+| Client naming permissions                  | `content/projects/sproat-systems.yaml`            | Done (Nov 6, 2026) for the five names in 4.6; one client still described, not named, pending confirmation            |
+| What was built for Mobility Health PT      | `content/projects/sproat-systems.yaml`            | Pending: one line from Ben                                                                                           |
+| Booking URL                                | `content/pages/contact.yaml`                      | Open decision (GoHighLevel calendar or Cal.com)                                                                      |
+| Three resume PDFs                          | `public/resumes/`, `content/resumes.yaml`         | Lead agent builds them from the content bank after Ben's corrections                                                 |
+| Photos: headshot, about field, about grass | `public/images/`                                  | Files delivered to Ben on Nov 6, 2026; Ben drops them in                                                             |
+| Sprout screenshots and demo clip           | `public/images/projects/`                         | Pending                                                                                                              |
+| Priming and Sproat Systems covers          | `public/images/projects/`                         | Pending                                                                                                              |
+| Expected graduation year                   | `content/pages/hire.yaml`                         | Confirm 2030                                                                                                         |
 
 Pages ship without the pending items (the fields are optional). Nothing in square brackets ever renders.
