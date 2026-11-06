@@ -6,7 +6,9 @@
 
 - 2026-11-05: Project folder moved out of OneDrive to `C:\Users\bensp\projects\bensproat-site` (resolves PLAN.md open decision 6). `node_modules` reinstalled from the lockfile; build, git remote and Vercel link verified there.
 - 2026-11-05: Repo-local git identity set to `Ben Sproat <287818870+beansprout21@users.noreply.github.com>`. Earlier commits (sproatsystems) left unchanged.
-- 2026-11-05: Planning chat added `docs/PLAN.md` and `docs/COMMS.md` (PR #1). `phase` label created. From C2 on, work follows COMMS.md: `cN-<topic>` branch, PR that closes the phase issue, plan and report as issue comments.
+- 2026-11-05: `pnpm format:check` failure on `docs/PLAN.md` and `docs/COMMS.md` resolved by the planning chat in commit 874670e (Prettier formatting only, no content change). Lint, format:check and build all pass at that commit.
+- 2026-11-05: This Claude Code session follows `docs/COMMS.md`: `cN-<topic>` branches, PRs that close the phase issue, plans, questions and reports as issue comments, decisions put to Ben in the issue, no edits to PLAN.md or briefs. Direct pushes to main were limited to C1 and Ben's explicit cleanup instructions.
+- 2026-11-05: Planning chat added `docs/PLAN.md` and `docs/COMMS.md` (PR #1). `phase` label created.
 - 2026-11-05: Vercel project created via CLI defaulted to preset "Other" (all routes 404). Set preset to Next.js and Node to 24.x; enabled Web Analytics; redeployed.
 - 2026-11-05: www.bensproat.com redirect (308 to apex) is a Vercel domain setting, not app code.
 - 2026-11-05: DNS in Cloudflare (registrar and DNS host): apex and www point to Vercel, proxy off.
@@ -26,6 +28,7 @@
 - JSON-LD on / validated by validator.schema.org: 0 errors, 0 warnings. /about emits the same ProfilePage/Person.
 - Live Lighthouse (/, /links, /about): mobile 99/100/100/100, desktop 100/100/100/100 (Perf/A11y/BP/SEO).
 - Visual check in a browser: home and /links on 375px and desktop, skip link on first Tab, 404 page.
+- Checks at 874670e in the new folder: `pnpm lint` clean, `pnpm format:check` clean, `pnpm build` 15 pages prerendered.
 
 **Next**
 
