@@ -25,7 +25,7 @@ Every route passes the quality bars in brief section 0 on the production deploym
 
 ## Depends on
 
-04, 05, 06, 07, 08, 09
+#5, #6, #7, #8, #9, #10 (drafts 04 to 09)
 
 ## Notes
 

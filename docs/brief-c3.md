@@ -426,27 +426,29 @@ Phone-first link page, already working. Update the entries and the header:
 
 Drafts live in `docs/issues/`. Work them in number order; each lists its own files in scope.
 
-| Draft | Title                                                         | Priority | Depends on |
-| ----- | ------------------------------------------------------------- | -------- | ---------- |
-| 01    | Design system: fonts, tokens, header, footer, base components | P0       | none       |
-| 02    | Content model: structured projects and page files             | P0       | none       |
-| 03    | Content: project data and page copy from the brief            | P0       | 02         |
-| 04    | Home page with the doors interaction                          | P0       | 01, 03     |
-| 05    | Projects index and project pages, Sprout case study           | P0       | 01, 03     |
-| 06    | /ventures and /hire                                           | P1       | 01, 03     |
-| 07    | /about                                                        | P1       | 01, 03     |
-| 08    | /resume, /contact, /now, /links, 404                          | P1       | 01, 03     |
-| 09    | Images: optimized photos, covers, alt text                    | P1       | 01         |
-| 10    | Pass: Lighthouse, keyboard, reduced motion, phone widths      | P1       | 04 to 09   |
+| Draft | Issue | Title                                                         | Priority | Depends on |
+| ----- | ----- | ------------------------------------------------------------- | -------- | ---------- |
+| 01    | #2    | Design system: fonts, tokens, header, footer, base components | P0       | none       |
+| 02    | #3    | Content model: structured projects and page files             | P0       | none       |
+| 03    | #4    | Content: project data and page copy from the brief            | P0       | #3         |
+| 04    | #5    | Home page with the doors interaction                          | P0       | #2, #4     |
+| 05    | #6    | Projects index and project pages, Sprout case study           | P0       | #2, #4     |
+| 06    | #7    | /ventures and /hire                                           | P1       | #2, #4     |
+| 07    | #8    | /about                                                        | P1       | #2, #4     |
+| 08    | #9    | /resume, /contact, /now, /links, 404                          | P1       | #2, #4     |
+| 09    | #10   | Images: optimized photos, covers, alt text                    | P1       | #2         |
+| 10    | #11   | Pass: Lighthouse, keyboard, reduced motion, phone widths      | P1       | #5 to #10  |
 
-Two builders can run 01 and 02 in parallel; 03 follows 02; 04 to 08 can run in parallel once 01 and 03 merge.
+Issue numbers are offset by one from draft numbers because PR #1 took the first number. "Depends on" lines use issue numbers.
+
+Two builders can run #2 and #3 in parallel; #4 follows #3; #5 to #9 can run in parallel once #2 and #4 merge.
 
 ## 6. Verification the builder reports in each PR
 
 - `pnpm lint`, `pnpm format:check`, `pnpm build` output.
 - Lighthouse scores (mobile and desktop) for every page the PR touches, from the Vercel preview URL.
 - A screenshot or short description of the page at 375px and 1280px.
-- For issue 04: the doors preview works with a mouse and with Tab focus, the links work with JavaScript disabled, and nothing animates with reduced motion on.
+- For issue #5 (draft 04): the doors preview works with a mouse and with Tab focus, the links work with JavaScript disabled, and nothing animates with reduced motion on.
 - Grep for em dashes in `/content`, `/app` and `/lib` returns nothing.
 
 ## 7. What Ben owes (not builder work)

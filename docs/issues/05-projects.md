@@ -28,7 +28,7 @@ labels: [status:ready, P0]
 
 ## Depends on
 
-01, 03
+#2, #4 (drafts 01 and 03)
 
 ## Notes
 

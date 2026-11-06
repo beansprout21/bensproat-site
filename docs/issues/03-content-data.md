@@ -25,7 +25,7 @@ Every content file holds the final copy from `docs/brief-c3.md` section 4, word 
 
 ## Depends on
 
-02
+#3 (draft 02)
 
 ## Notes
 

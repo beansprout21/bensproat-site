@@ -36,4 +36,4 @@ none
 - Reference markup: `docs/design/c2-home.html` and `docs/design/c2-sprout.html` (read `docs/design/README.md` first). Copy exact values.
 - Icons are inline stroke SVG only. No icon package, no new dependencies.
 - The 404 copy is in brief section 4.11.
-- Do not touch `/content` or the page files beyond wiring the layout; copy comes in issue 03.
+- Do not touch `/content` or the page files beyond wiring the layout; copy comes in issue #4 (draft 03).

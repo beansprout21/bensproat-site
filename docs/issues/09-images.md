@@ -25,7 +25,7 @@ The approved photos are in the repo at sane sizes and every image on the site go
 
 ## Depends on
 
-01
+#2 (draft 01)
 
 ## Notes
 

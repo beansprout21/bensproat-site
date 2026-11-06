@@ -21,7 +21,7 @@ labels: [status:ready, P0]
 
 - `lib/content.ts`
 - `scripts/check-content.mts`
-- `content/**` (schema-shaped sample data only; real copy is issue 03)
+- `content/**` (schema-shaped sample data only; real copy is issue #4, draft 03)
 - `app/projects/[slug]/page.tsx` and `app/sitemap.ts` (only what the file rename breaks)
 - `docs/STATE.md`, `docs/DECISIONS.md`
 

@@ -20,12 +20,12 @@ labels: [status:ready, P1]
 
 - `app/ventures/page.tsx`
 - `app/hire/page.tsx`
-- `app/_components/pipeline-row.tsx` (shared with the Sprout page if issue 05 has not created it; coordinate in the issue comments)
+- `app/_components/pipeline-row.tsx` (shared with the Sprout page if issue #6 (draft 05) has not created it; coordinate in the issue comments)
 - `docs/STATE.md`
 
 ## Depends on
 
-01, 03
+#2, #4 (drafts 01 and 03)
 
 ## Notes
 

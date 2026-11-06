@@ -29,10 +29,10 @@ labels: [status:ready, P0]
 
 ## Depends on
 
-01, 03
+#2, #4 (drafts 01 and 03)
 
 ## Notes
 
 - `HomeRouter` is the only client component on the page; it receives content as props and holds the `door` state. No copy strings inside it.
 - Animation approach: fixed DOM order plus `translateX(calc(shift * (100% + gap)))` on desktop, `order` on phone, as in the reference file. FLIP is acceptable if dependency-free.
-- The headshot file comes from issue 09; if it is not merged yet, build against a local copy and keep `next/image` sizes explicit.
+- The headshot file comes from issue #10 (draft 09); if it is not merged yet, build against a local copy and keep `next/image` sizes explicit.

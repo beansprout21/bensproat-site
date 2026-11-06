@@ -26,9 +26,9 @@ labels: [status:ready, P1]
 
 ## Depends on
 
-01, 03
+#2, #4 (drafts 01 and 03)
 
 ## Notes
 
 - Keep off: family and health stories, investing, net worth, contest rejections, the basketball injury, addresses, scores, the Tesla application. If any of these appear in the content file, stop and flag it.
-- Photos arrive in issue 09; build against local copies if needed and keep `next/image` sizes explicit.
+- Photos arrive in issue #10 (draft 09); build against local copies if needed and keep `next/image` sizes explicit.

@@ -27,7 +27,7 @@ The four utility pages are built to the design system from their content files (
 
 ## Depends on
 
-01, 03
+#2, #4 (drafts 01 and 03)
 
 ## Notes
 
