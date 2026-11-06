@@ -4,6 +4,8 @@
 
 **Decisions**
 
+- 2026-11-05: Vercel project created via CLI defaulted to preset "Other" (all routes 404). Set preset to Next.js and Node to 24.x; enabled Web Analytics; redeployed.
+
 - 2026-11-05: Kept scaffold's Cache Components + Partial Prefetching. `dynamicParams` is unsupported with it, so `/projects/[slug]` calls `notFound()` for unknown slugs (first hit is a streamed soft 404 with noindex; cached hits return 404).
 - 2026-11-05: Favicon is `public/favicon.svg` (plain monogram), no .ico.
 - 2026-11-05: Added `NowSchema` ({ updated: ISO date }) for now.mdx; brief had no schema for it.
@@ -24,11 +26,12 @@
 - Repo created and main pushed: https://github.com/beansprout21/bensproat-site (public).
 - Vercel project sproat1/bensproat-site created, folder linked, GitHub repo connected (pushes to main deploy production).
 
+- Production live at https://bensproat-site.vercel.app: all routes 200, /card 308, JSON-LD present, analytics script 200.
+
 **Next**
 
-1. Confirm first production deploy.
-2. (Ask first) Add bensproat.com and www.bensproat.com; ask registrar; give DNS records.
-3. Verify HTTPS, www redirect, /card redirect, JSON-LD, Lighthouse on live site.
+1. (Ask first) Add bensproat.com and www.bensproat.com; ask registrar; give DNS records.
+2. Verify HTTPS, www redirect, /card redirect, JSON-LD, Lighthouse on live site.
 
 **Blockers**
 
