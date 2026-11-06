@@ -1,0 +1,53 @@
+# Priming Labs project page (docs/brief-c3.md 4.6). Public facts only: stack
+# names frameworks and build tools; no counts, names, hosting, legal or beta
+# details. Screenshots are omitted until they exist in public/images/projects/.
+slug: priming
+title: Priming Labs
+pillar: founder
+oneLineResult: A daily training-readiness app for coaches and sport-performance physical therapists. Technical co-founder, with Dr. Jessica Visintainer, PT, DPT.
+summary: Technical co-founder. A daily training-readiness app for coaches and sport-performance physical therapists, built with Dr. Jessica Visintainer, PT, DPT.
+role: "Technical co-founder: the web app, the iOS app and the scoring engine"
+team: Co-founded with Dr. Jessica Visintainer, PT, DPT
+when: June 2026 to now
+dates:
+  start: "2026-06"
+status: in-progress
+statusText: Web app live in private beta; iOS app in TestFlight testing
+stack:
+  - TanStack Start
+  - React 19
+  - Vite
+  - Capacitor 8
+  - Apple Health
+  - Codemagic
+tags: [Web app, iOS, Apple Health]
+live:
+  label: See Priming live
+  url: https://priminglabs.com
+links: []
+metrics:
+  - value: "57"
+    label: server functions
+  - value: "151"
+    label: automated tests
+  - value: Jul 2026
+    label: Maryland LLC formed
+  - value: TestFlight
+    label: iOS app in testing
+featured: true
+order: 2
+sections:
+  built:
+    heading: What it does
+    paragraphs:
+      - Athletes complete a short check-in and a quick cognitive test. Combined with sleep and heart data from their watch, that gives a clear green, yellow or red read on whether to push, ease off or recover.
+  how:
+    heading: What I built
+    paragraphs: []
+    columns:
+      - title: The web app
+        text: The check-in flow, the cognitive tests and the scoring engine that implements a readiness model designed with Dr. Visintainer.
+      - title: The iOS app
+        text: Capacitor around the web app, with Apple Health import for sleep, HRV, resting heart rate and workouts, and a Codemagic build pipeline that ships to TestFlight.
+      - title: The backend
+        text: 57 server functions covered by 151 automated tests.

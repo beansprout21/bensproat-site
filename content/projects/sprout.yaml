@@ -1,0 +1,115 @@
+# Sprout case study (docs/brief-c3.md 4.6). Visuals are omitted until the
+# screenshots exist in public/images/projects/.
+slug: sprout
+title: Sprout
+pillar: builder
+oneLineResult: Won the FNB Challenge at HackPSU Fall 2026, out of 122 projects, with a goals-first AI money coach that hands students to a banker. Built and deployed in 24 hours by two students and a team of AI agents.
+summary: Won the FNB Challenge at HackPSU Fall 2026. Claude explains the plan, a deterministic engine owns every number, and 3,084 generated users stress-tested it overnight.
+role: "Everything except the front-end design: product, the plan engine and its guards, sign-in and the banker role, and the agent build system"
+team: Ben Sproat and Ethan Cooper (front-end design)
+when: October 2026, a 24-hour hackathon build
+dates:
+  start: "2026-10"
+status: live
+statusText: Live prototype at getsprout.tech; pilot proposed to FNB
+stack:
+  - Next.js
+  - TypeScript
+  - Tailwind
+  - shadcn/ui
+  - Auth0
+  - Upstash Redis
+  - Claude Haiku and Sonnet
+  - Vercel
+tags: [Next.js, Auth0, Claude]
+live:
+  label: Try Sprout live
+  url: https://getsprout.tech
+links:
+  - label: Code on GitHub
+    url: https://github.com/beansprout21/hackpsu-f26
+    kind: code
+  - label: Devpost
+    url: https://devpost.com/beansprout21
+    kind: devpost
+metrics:
+  - value: "3,084"
+    label: generated users run through the plan engine overnight
+  - value: "600"
+    label: "live AI outputs audited: 200 plans and 400 Ask Sprout answers"
+  - value: 3 to 0
+    label: failing checks by morning, with zero crashes
+  - value: 24 h
+    label: from empty repo to a deployed product with sign-in, upload and a banker view
+featured: true
+order: 1
+footerHeading: Want to see the engine?
+sections:
+  problem:
+    heading: Students don't trust money advice, and most money apps start from the wrong question.
+    paragraphs:
+      - "At the opening ceremony, FNB asked: for a big money decision, who do you trust, a banker with 30 years of experience, a finance personality on social media, or an AI agent? Most apps track what you already spent. Sprout starts with what you want and builds the plan backward, then hands you and your plan to a banker."
+    stats:
+      - value: 63%
+        label: of adults 18 to 29 said they were doing at least okay financially, against 73% of all adults (Federal Reserve SHED 2025)
+      - value: 61%
+        label: of investors 18 to 34 have made an investment decision on a social media personality's recommendation (FINRA Foundation)
+      - value: 3 in 10
+        label: U.S. adults have confidence in AI to manage money, while about 1 in 4 young adults who sought guidance used AI (Edward Jones and Gallup)
+  built:
+    heading: A plan that changes with what you value, not only with your numbers.
+    paragraphs:
+      - In the demo, Maya, a sophomore saving to study abroad in Japan, gets a different first move and a different savings split when she swipes for security instead of experiences. No account is needed to build a plan.
+    steps:
+      - lead: Values first.
+        text: Eight swipes reveal a money persona, such as Experience Collector or Safety Builder.
+      - lead: Goals, not a credit score.
+        text: Studying abroad, a first home or building credit, placed on a timeline.
+      - lead: Money the way students have it.
+        text: Summer savings, aid refunds, gig work or nothing coming in. Upload a statement and the AI fills it in, then discards the file.
+      - lead: A first move today.
+        text: Step one is personal and takes two minutes, with the FNB account that fits right under it, fees shown. Every goal shows when you get there.
+      - lead: Ask Sprout.
+        text: An agent that explains the plan with your real numbers, runs what-ifs and remembers the conversation.
+      - lead: Hand-off to a banker.
+        text: Sign in to save a banker-ready PDF or opt in to share the plan. A role-protected dashboard lets a banker see the goals before the meeting.
+  how:
+    heading: The AI explains. The engine decides every number. Guards check both.
+    paragraphs:
+      - Take the AI out and Sprout can't read your values, your statements or your questions. Take the engine out and the AI could invent numbers. Each part does what it does best.
+    columns:
+      - title: AI understands and explains
+        text: Claude Haiku turns swipes and goals into a goal profile in the student's own words and reads uploaded statements. Claude Sonnet explains why each step fits and powers Ask Sprout.
+      - title: Engine decides
+        text: "Every number is deterministic code with tests: income from irregular sources, the spending split, the safety cushion, goal timelines, and which FNB products fit and when they unlock."
+      - title: Guards verify
+        text: Any AI sentence with a number the engine didn't produce is replaced. Products outside FNB's catalog are dropped. Every AI call has a timeout and a template fallback, so the plan never breaks.
+    pipelineLabel: Built by a team of AI agents, coordinated through GitHub
+    pipeline:
+      - title: Lead Claude chat
+        text: Owned the spec, the contracts and the backlog. Triaged every hour overnight.
+      - title: GitHub issues, PRs, labels
+        text: The only channel between agents. Clear file ownership kept them from colliding.
+      - title: Up to 4 Claude Code sessions
+        text: Built features in parallel, each on its own issue and branch.
+      - title: "Overnight loop: generate, fix, audit"
+        text: One agent generated thousands of users and checked 25 rules, one fixed what it found, one audited live AI answers.
+  failed:
+    heading: The overnight test caught us giving bad advice. That is why the engine is deterministic.
+    items:
+      - lead: The first plan felt like an ad.
+        text: Step one was "open an account." We rebuilt it so step one is always personal, with the FNB product underneath as the fit.
+      - lead: Three bad recommendations surfaced overnight.
+        text: A CD with a $100 minimum for students with no income, a retirement account for a car fund, and a credit card matched to the safety cushion. Each became a rule, a fix and a regression test before morning.
+      - lead: Irregular income had to be modeled honestly.
+        text: Aid refunds, summer savings and "no money coming in" are first-class inputs, without shaming anyone.
+      - lead: One deliberate trade-off.
+        text: The AI never produces a number, even though that makes it feel less magical. A money coach that invents figures is worse than none.
+  results:
+    heading: Won the FNB Challenge. Proposed a pilot.
+    items:
+      - 'Winner of the FNB Challenge, "Trust, Decisions & Financial Confidence," at HackPSU Fall 2026: 353 participants, 122 projects.'
+      - Also entered for the Grand Prize, the Nittany AI Challenge and MLH Best Use of Auth0.
+      - "Proposed a 90-day pilot at FNB's Penn State HUB branch: students scan a QR code, build a plan and book a banker who already knows their goals. Proposal only, not yet started."
+      - "Firsts for the team: a financial-planning engine, Auth0 role-based access, and running AI agents as a coordinated team."
+  footnote: Sprout is an educational prototype built for HackPSU Fall 2026. It is not affiliated with or endorsed by FNB. Product details came from FNB's public pages, there is no bank account linking, and shared plans live in a demo store for 30 days. Planning method adapted from Ramit Sethi's I Will Teach You to Be Rich, with no affiliation.

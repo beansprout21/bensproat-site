@@ -1,0 +1,59 @@
+# /ventures, "Build with me" (docs/brief-c3.md 4.2). lookingFor.text stays null
+# until Ben writes it; the section is omitted while null.
+meta:
+  title: Build with me
+  description: I build the product. Fast, with proof you can click. Three things I'm building now, and the way I build them.
+eyebrow: For partners and investors
+title: I build the product. Fast, with proof you can click.
+lede: Three things I'm building now, and the way I build them.
+nowBuilding:
+  heading: Now building
+  items:
+    - title: Priming Labs
+      text: Readiness testing for coaches and physical therapists. Technical co-founder, with Dr. Jessica Visintainer, PT, DPT. Maryland LLC, web app live in private beta, iOS app in TestFlight, Happy Valley LaunchBox Idea TestLab completed.
+      links:
+        - label: See Priming live
+          href: https://priminglabs.com
+          external: true
+        - label: Project page
+          href: /projects/priming
+    - title: OT Directory
+      text: A public directory of occupational therapy clinics across the mid-Atlantic, in testing before launch. Built on a pipeline that finds clinics in the NPI registry, verifies ownership and extracts details with Claude. Joint venture.
+      links:
+        - label: Project page
+          href: /projects/ai-data-systems
+    - title: Sprout
+      text: Goals-first AI money coach that hands students to a banker. Won the FNB Challenge at HackPSU Fall 2026. A 90-day pilot at FNB's Penn State HUB branch is proposed.
+      links:
+        - label: Try Sprout live
+          href: https://getsprout.tech
+          external: true
+        - label: Case study
+          href: /projects/sprout
+howIBuild:
+  heading: How I build
+  paragraphs:
+    - A lead chat owns the spec, the contracts and the backlog. Parallel coding agents build through GitHub issues and pull requests, each on its own branch. An overnight loop generates test users, fixes what breaks and audits the AI's live answers. I own the architecture, the decisions and the final call.
+    - "Sprout proved the method in 24 hours: 3,084 generated users, 600 live AI outputs audited, failing checks from 3 to 0. This site is built the same way, in public."
+  links:
+    - label: See the repo
+      href: https://github.com/beansprout21/bensproat-site
+      external: true
+  pipeline:
+    - title: Lead chat
+    - title: GitHub issues, PRs, labels
+    - title: Parallel coding agents
+    - title: "Overnight loop: generate, fix, audit"
+lookingFor:
+  heading: What I'm looking for
+  text: null
+supportingProof:
+  - label: Paying clients since 2025
+    detail: Sproat Systems
+  - label: Schreyer Honors College
+    detail: Penn State, Engineering
+  - label: AI data systems
+    href: /projects/ai-data-systems
+footer:
+  heading: Let's talk about building something.
+  bookingLabel: Book a call

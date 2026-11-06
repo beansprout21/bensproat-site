@@ -1,0 +1,35 @@
+# Floating sunglasses project page (docs/brief-c3.md 4.6). Nothing about
+# intellectual property.
+slug: floating-sunglasses
+title: Floating sunglasses
+pillar: builder
+oneLineResult: Three prototypes in six weeks of sunglasses that float, with a 312-second mean float against a 300-second target. Team lead and lead designer, PLTW Engineering Capstone.
+summary: PLTW capstone, team lead of four. Three prototypes in six weeks; 312 s mean float against a 300 s target; three of three six-foot drop tests passed.
+role: "Team lead and lead designer: team organization and every design decision"
+team: Team of four
+when: 2025 to 2026 school year
+dates:
+  start: "2025-09"
+  end: "2026-06"
+status: archived
+statusText: Capstone complete; restart planned for spring 2027
+stack:
+  - Fusion 360
+  - TPU 3D printing
+  - band saw
+  - Silpoxy bonding
+tags: [CAD, 3D printing, prototyping]
+links: []
+metrics:
+  - value: 312 s
+    label: mean float time against a 300 s target
+  - value: 3 of 3
+    label: six-foot drop tests passed
+  - value: $5.45
+    label: prototype cost, $4.75 at scale
+  - value: 80%
+    label: frame-fit target, not yet met
+featured: true
+order: 4
+paragraphs:
+  - Feedback came from professionals at summer camps. The frame-fit target is the open problem; the plan is to restart the design in spring 2027 with some of the original teammates, this time with AI in the loop.

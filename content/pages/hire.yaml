@@ -1,0 +1,66 @@
+# /hire, "Hire me" (docs/brief-c3.md 4.3). Skill bullets split the brief's
+# semicolon lists. The resume picker's one-liners are the builder's wording.
+meta:
+  title: Hire me
+  description: Engineering training, AI product skills, shipped work. Available for Summer 2027 internships and projects.
+eyebrow: For recruiters and companies
+title: Engineering training, AI product skills, shipped work.
+availability: Available for Summer 2027 internships and projects.
+skills:
+  heading: What I can do
+  items:
+    - title: AI product engineering
+      items:
+        - Next.js and TypeScript
+        - Claude API with deterministic engines and guards around the AI
+        - Auth0 role-based access
+        - Vercel
+        - Coordinated AI coding agents through GitHub
+    - title: Engineering
+      items:
+        - CAD in Fusion 360 and Onshape
+        - 3D printing (TPU, PETG-CF)
+        - PLTW capstone team lead, three prototypes in six weeks
+        - Energy modeling of 10+ homes in EnergyPro 9 at an MEP firm
+    - title: Systems and automation
+      items:
+        - GoHighLevel CRMs and intake systems
+        - Data pipelines on the NPI registry, Google Places, Apify, NeverBounce and Supabase
+        - Python and SQLite
+        - An always-on Linux server
+evidence:
+  heading: Evidence
+  slugs: [sprout, priming, sproat-systems, floating-sunglasses, ai-data-systems]
+experience:
+  heading: Experience
+  items:
+    - dates: 2026 to now
+      text: Technical co-founder, Priming Labs.
+    - dates: 2025 to now
+      text: Founder, Sproat Systems.
+    - dates: Summer 2025
+      text: Intern, Medical Center Orthotics and Prosthetics, Silver Spring, MD. Observed and assisted in making prosthetic and orthotic devices, including a power knee.
+    - dates: Summer 2024
+      text: Engineering intern, SETTY, Washington, DC. Modeled the energy efficiency of 10+ California homes in EnergyPro 9 and checked them against energy regulations.
+    - dates: Summers 2022 to 2026
+      text: Counselor, then Lead Counselor, Bretton Woods Recreation Center. Led staff training and adventure camp groups of up to 20 kids.
+education:
+  heading: Education
+  text: Penn State University Park, College of Engineering, Schreyer Honors College. Engineering (major to be declared), started August 2026, expected graduation 2030. College of Engineering merit scholarship. AP Scholar with Distinction, 2025 and 2026.
+resumePicker:
+  heading: Pick the resume that fits
+  downloadLabel: Download PDF
+  fallbackLabel: Resume page
+  items:
+    - audience: ai-product
+      title: AI product
+      text: For AI product and software engineering roles.
+    - audience: engineering
+      title: Engineering
+      text: For mechanical and general engineering roles.
+    - audience: founder
+      title: Founder
+      text: For startup, partnership and investor conversations.
+footer:
+  heading: Let's talk.
+  resumeLabel: Resume (PDF)
