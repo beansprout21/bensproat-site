@@ -28,11 +28,16 @@
 
 - Production live at https://bensproat-site.vercel.app: all routes 200, /card 308, JSON-LD present, analytics script 200.
 
+- Domains added to project: bensproat.com (primary), www.bensproat.com (308 redirect to apex, Vercel domain setting).
+- Registrar and DNS host: Cloudflare (public RDAP + NS lookup). No existing apex/www records.
+
 **Next**
 
-1. (Ask first) Add bensproat.com and www.bensproat.com; ask registrar; give DNS records.
-2. Verify HTTPS, www redirect, /card redirect, JSON-LD, Lighthouse on live site.
+1. Owner adds in Cloudflare DNS (proxy off, DNS only): CNAME @ -> a032731f48e770f7.vercel-dns-017.com, CNAME www -> a032731f48e770f7.vercel-dns-017.com.
+2. `vercel domains verify bensproat.com --scope sproat1` (and www) until valid.
+3. Verify HTTPS, www redirect, /card redirect, JSON-LD, Lighthouse (mobile + desktop) on https://bensproat.com.
+4. Final report: live URL, repo URL, scores, decisions.
 
 **Blockers**
 
-- Registrar for bensproat.com (needed at DNS step).
+- Waiting on owner to add DNS records in Cloudflare.
