@@ -1,0 +1,52 @@
+# /projects index (docs/brief-c3.md 4.5): title, lede, filter labels and the
+# "Earlier builds" archive table. Case studies come from content/projects/.
+meta:
+  title: Projects
+  description: Case studies first, then everything else I have built.
+title: Projects
+lede: Case studies first, then everything else I have built.
+filters:
+  all: All
+  builder: Builder
+  founder: Founder
+  impact: Impact
+archive:
+  heading: Earlier builds
+  columns:
+    year: Year
+    project: Project
+    what: What
+    status: Status
+  items:
+    - year: "2026"
+      project: Nittany Org Finder
+      what: Searchable directory of all 1,237 Penn State student organizations, joined to the events calendar
+      status: Prototype
+    - year: "2026"
+      project: Roadster Kickflip
+      what: Interactive 3D rigid-body physics simulation with live equations
+      status: Prototype
+    - year: "2026"
+      project: Lead Forge AI
+      what: Business discovery plus AI lead scoring (Google Places, Apify, NeverBounce, Supabase)
+      status: Finished
+    - year: "2023-24"
+      project: Magnetic-closing Ziploc bag
+      what: Three prototypes of a reusable bag with magnetic strips; shelved because the seal was not airtight
+      status: Shelved
+    - year: "2023"
+      project: Custom medallions
+      what: 30 3D-printed medallions for a youth basketball team; demand melted the extruder during playoffs
+      status: Finished
+    - year: "2022"
+      project: Bells and Breaks
+      what: Countdown site for Poolesville High students; first code, written with early ChatGPT as a tutor
+      status: Retired
+    - year: "2021-22"
+      project: Ethereum mining rig
+      what: Built around an RTX 3070; about $600 profit reinvested into a gaming PC
+      status: Finished
+    - year: "2017"
+      project: EV3 Rubik's Cube solver
+      what: Lego EV3 robot that scanned a cube with a color sensor and solved it; science fair Honorable Mention
+      status: Finished

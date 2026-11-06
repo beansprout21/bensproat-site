@@ -1,0 +1,33 @@
+# AI data systems project page (docs/brief-c3.md 4.6). OT Directory counts
+# (clinics, cities) are added only after it launches.
+slug: ai-data-systems
+title: AI data systems
+pillar: builder
+oneLineResult: Pipelines that find, verify and extract business data with AI, from a lead engine to a clinic directory and an acquisition sourcing system.
+summary: Lead Forge AI, an occupational therapy clinic directory in testing, an AI-assisted acquisition sourcing pipeline, and the always-on server they run on.
+role: Builder
+when: January 2026 to now
+dates:
+  start: "2026-01"
+status: in-progress
+statusText: OT Directory in testing
+stack:
+  - Python
+  - SQLite
+  - Supabase
+  - Claude
+  - Apify
+  - NeverBounce
+  - Google Places
+  - NPI registry
+  - Linux
+tags: [Pipelines, Claude, data]
+links: []
+metrics: []
+featured: true
+order: 5
+paragraphs:
+  - "Lead Forge AI (January to February 2026): business discovery through Google Places and Apify, GPT-4o-mini scoring, NeverBounce verification and Supabase functions. Tuned scraper concurrency, added cost tracking and fixed the scoring rubric. Finished."
+  - "OT Directory (summer 2026 to now): a joint venture building a public directory of occupational therapy clinics. The pipeline reuses Lead Forge: NPI registry discovery, Census geocoding, Google Places lookup, site crawl, an ownership check, Claude extraction, duplicate merge and map-pin correction. A first extraction model was replaced after measuring 35% field errors. In testing before launch."
+  - "Acquisition sourcing (summer 2026): an AI-assisted pipeline for finding small businesses to buy, built with my dad. 29,245 Google Maps queries, a buy box built on SBA 7(a) default data across 27 industry codes and 8 states, and 590 verified owner contacts. Built and paused before any outreach; no emails were sent."
+  - "Hermes: an always-on Ubuntu mini PC with an encrypted disk, Tailscale and systemd, running a local 20B model, Whisper lecture transcription and email triage."

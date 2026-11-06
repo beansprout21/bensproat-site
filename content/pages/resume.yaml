@@ -1,0 +1,12 @@
+# /resume (docs/brief-c3.md 4.7). Download cards come from resumes.yaml; the
+# education, experience and skills summary is read from pages/hire.yaml.
+meta:
+  title: Resume
+  description: Three versions, one source of truth. Email and site link only, no phone or address.
+title: Resume
+lede: Three versions, one source of truth. Email and site link only, no phone or address.
+downloadLabel: Download PDF
+emptyState:
+  before: PDFs are being updated.
+  linkLabel: Email me
+  after: for a copy.

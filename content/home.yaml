@@ -1,0 +1,97 @@
+# Home page copy (docs/brief-c3.md, sections 2 and 4.1). Door states carry the
+# order table: project slugs first to last, the hero's primary button and the
+# "who" that fills "Proof, ordered for <who>".
+meta:
+  title: Ben Sproat
+hero:
+  name: Ben Sproat
+  headline: I turn ideas into working AI products.
+  sub: Engineering student, Penn State Schreyer Honors College.
+  availability: Available for Summer 2027 internships and projects.
+  resumeLabel: Resume (PDF)
+  emailLabel: Email Ben
+default:
+  order: [sprout, priming, sproat-systems]
+  cta:
+    label: See the work
+    href: /projects
+  who: everyone
+proof:
+  eyebrowPrefix: Proof, ordered for
+  caption: Every claim links to the live product, so you can check it yourself.
+  items:
+    - slug: sprout
+      kind: Win
+      title: FNB Challenge winner, HackPSU Fall 2026
+      text: Sprout, a goals-first AI money coach that hands students to a banker. 353 participants, 122 projects.
+      liveLabel: Try Sprout live
+      pageLabel: Case study
+    - slug: priming
+      kind: Startup
+      title: Technical co-founder, Priming Labs
+      text: Readiness testing for coaches and physical therapists. Web app live in private beta, iOS app in TestFlight.
+      liveLabel: See Priming live
+      pageLabel: Project page
+    - slug: sproat-systems
+      kind: Business
+      title: Founder, Sproat Systems
+      text: Websites, CRMs and AI automation for healthcare practices and small businesses, since 2025.
+      liveLabel: See Sproat Systems live
+      pageLabel: Project page
+doors:
+  heading: What brings you here?
+  lede: Pick a door. The page reorders for you, and the resume stays one click away.
+  items:
+    - key: building
+      title: Building something?
+      text: "Partners and investors: what I'm building, how I build, and what I'm looking for."
+      href: /ventures
+      state:
+        order: [priming, sprout, sproat-systems]
+        cta:
+          label: See what I'm building
+          href: /ventures
+        who: partners and investors
+    - key: hiring
+      title: Hiring?
+      text: "Recruiters and companies: engineering plus AI product skills, availability, case studies and three resume versions."
+      href: /hire
+      state:
+        order: [sprout, priming, sproat-systems]
+        cta:
+          label: Download the resume
+          href: /resume
+        who: recruiters and companies
+    - key: about
+      title: Who's Ben?
+      text: "The story in three pillars: builder, founder, impact. Plus the outdoors."
+      href: /about
+      state:
+        order: [sprout, priming, sproat-systems]
+        cta:
+          label: Read the story
+          href: /about
+        who: anyone curious
+    - key: automation
+      title: Need AI automation?
+      text: Sproat Systems builds websites, CRMs and AI automation for healthcare practices and small businesses.
+      href: https://sproatsystems.com
+      external: true
+      state:
+        order: [sproat-systems, sprout, priming]
+        cta:
+          label: Visit Sproat Systems
+          href: https://sproatsystems.com
+          external: true
+        who: practices that need automation
+work:
+  heading: Selected work
+  allLabel: All projects
+  caseStudyLabel: Case study
+  pageLabel: Project page
+now:
+  label: Now
+  line: null
+  linkLabel: Full /now page
+footer:
+  heading: Let's build something.

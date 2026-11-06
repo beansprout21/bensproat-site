@@ -1,16 +1,35 @@
+# /links order and labels (docs/brief-c3.md 4.9). The Resume entry points at
+# /resume until a default PDF exists in resumes.yaml.
 - label: LinkedIn
   url: https://www.linkedin.com/in/benjamin-s-a39622385
   icon: linkedin
   order: 1
+- label: Resume (PDF)
+  url: /resume
+  icon: resume
+  order: 2
+- label: Sprout
+  note: Try it live
+  url: https://getsprout.tech
+  icon: sprout
+  order: 3
+- label: Priming Labs
+  url: https://priminglabs.com
+  icon: priming
+  order: 4
+- label: Sproat Systems
+  url: https://sproatsystems.com
+  icon: sproat-systems
+  order: 5
 - label: GitHub
   url: https://github.com/beansprout21
   icon: github
-  order: 2
+  order: 6
 - label: Devpost
   url: https://devpost.com/beansprout21
   icon: devpost
-  order: 3
+  order: 7
 - label: Email
   url: mailto:ben.c.sproat@gmail.com
   icon: email
-  order: 4
+  order: 8

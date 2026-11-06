@@ -18,8 +18,8 @@
 
 | Issue | Draft | Branch                  | Status                                                                                                                                                     |
 | ----- | ----- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| #2    | 01    | `issue-2-design-system` | In progress: code done, PR being opened                                                                                                                    |
-| #3    | 02    |                         | Ready                                                                                                                                                      |
+| #2    | 01    | `issue-2-design-system` | Merged: PR #12 (b51543b). Production Lighthouse 100/100/100/100 on `/` and `/links`, mobile and desktop                                                    |
+| #3    | 02    | `issue-3-content-model` | In progress: schemas, loaders and the brief's content files written; checks and PR next                                                                    |
 | #4    | 03    |                         | Ready, depends on #3                                                                                                                                       |
 | #5    | 04    |                         | Ready, depends on #2 and #4                                                                                                                                |
 | #6    | 05    |                         | Ready, depends on #2 and #4                                                                                                                                |
@@ -32,6 +32,8 @@
 **Decisions this run** (one line each in `docs/DECISIONS.md`)
 
 - #2: footer copy stays in `site-footer.tsx` until #4; 404 line wording; header active state and footer heading overrides via small client components in Suspense; `type-*` utilities and `@theme` tokens; static font weights; full-width `main` with per-section `Container`.
+- #3: projects as YAML with `paragraphs?` and `footerHeading?`; page files `content/pages/{ventures,hire,about,contact,projects,resume}.yaml` via `getPage()`; archive table inside `pages/projects.yaml`; #3 carries the brief's final copy so #4 is a verification pass; meta descriptions = H1 plus lede; resume-picker one-liners and about-grass alt are builder wording; Priming `links` empty (live link covers it); `LinkSchema.url` accepts site paths.
+- Vercel previews are behind Vercel Authentication (302 to vercel.com/sso-api), so pre-merge Lighthouse runs on a local production build; production is measured after each merge.
 
 **Done before this run**
 
@@ -40,8 +42,8 @@
 
 **Next**
 
-1. Open PR for #2, wait for the Vercel check, run Lighthouse on `/` and `/links`, merge, comment, then #3.
-2. #3 content model, #4 content data, #5 home, #6 projects, #7 ventures and hire, #8 about, #9 utility pages, #10 images (extract the zip into `public/images/`), #11 quality pass.
+1. Finish #3: checks, PR, merge, comment. Then #4 (verify every content file word for word against the brief, em-dash and private-data greps, `updated` date in now.mdx).
+2. #5 home, #6 projects, #7 ventures and hire, #8 about, #9 utility pages, #10 images (extract the zip into `public/images/`; files are 960x1200, 1600x1067, 1400x1050 and under 250 KB), #11 quality pass.
 3. Morning summary at the end of this file: what merged, what is blocked and why, production URL, what Ben must look at first.
 
 **Blockers**

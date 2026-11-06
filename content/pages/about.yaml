@@ -1,0 +1,67 @@
+# /about (docs/brief-c3.md 4.4). Photos arrive with issue #10; pages omit an
+# image whose file is missing. Nothing from the private list belongs here.
+meta:
+  title: About
+  description: Building since Lego. Ben Sproat builds things that work, and now he builds them with AI.
+header:
+  image: /images/about-field.jpg
+  alt: Ben Sproat in a field at sunset
+title: Building since Lego.
+lede: Ben Sproat builds things that work, and now he builds them with AI.
+bio: Ben Sproat is a Schreyer Honors engineering student at Penn State who builds AI products. He won the FNB Challenge at HackPSU Fall 2026 with Sprout, co-founded Priming Labs, a readiness app for athletes and their coaches, and runs Sproat Systems, which builds websites, CRMs and AI automation for healthcare practices and small businesses.
+threads:
+  heading: Three threads
+  items:
+    - title: Builder
+      quote: I always loved making things with whatever I had.
+      items:
+        - Lego cities without instructions
+        - A Lego EV3 robot that scanned and solved a Rubik's Cube for the 4th grade science fair (Honorable Mention)
+        - A PC and Ethereum mining rig built around an RTX 3070 that paid for its own gaming upgrade
+        - 3D printing and CAD in Fusion 360 and Onshape, including 30 custom medallions for a youth basketball team
+        - A floating sunglasses capstone as team lead
+        - Sprout, built with a team of AI agents
+        - An always-on home server that transcribes lectures and triages email
+    - title: Founder
+      quote: Trying to make money by selling stuff.
+      items:
+        - Worms for bait at age 7 (they died)
+        - Furniture resale for about $250 in middle school
+        - A mining rig that returned about $600
+        - A pickleball Instagram that reached a paid sponsor
+        - Sproat Systems, started in 2025 with my family's pediatric OT practice as the first client
+        - Priming Labs, co-founded in 2026
+        - A directory of occupational therapy clinics, in testing
+    - title: Impact
+      quote: Protecting the environment is something I am passionate about.
+      items:
+        - A $1,000 grant, 20 volunteers and a restored 0.2-mile trail at my middle school
+        - 700 stocked pencil cases assembled with about 30 contributors and handed out at a school in Lukaya, Uganda, where the school's farmer and engineer taught me sustainable engineering
+        - Energy modeling at SETTY
+        - Equipment and website work at Canyon Kids
+        - Adaptive camp counseling
+        - Teaching AI to 18 friends and family members and every client
+timeline:
+  heading: The short version
+  items:
+    - year: "2017"
+      text: Lego EV3 Rubik's Cube solver, Honorable Mention at the science fair.
+    - year: "2021"
+      text: Trail grant written, awarded the next year.
+    - year: "2022"
+      text: Ethereum mining rig built; first 3D printer.
+    - year: "2023"
+      text: Bells and Breaks, a countdown site for Poolesville High students, my first code; 700 pencil cases delivered in Lukaya, Uganda.
+    - year: "2024"
+      text: Founding member and captain of Poolesville High's first varsity pickleball team; SETTY internship.
+    - year: "2025"
+      text: Sproat Systems; MCOP internship; everyday.pickleball reaches a paid sponsor.
+    - year: "2026"
+      text: Floating sunglasses capstone as team lead; Priming Labs; Penn State Schreyer Honors College; won the FNB Challenge at HackPSU Fall 2026.
+offKeyboard:
+  heading: Off the keyboard
+  image: /images/about-grass.jpg
+  alt: Ben Sproat crouching in tall dry grass, in a navy shirt
+  paragraph: I grew up fishing with my grandpa and hiking in Acadia. Two summers at a primitive wilderness camp in Vermont taught me to build a fire with a bow drill and to pay attention. I have captained most teams I played on, from travel soccer to a founding varsity pickleball team, and I spent five summers leading camp groups on kayaks, paddleboards and high ropes. The environment thread runs through the trail grant, nine Chesapeake Bay cleanups and the energy modeling work.
+footer:
+  heading: Say hello.
