@@ -171,7 +171,8 @@ export function HomeRouter({
               width={hero.photo.width}
               height={hero.photo.height}
               sizes="(min-width: 800px) 420px, 100vw"
-              priority
+              loading="eager"
+              fetchPriority="high"
               className="h-auto w-full max-w-[420px] rounded-image border border-line object-cover"
             />
           </div>

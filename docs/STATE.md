@@ -16,18 +16,18 @@
 
 **Issue status**
 
-| Issue | Draft | Branch                  | Status                                                                                                                                                     |
-| ----- | ----- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| #2    | 01    | `issue-2-design-system` | Merged: PR #12 (b51543b). Production Lighthouse 100/100/100/100 on `/` and `/links`, mobile and desktop                                                    |
-| #3    | 02    | `issue-3-content-model` | Merged: PR #13 (e8c0113). Content files hold the brief's final copy; #4 is a verification pass                                                             |
-| #4    | 03    | `issue-4-content-data`  | Verified against the brief, no content changes needed; shipped as a docs-only PR                                                                           |
-| #5    | 04    | issue-5-home-page       | Merged: PR #16 (58c181e). Production Lighthouse 100 on /                                                                                                   |
-| #6    | 05    | issue-6-projects        | Merged: PR #17 (4a187ea). Production Lighthouse 100 on /projects and /projects/sprout                                                                      |
-| #7    | 06    | issue-7-ventures-hire   | Merged: PR #18 (0f97f5a). Production Lighthouse 100 on both pages                                                                                          |
-| #8    | 07    | issue-8-about           | Merged: PR #19 (ad836fa). Production Lighthouse 100                                                                                                        |
-| #9    | 08    | issue-9-utility-pages   | In progress: built and verified locally; PR open                                                                                                           |
-| #10   | 09    |                         | Ready, depends on #2; photos are in `C:\Users\bensp\Downloads\bensproat-site-images.zip` (headshot, about-field, about-grass), not yet in `public/images/` |
-| #11   | 10    |                         | Ready, depends on #5 to #10                                                                                                                                |
+| Issue | Draft | Branch                  | Status                                                                                                  |
+| ----- | ----- | ----------------------- | ------------------------------------------------------------------------------------------------------- |
+| #2    | 01    | `issue-2-design-system` | Merged: PR #12 (b51543b). Production Lighthouse 100/100/100/100 on `/` and `/links`, mobile and desktop |
+| #3    | 02    | `issue-3-content-model` | Merged: PR #13 (e8c0113). Content files hold the brief's final copy; #4 is a verification pass          |
+| #4    | 03    | `issue-4-content-data`  | Verified against the brief, no content changes needed; shipped as a docs-only PR                        |
+| #5    | 04    | issue-5-home-page       | Merged: PR #16 (58c181e). Production Lighthouse 100 on /                                                |
+| #6    | 05    | issue-6-projects        | Merged: PR #17 (4a187ea). Production Lighthouse 100 on /projects and /projects/sprout                   |
+| #7    | 06    | issue-7-ventures-hire   | Merged: PR #18 (0f97f5a). Production Lighthouse 100 on both pages                                       |
+| #8    | 07    | issue-8-about           | Merged: PR #19 (ad836fa). Production Lighthouse 100                                                     |
+| #9    | 08    | issue-9-utility-pages   | Merged: PR #20 (0bbb80a). Production Lighthouse 99 to 100 on all four pages                             |
+| #10   | 09    | issue-10-images         | In progress: photos committed, cover convention; PR open                                                |
+| #11   | 10    |                         | Ready, depends on #5 to #10                                                                             |
 
 **Decisions this run** (one line each in `docs/DECISIONS.md`)
 

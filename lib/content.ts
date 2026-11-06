@@ -510,6 +510,12 @@ export function getProjects(): Project[] {
           `Invalid content in content/${source}: slug "${project.slug}" must match the file name`,
         );
       }
+      // A file at public/images/projects/<slug>.jpg is the cover unless the
+      // YAML names one; pages still pass every cover through resolveImage.
+      const conventionalCover = `/images/projects/${project.slug}.jpg`;
+      if (!project.cover && resolveImage(conventionalCover)) {
+        return { ...project, cover: conventionalCover };
+      }
       return project;
     });
   return projects.toSorted((a, b) => a.order - b.order);
