@@ -63,7 +63,7 @@ export function SiteFooter({
           Built by Ben with a team of Claude agents, in public:{" "}
           <a
             href={REPO_URL}
-            className="text-on-dark-accent underline-offset-4 hover:underline"
+            className="text-on-dark-accent underline underline-offset-4 hover:text-on-dark"
           >
             github.com/beansprout21/bensproat-site
           </a>
