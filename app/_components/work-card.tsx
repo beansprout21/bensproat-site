@@ -10,6 +10,8 @@ export type WorkCardProps = {
   cover: { src: string; alt: string } | null;
   live: { label: string; url: string } | null;
   page: { label: string; href: string };
+  /** 3 under a section heading (default), 2 when the grid sits directly under the page title. */
+  headingLevel?: 2 | 3;
   className?: string;
   style?: CSSProperties;
 };
@@ -22,9 +24,11 @@ export function WorkCard({
   cover,
   live,
   page,
+  headingLevel = 3,
   className = "",
   style,
 }: WorkCardProps) {
+  const Heading = headingLevel === 2 ? "h2" : "h3";
   return (
     <article
       className={`flex min-w-0 flex-col gap-3.5 ${className}`}
@@ -44,9 +48,9 @@ export function WorkCard({
         <p className="font-mono text-[12px] tracking-[0.06em] text-muted uppercase">
           {tags.join(", ")}
         </p>
-        <h3 className="font-display text-[22px] leading-[1.2] font-semibold tracking-[-0.01em] text-ink">
+        <Heading className="font-display text-[22px] leading-[1.2] font-semibold tracking-[-0.01em] text-ink">
           {title}
-        </h3>
+        </Heading>
         <p className="text-[15px] leading-[1.55] text-ink-2">{summary}</p>
         <div className="flex flex-wrap items-center gap-x-[18px] gap-y-1">
           {live ? (

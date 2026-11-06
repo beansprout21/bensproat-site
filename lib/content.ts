@@ -107,6 +107,8 @@ export const ProjectSectionsSchema = z.strictObject({
 export const ProjectSchema = z.strictObject({
   slug,
   title: text,
+  /** Short badge shown next to the title, for example the contest win. */
+  badge: text.optional(),
   pillar: z.enum(["builder", "founder", "impact"]),
   /** The lede on the project page. */
   oneLineResult: text,
