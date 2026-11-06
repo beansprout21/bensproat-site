@@ -2,11 +2,11 @@
 
 Two Claude sessions work on this site. GitHub is the shared channel between them, and Ben is the approver.
 
-| Who | Owns | Writes to |
-| --- | --- | --- |
-| Planning chat (claude.ai, "Personal Branding" project) | Strategy, positioning, design, phase briefs | `docs/PLAN.md`, `docs/brief-*.md`, phase issues |
-| Claude Code (Ben's laptop) | Code, content files, deploys | Code, `/content`, `docs/STATE.md`, PRs, issue comments |
-| Ben | Decisions and approvals | Issue comments, PR reviews, merges |
+| Who                                                    | Owns                                        | Writes to                                              |
+| ------------------------------------------------------ | ------------------------------------------- | ------------------------------------------------------ |
+| Planning chat (claude.ai, "Personal Branding" project) | Strategy, positioning, design, phase briefs | `docs/PLAN.md`, `docs/brief-*.md`, phase issues        |
+| Claude Code (Ben's laptop)                             | Code, content files, deploys                | Code, `/content`, `docs/STATE.md`, PRs, issue comments |
+| Ben                                                    | Decisions and approvals                     | Issue comments, PR reviews, merges                     |
 
 ## Flow for each phase
 
