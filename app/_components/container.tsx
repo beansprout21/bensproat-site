@@ -3,6 +3,9 @@ import type { ReactNode } from "react";
 type ContainerProps = {
   as?: "div" | "section" | "article" | "nav" | "header" | "footer";
   className?: string;
+  id?: string;
+  "aria-label"?: string;
+  "aria-labelledby"?: string;
   children: ReactNode;
 };
 
@@ -11,6 +14,11 @@ export function Container({
   as: Tag = "div",
   className = "",
   children,
+  ...rest
 }: ContainerProps) {
-  return <Tag className={`container-x ${className}`}>{children}</Tag>;
+  return (
+    <Tag className={`container-x ${className}`} {...rest}>
+      {children}
+    </Tag>
+  );
 }

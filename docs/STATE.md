@@ -21,7 +21,7 @@
 | #2    | 01    | `issue-2-design-system` | Merged: PR #12 (b51543b). Production Lighthouse 100/100/100/100 on `/` and `/links`, mobile and desktop                                                    |
 | #3    | 02    | `issue-3-content-model` | Merged: PR #13 (e8c0113). Content files hold the brief's final copy; #4 is a verification pass                                                             |
 | #4    | 03    | `issue-4-content-data`  | Verified against the brief, no content changes needed; shipped as a docs-only PR                                                                           |
-| #5    | 04    |                         | Ready, depends on #2 and #4                                                                                                                                |
+| #5    | 04    | issue-5-home-page       | In progress: built and verified locally; PR open                                                                                                           |
 | #6    | 05    |                         | Ready, depends on #2 and #4                                                                                                                                |
 | #7    | 06    |                         | Ready, depends on #2 and #4                                                                                                                                |
 | #8    | 07    |                         | Ready, depends on #2 and #4                                                                                                                                |
