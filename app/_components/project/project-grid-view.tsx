@@ -19,7 +19,7 @@ type ProjectGridViewProps = {
 };
 
 const pillBase =
-  "inline-flex min-h-[44px] items-center rounded-full border px-4 font-mono text-[12.5px] font-medium tracking-[0.06em] uppercase no-underline transition-colors";
+  "inline-flex min-h-[44px] items-center rounded-full border px-4 font-mono text-[12.5px] font-medium tracking-[0.06em] uppercase no-underline transition-[color,background-color,border-color]";
 
 /**
  * Filter pills plus the case-study grid (brief 4.5). The pills are real links

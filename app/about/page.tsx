@@ -34,7 +34,7 @@ export default function Page() {
             alt={page.header.alt}
             width={1600}
             height={1067}
-            sizes="(min-width: 1200px) 1120px, 100vw"
+            sizes="(min-width: 1200px) 1040px, calc(100vw - 40px)"
             loading="eager"
             fetchPriority="high"
             className="h-auto max-h-[520px] w-full rounded-image border border-line object-cover"

@@ -5,7 +5,7 @@ import { ArrowOut } from "./icons";
 type Variant = "primary" | "secondary" | "text";
 
 const base =
-  "inline-flex min-h-[46px] items-center justify-center gap-2 rounded-button px-5 text-[15px] leading-none font-semibold no-underline transition-colors";
+  "inline-flex min-h-[46px] items-center justify-center gap-2 rounded-button px-5 text-[15px] leading-none font-semibold no-underline transition-[color,background-color,border-color]";
 
 const variants: Record<Variant, string> = {
   primary: "bg-accent text-white hover:bg-accent-strong",
