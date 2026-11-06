@@ -106,7 +106,7 @@ Icons: inline stroke SVG only (arrow right `M3 8h10M9 4l4 4-4 4`, arrow out abov
 ### 1.6 Images
 
 - Use `next/image` with explicit `sizes`. No layout shift.
-- Files Ben supplies in `public/images/` (section 7): `headshot.jpg` (960 x 1200, 4:5), `about-field.jpg` (1800 wide, 3:2), `about-grass.jpg` (1600 wide, 4:5 or 3:2), project covers as they arrive (`projects/<slug>.jpg`, 1600 x 1000).
+- Files Ben supplies in `public/images/` (section 7): `headshot.jpg` (960 x 1200, 4:5), `about-field.jpg` (1600 x 1067, 3:2), `about-grass.jpg` (1400 x 1050, 4:3), project covers as they arrive (`projects/<slug>.jpg`, 1600 x 1000).
 - Alt text for the headshot: "Ben Sproat, smiling, in a navy shirt against a white wall".
 - Never add a photo that is not on the list in section 7. No stock images.
 

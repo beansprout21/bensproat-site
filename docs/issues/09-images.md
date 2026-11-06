@@ -9,7 +9,7 @@ The approved photos are in the repo at sane sizes and every image on the site go
 
 ## Acceptance criteria
 
-- [ ] `public/images/headshot.jpg` (960 x 1200), `public/images/about-field.jpg` (1800 x 1200), `public/images/about-grass.jpg` (1600 wide) are committed from the files Ben drops into the repo folder; each under 250 KB.
+- [ ] `public/images/headshot.jpg` (960 x 1200), `public/images/about-field.jpg` (1600 x 1067), `public/images/about-grass.jpg` (1400 x 1050) are committed from the files Ben drops into the repo folder; each under 250 KB.
 - [ ] Any file in `public/images/projects/` named `<slug>.jpg` is picked up as that project's `cover`; missing covers render nothing (no placeholder boxes on the live site).
 - [ ] Alt text as specified in the brief for the headshot and about photos; project covers use "<Project> screenshot".
 - [ ] No layout shift on any page that shows an image (CLS 0 in Lighthouse).
