@@ -66,3 +66,4 @@ Append-only. One line per decision: date, decision, who decided. Newest at the b
 - 2026-11-07: /links is indexed again; the 95+ Lighthouse rule wins over the brief's noindex. Supersedes the C5 noindex decision. (lead agent recommendation, pending Ben)
 - 2026-11-07: Default share card size target is 600 KB (364 KB shipped); project cards stay under 300 KB. (lead agent)
 - 2026-11-07: Ben approved indexing /links again (draft 17) and the 600 KB default card target. (Ben)
+- 2026-11-07: Every meta description is 70 to 160 characters (lead agent copy, #35): projects take an optional `metaDescription` (set on Sprout, Sproat Systems and Floating sunglasses), `/projects` and `/now` use new copy, and `/links` reads its description from a new `content/pages/links.yaml` (a metadata-only page schema). `/links` is indexed again and back in the sitemap, since the 95+ Lighthouse rule wins over noindexing it. (builder, #35)

@@ -141,6 +141,8 @@ export const ProjectSchema = z.strictObject({
   order: z.int(),
   /** Footer heading override for this project's page. */
   footerHeading: text.optional(),
+  /** Meta description when `oneLineResult` is outside 70 to 160 characters (#35). */
+  metaDescription: text.optional(),
   /** Award named in the project's JSON-LD (docs/brief-c5.md 3). */
   award: text.optional(),
   /** Share-image eyebrow; falls back to "Project" (docs/brief-c5.md 2). */
@@ -414,6 +416,12 @@ export const ResumePageSchema = z.strictObject({
   footer: PageFooterSchema.optional(),
 });
 
+/** /links: metadata only; the links themselves come from links.yaml. */
+export const LinksPageSchema = z.strictObject({
+  meta: MetaSchema,
+  footer: PageFooterSchema.optional(),
+});
+
 const PAGE_SCHEMAS = {
   ventures: VenturesSchema,
   hire: HireSchema,
@@ -421,6 +429,7 @@ const PAGE_SCHEMAS = {
   contact: ContactSchema,
   projects: ProjectsPageSchema,
   resume: ResumePageSchema,
+  links: LinksPageSchema,
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -596,4 +605,5 @@ export function validateAllContent(): void {
   getPage("contact");
   getPage("projects");
   getPage("resume");
+  getPage("links");
 }
