@@ -5,7 +5,7 @@ labels: [status:ready, P1, quick]
 
 ## Goal
 
-Every page's meta description is 70 to 160 characters, and the /links SEO score returns to 100 (Ben, Nov 7, 2026: the 95+ Lighthouse rule wins over noindexing /links).
+Every page's meta description is 70 to 160 characters, and the /links SEO score returns to 100 (lead agent recommendation, Nov 7, 2026: the 95+ Lighthouse rule wins over noindexing /links).
 
 ## Acceptance criteria
 
