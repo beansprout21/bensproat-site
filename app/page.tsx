@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_NAME, pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import {
   getHome,
@@ -28,10 +29,11 @@ const HEADSHOT = {
 const home = getHome();
 const profile = getProfile();
 
-export const metadata: Metadata = {
-  title: { absolute: home.meta.title },
+export const metadata: Metadata = pageMetadata({
+  title: SITE_NAME,
   description: profile.headline,
-};
+  path: "/",
+});
 
 function buildProps(): HomeRouterProps {
   const projects = getProjects();

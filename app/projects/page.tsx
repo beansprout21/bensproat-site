@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Suspense } from "react";
 import { getHome, getPage, getProjects, resolveImage } from "@/lib/content";
 import { Container } from "../_components/container";
@@ -11,10 +12,11 @@ import { SectionHeader } from "../_components/section-header";
 
 const page = getPage("projects");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.meta.title,
   description: page.meta.description,
-};
+  path: "/projects",
+});
 
 function buildCards(): ProjectCard[] {
   const home = getHome();

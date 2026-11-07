@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { getLinks, getPage, getProfile } from "@/lib/content";
 import { Button } from "../_components/button";
@@ -7,10 +8,11 @@ import { Container } from "../_components/container";
 const page = getPage("contact");
 const PROFILE_LINK_ICONS = ["linkedin", "github", "devpost"];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.meta.title,
   description: page.meta.description,
-};
+  path: "/contact",
+});
 
 /** Renders the links line with the "/links" path as a link to the page. */
 function LinksLine({ text }: { text: string }) {

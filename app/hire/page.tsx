@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import {
   getHome,
   getPage,
@@ -18,10 +19,11 @@ import { WorkCard } from "../_components/work-card";
 
 const page = getPage("hire");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.meta.title,
   description: page.meta.description,
-};
+  path: "/hire",
+});
 
 /** /hire, "Hire me" (brief 4.3). Every string comes from content/pages/hire.yaml. */
 export default function Page() {

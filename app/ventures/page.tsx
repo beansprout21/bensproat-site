@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { getPage } from "@/lib/content";
 import { Card } from "../_components/card";
@@ -9,10 +10,11 @@ import { Prose } from "../_components/prose";
 
 const page = getPage("ventures");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.meta.title,
   description: page.meta.description,
-};
+  path: "/ventures",
+});
 
 /** /ventures, "Build with me" (brief 4.2). Every string comes from content/pages/ventures.yaml. */
 export default function Page() {

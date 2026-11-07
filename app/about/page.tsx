@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import { getPage, getProfile, resolveImage } from "@/lib/content";
 import { buildProfilePage, serializeJsonLd } from "@/lib/jsonld";
@@ -6,10 +7,11 @@ import { Container } from "../_components/container";
 
 const page = getPage("about");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.meta.title,
   description: page.meta.description,
-};
+  path: "/about",
+});
 
 /** /about (brief 4.4). Every string comes from content/pages/about.yaml; photos arrive with #10. */
 export default function Page() {

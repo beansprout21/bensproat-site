@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { getPage, getProfile, getResumes } from "@/lib/content";
 import { Button } from "../_components/button";
 import { Card } from "../_components/card";
@@ -13,10 +14,11 @@ import {
 const page = getPage("resume");
 const hire = getPage("hire");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: page.meta.title,
   description: page.meta.description,
-};
+  path: "/resume",
+});
 
 /** /resume (brief 4.7). Download cards from resumes.yaml; the summary reuses the /hire fields. */
 export default function Page() {

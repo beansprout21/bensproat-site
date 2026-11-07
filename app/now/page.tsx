@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { getNow, getProfile } from "@/lib/content";
 import { Container } from "../_components/container";
 import { formatDate } from "../_components/format-date";
@@ -8,10 +9,11 @@ const now = getNow();
 const profile = getProfile();
 const title = now.title ?? "Now";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title,
   description: now.description ?? profile.oneLiner,
-};
+  path: "/now",
+});
 
 /** /now (brief 4.10): paragraphs and bullets from content/now.mdx with the updated date. */
 export default function Page() {
