@@ -36,6 +36,8 @@ metrics:
     label: iOS app in testing
 featured: true
 order: 2
+ogEyebrow: "Startup · Technical co-founder"
+ogLine: "A daily training-readiness app for coaches and sport-performance physical therapists."
 sections:
   built:
     heading: What it does

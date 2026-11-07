@@ -38,6 +38,7 @@ const { openGraph, twitter } = pageMetadata({
   title: SITE_NAME,
   description: profile.headline,
   path: "/",
+  ownImage: true,
 });
 
 export const metadata: Metadata = {

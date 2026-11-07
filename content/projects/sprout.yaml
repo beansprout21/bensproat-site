@@ -44,6 +44,8 @@ metrics:
     label: from empty repo to a deployed product with sign-in, upload and a banker view
 featured: true
 order: 1
+ogEyebrow: "Case study · FNB Challenge winner, HackPSU Fall 2026"
+ogLine: "A goals-first AI money coach that hands students to a banker. Built in 24 hours with a team of AI agents."
 footerHeading: Want to see the engine?
 sections:
   problem:

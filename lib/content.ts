@@ -141,6 +141,10 @@ export const ProjectSchema = z.strictObject({
   order: z.int(),
   /** Footer heading override for this project's page. */
   footerHeading: text.optional(),
+  /** Share-image eyebrow; falls back to "Project" (docs/brief-c5.md 2). */
+  ogEyebrow: text.optional(),
+  /** Share-image sub line, at most two lines; falls back to `summary`. */
+  ogLine: text.optional(),
   /** Body paragraphs for project pages that are not full case studies. */
   paragraphs: textList.optional(),
   /** Present only for full case studies. */

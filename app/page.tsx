@@ -33,6 +33,7 @@ export const metadata: Metadata = pageMetadata({
   title: SITE_NAME,
   description: profile.headline,
   path: "/",
+  ownImage: true,
 });
 
 function buildProps(): HomeRouterProps {

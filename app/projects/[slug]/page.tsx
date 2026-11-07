@@ -37,6 +37,7 @@ export async function generateMetadata({
         description: project.oneLineResult,
         path: `/projects/${project.slug}`,
         type: "article",
+        ownImage: true,
       })
     : {};
 }
