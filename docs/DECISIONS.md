@@ -65,3 +65,4 @@ Append-only. One line per decision: date, decision, who decided. Newest at the b
 - 2026-11-07: JSON-LD: each page's graph defines the Person once so every `@id` reference resolves inside the page (project graphs carry the Person too). Project CreativeWork `description` is the lead sentence of `oneLineResult`, because Priming's second sentence names the co-founder and the brief keeps a second founder's name out of JSON-LD. `award` is a new optional project field, set on Sprout. `/links` is out of the sitemap; no `lastModified`. (builder, #31)
 - 2026-11-07: /links is indexed again; the 95+ Lighthouse rule wins over the brief's noindex. Supersedes the C5 noindex decision. (lead agent recommendation, pending Ben)
 - 2026-11-07: Default share card size target is 600 KB (364 KB shipped); project cards stay under 300 KB. (lead agent)
+- 2026-11-07: Ben approved indexing /links again (draft 17) and the 600 KB default card target. (Ben)
