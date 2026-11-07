@@ -31,6 +31,7 @@ A personal site that routes each visitor to the part of Ben's work they care abo
 | "Better at AI than my peers"                        | Concrete counts of people taught                                                                                                                                                                 |
 | "Since 2023" (Sproat Systems)                       | "Since 2025"                                                                                                                                                                                     |
 | "Mechanical Engineering"                            | "Engineering, Schreyer Honors College" until a major is declared                                                                                                                                 |
+| HackPSU size                                        | "Out of 122 projects" or any phrasing that ties 353 or 122 to the FNB Challenge                                                                                                                  | "HackPSU Fall 2026, a hackathon of 353 participants and 122 projects" (totals across all tracks) |
 | Any client by name                                  | Only approved clients: Canyon Kids (say it is the family practice), Kentuckiana Mobile Therapy, Mobility Health PT, Hydes Group, Cloud Surfing Media. Every other client is described, not named |
 
 ## Sitemap
