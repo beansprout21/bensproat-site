@@ -23,7 +23,7 @@ proof:
     - slug: sprout
       kind: Win
       title: FNB Challenge winner, HackPSU Fall 2026
-      text: Sprout, a goals-first AI money coach that hands students to a banker. 353 participants, 122 projects.
+      text: Sprout, a goals-first AI money coach that hands students to a banker. HackPSU drew 353 participants and 122 projects.
       liveLabel: Try Sprout live
       pageLabel: Case study
     - slug: priming

@@ -4,7 +4,7 @@ slug: sprout
 title: Sprout
 badge: FNB Challenge winner, HackPSU Fall 2026
 pillar: builder
-oneLineResult: Won the FNB Challenge at HackPSU Fall 2026, out of 122 projects, with a goals-first AI money coach that hands students to a banker. Built and deployed in 24 hours by two students and a team of AI agents.
+oneLineResult: Won the FNB Challenge at HackPSU Fall 2026, a hackathon of 353 participants and 122 projects, with a goals-first AI money coach that hands students to a banker. Built and deployed in 24 hours by two students and a team of AI agents.
 summary: Won the FNB Challenge at HackPSU Fall 2026. Claude explains the plan, a deterministic engine owns every number, and 3,084 generated users stress-tested it overnight.
 role: "Everything except the front-end design: product, the plan engine and its guards, sign-in and the banker role, and the agent build system"
 team: Ben Sproat and Ethan Cooper (front-end design)
@@ -109,7 +109,7 @@ sections:
   results:
     heading: Won the FNB Challenge. Proposed a pilot.
     items:
-      - 'Winner of the FNB Challenge, "Trust, Decisions & Financial Confidence," at HackPSU Fall 2026: 353 participants, 122 projects.'
+      - 'Winner of the FNB Challenge, "Trust, Decisions & Financial Confidence," at HackPSU Fall 2026, a hackathon of 353 participants and 122 projects.'
       - Also entered for the Grand Prize, the Nittany AI Challenge and MLH Best Use of Auth0.
       - "Proposed a 90-day pilot at FNB's Penn State HUB branch: students scan a QR code, build a plan and book a banker who already knows their goals. Proposal only, not yet started."
       - "Firsts for the team: a financial-planning engine, Auth0 role-based access, and running AI agents as a coordinated team."

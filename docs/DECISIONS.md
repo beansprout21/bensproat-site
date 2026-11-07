@@ -56,3 +56,4 @@ Append-only. One line per decision: date, decision, who decided. Newest at the b
 - 2026-11-07: 353 participants and 122 projects are HackPSU Fall 2026 totals across all tracks; copy never ties them to the FNB Challenge. (Ben)
 - 2026-11-07: Sproat Systems is described as AI consulting and automation (custom AI systems and solutions); websites and CRMs are secondary. (Ben)
 - 2026-11-07: One resume set for applications and the site: header carries the phone number and "University Park, PA"; no street address. Supersedes the two-set decision above. (Ben)
+- 2026-11-07: The 353 participants and 122 projects are HackPSU Fall 2026 totals, never FNB Challenge numbers; the three lines that cite them say so (home proof text, Sprout one-line result, first Sprout result). (builder, #24)
