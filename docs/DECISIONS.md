@@ -55,3 +55,4 @@ Append-only. One line per decision: date, decision, who decided. Newest at the b
 - 2026-11-07: Two resume sets: an application set with Ben's phone number, kept outside the repo, and a web set (email and links only) published under public/resumes. (lead agent, pending Ben's confirmation)
 - 2026-11-07: 353 participants and 122 projects are HackPSU Fall 2026 totals across all tracks; copy never ties them to the FNB Challenge. (Ben)
 - 2026-11-07: Sproat Systems is described as AI consulting and automation (custom AI systems and solutions); websites and CRMs are secondary. (Ben)
+- 2026-11-07: One resume set for applications and the site: header carries the phone number and "University Park, PA"; no street address. Supersedes the two-set decision above. (Ben)
