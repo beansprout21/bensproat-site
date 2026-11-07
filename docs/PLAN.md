@@ -61,6 +61,7 @@ Case study order of sections: one-line result, problem, what Ben built and his r
 | C3    | Content: real copy and project data in /content             | Ready: `docs/brief-c3.md`, issues #2 to #4 (drafts 01 to 03)  |
 | C4    | Core pages built to the approved design                     | Ready: `docs/brief-c3.md`, issues #5 to #11 (drafts 04 to 10) |
 | C5    | Search: profile markup, Open Graph images, Search Console   | Ready: `docs/brief-c5.md`, drafts 14 to 16                    |
+| C5b   | Home refresh from the Nov 7 mockup (Ben's picks)            | Ready: drafts 18 and 19                                       |
 | C6    | Extras: build log, live metrics, "Ask Ben's agent"          | Planned (the signature interaction and /now moved into C4)    |
 | C7    | QA: Lighthouse, accessibility, NFC and QR tests             | Planned                                                       |
 

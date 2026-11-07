@@ -112,6 +112,8 @@ Icons: inline stroke SVG only (arrow right `M3 8h10M9 4l4 4-4 4`, arrow out abov
 
 ## 2. The signature interaction: doors that reshape the page (home only)
 
+> Superseded on Nov 7, 2026 by `docs/issues/19-home-refresh.md`: the page no longer reorders; doors are square tiles that open a panel with a link.
+
 Production behavior, decided by Ben on Nov 5, 2026:
 
 1. Each door is a real link. Click or tap navigates: `/ventures`, `/hire`, `/about`, and `https://sproatsystems.com` (new tab).
