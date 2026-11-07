@@ -61,7 +61,7 @@ Fonts: three static TTF files, already placed by the lead agent in Ben's working
 | floating-sunglasses | Engineering · PLTW capstone team lead                | Three prototypes in six weeks of sunglasses that float: 312 s mean float against a 300 s target.          |
 | ai-data-systems     | Builder · AI data pipelines                          | Pipelines that find, verify and extract business data with AI.                                            |
 
-- Each image under 300 KB. Pages keep using the default image unless they are project pages.
+- Project images under 300 KB; the default card (with the photo) under 600 KB (Ben, Nov 7: 364 KB accepted; LinkedIn and X allow 5 MB). Pages keep using the default image unless they are project pages.
 
 ## 3. Structured data, sitemap, robots (draft 16)
 
