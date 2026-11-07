@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProject, getProjects, type Project } from "@/lib/content";
+import {
+  getProfile,
+  getProject,
+  getProjects,
+  type Project,
+} from "@/lib/content";
+import { buildProjectGraph, serializeJsonLd } from "@/lib/jsonld";
 import { Container } from "../../_components/container";
 import { Pill } from "../../_components/pill";
 import { CaseStudySections } from "../../_components/project/case-study";
@@ -68,6 +74,12 @@ export default async function Page({ params }: PageProps<"/projects/[slug]">) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(buildProjectGraph(getProfile(), project)),
+        }}
+      />
       <Container
         as="section"
         aria-label="Project summary"
