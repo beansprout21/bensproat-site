@@ -3,6 +3,7 @@ import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { getProfile } from "@/lib/content";
 import { SITE_URL } from "@/lib/jsonld";
+import { SITE_NAME, pageMetadata } from "@/lib/metadata";
 import { SiteFooter } from "./_components/site-footer";
 import { SiteHeader } from "./_components/site-header";
 import "./globals.css";
@@ -31,6 +32,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 const profile = getProfile();
 
+// Site defaults: the home page's Open Graph and Twitter blocks. Canonical is
+// left to each page, so a route without its own (the 404) never claims "/".
+const { openGraph, twitter } = pageMetadata({
+  title: SITE_NAME,
+  description: profile.headline,
+  path: "/",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -38,6 +47,8 @@ export const metadata: Metadata = {
     template: `%s | ${profile.name}`,
   },
   description: profile.oneLiner,
+  openGraph,
+  twitter,
   icons: { icon: "/favicon.svg" },
 };
 

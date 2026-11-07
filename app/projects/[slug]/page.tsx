@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, getProjects, type Project } from "@/lib/content";
@@ -31,7 +32,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   return project
-    ? { title: project.title, description: project.oneLineResult }
+    ? pageMetadata({
+        title: project.title,
+        description: project.oneLineResult,
+        path: `/projects/${project.slug}`,
+        type: "article",
+      })
     : {};
 }
 

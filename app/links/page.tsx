@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import { getLinks, getProfile, getResumes, resolveImage } from "@/lib/content";
 import { Container } from "../_components/container";
@@ -11,9 +12,14 @@ const HEADSHOT = {
 /** Links that are Ben's own profiles get rel="me". */
 const PROFILE_ICONS = ["linkedin", "github", "devpost", "email"];
 
+// /links duplicates the other pages and is the NFC landing, not a search page.
 export const metadata: Metadata = {
-  title: "Links",
-  description: profile.oneLiner,
+  ...pageMetadata({
+    title: "Links",
+    description: profile.oneLiner,
+    path: "/links",
+  }),
+  robots: { index: false, follow: true },
 };
 
 /**
