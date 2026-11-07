@@ -35,7 +35,7 @@ proof:
     - slug: sproat-systems
       kind: Business
       title: Founder, Sproat Systems
-      text: Websites, CRMs and AI automation for healthcare practices and small businesses, since 2025.
+      text: "AI consulting and automation for healthcare practices and small businesses: custom AI systems, plus the websites and CRMs they run on. Since 2025."
       liveLabel: See Sproat Systems live
       pageLabel: Project page
 doors:
@@ -73,8 +73,8 @@ doors:
           href: /about
         who: anyone curious
     - key: automation
-      title: Need AI automation?
-      text: Sproat Systems builds websites, CRMs and AI automation for healthcare practices and small businesses.
+      title: Need AI for your business?
+      text: "Sproat Systems is my AI consulting and automation practice: custom AI systems and solutions for healthcare practices and small businesses."
       href: https://sproatsystems.com
       external: true
       state:
@@ -83,7 +83,7 @@ doors:
           label: Visit Sproat Systems
           href: https://sproatsystems.com
           external: true
-        who: practices that need automation
+        who: businesses that want AI
 work:
   heading: Selected work
   allLabel: All projects

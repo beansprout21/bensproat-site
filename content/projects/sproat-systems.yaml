@@ -3,9 +3,9 @@
 slug: sproat-systems
 title: Sproat Systems
 pillar: founder
-oneLineResult: Websites, GoHighLevel CRMs and AI automation for healthcare practices and small businesses. Founder, since 2025.
-summary: Founder, since 2025. Websites, GoHighLevel CRMs and AI automation for healthcare practices and small businesses.
-role: Founder. I scope, build and teach every system I ship.
+oneLineResult: "AI consulting and automation for healthcare practices and small businesses: custom AI systems and solutions, plus the websites and CRMs they run on. Founder, since 2025."
+summary: "Founder, since 2025. AI consulting and automation: custom AI systems and solutions for healthcare practices and small businesses."
+role: Founder. I find where AI fits, then scope, build and teach every system I ship.
 when: 2025 to now
 dates:
   start: "2025-06"
@@ -17,7 +17,7 @@ stack:
   - Next.js
   - Claude
   - Supabase
-tags: [Websites, CRMs, automation]
+tags: [AI consulting, Custom AI, Automation]
 live:
   label: See Sproat Systems live
   url: https://sproatsystems.com
@@ -29,6 +29,7 @@ sections:
   built:
     heading: What I build
     paragraphs:
+      - Sproat Systems is an AI consulting and automation practice. I work out where AI actually helps a practice or small business, then design and build custom AI systems and solutions around it, along with the websites and CRMs they run on.
       - "It started in 2025 with Canyon Kids, my family's pediatric OT practice and my first client: a new website and booking flow, scheduling automation, and a therapist recruitment pipeline."
       - "Since then: a WordPress rebuild for Kentuckiana Mobile Therapy, with seven SEO articles at launch and Search Console reporting; systems setup and onboarding for Mobility Health PT, a physical therapy practice; a social media and local-visibility program for Hydes Group; a GoHighLevel seller-lead pipeline with call tracking and booking for a land-buying company; an 85-field client intake system; and ongoing consulting for Cloud Surfing Media on GoHighLevel systems and AI for its clients."
       - Every client learns to use AI in their own work as part of the engagement.
