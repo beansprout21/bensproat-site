@@ -31,5 +31,7 @@ metrics:
     label: frame-fit target, not yet met
 featured: true
 order: 4
+ogEyebrow: "Engineering · PLTW capstone team lead"
+ogLine: "Three prototypes in six weeks of sunglasses that float: 312 s mean float against a 300 s target."
 paragraphs:
   - Feedback came from professionals at summer camps. The frame-fit target is the open problem; the plan is to restart the design in spring 2027 with some of the original teammates, this time with AI in the loop.

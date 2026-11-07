@@ -26,6 +26,8 @@ links: []
 metrics: []
 featured: true
 order: 5
+ogEyebrow: "Builder · AI data pipelines"
+ogLine: "Pipelines that find, verify and extract business data with AI."
 paragraphs:
   - "Lead Forge AI (January to February 2026): business discovery through Google Places and Apify, GPT-4o-mini scoring, NeverBounce verification and Supabase functions. Tuned scraper concurrency, added cost tracking and fixed the scoring rubric. Finished."
   - "OT Directory (summer 2026 to now): a joint venture building a public directory of occupational therapy clinics. The pipeline reuses Lead Forge: NPI registry discovery, Census geocoding, Google Places lookup, site crawl, an ownership check, Claude extraction, duplicate merge and map-pin correction. A first extraction model was replaced after measuring 35% field errors. In testing before launch."
