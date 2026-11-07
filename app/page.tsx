@@ -10,7 +10,7 @@ import {
   type DoorKey,
   type HomeState,
 } from "@/lib/content";
-import { buildProfilePage, serializeJsonLd } from "@/lib/jsonld";
+import { buildHomeGraph, serializeJsonLd } from "@/lib/jsonld";
 import { Container } from "./_components/container";
 import {
   HomeRouter,
@@ -136,7 +136,7 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: serializeJsonLd(buildProfilePage(profile, "/")),
+          __html: serializeJsonLd(buildHomeGraph(profile)),
         }}
       />
       <HomeRouter {...props} />
