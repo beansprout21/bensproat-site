@@ -44,7 +44,7 @@ Read `docs/PLAN.md` and `docs/STATE.md` before starting any task.
 
 ## Standing rules
 
-- Never put a phone number, street address or other personal data in the repo or on the site. The one deliberate exception is the public contact email in `content/profile.yaml` and `content/links.yaml`.
+- Never put a phone number, street address or other personal data in the repo or on the site. The deliberate exceptions are the public contact email in `content/profile.yaml` and `content/links.yaml`, and the phone number and city line in the resume PDFs under `public/resumes/`. Web pages stay free of the phone number.
 - The repo is public: nothing private in files, issues, PRs or comments (no health details, finances, pricing, or client names Ben has not approved).
 - Site copy uses no em dashes. Public name is "Ben Sproat." Follow the wording rules in `docs/PLAN.md`.
 - Content lives in `/content` and is validated by zod (`lib/content.ts`). Pages read content only through those loaders.

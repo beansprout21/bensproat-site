@@ -1,6 +1,6 @@
 # STATE
 
-**Objective**: C3 and C4 (`docs/brief-c3.md`, issues #2 to #11) are built and merged. Next per `docs/PLAN.md`: C5 (search: profile markup, Open Graph images, Search Console), once the lead agent drafts it. Start the next session with `/sync`.
+**Objective**: C3 and C4 (`docs/brief-c3.md`, issues #2 to #11) and the Nov 7 follow-ups (#23 to #25) are built and merged. Next per `docs/PLAN.md`: C5 (search: profile markup, Open Graph images, Search Console), once the lead agent drafts it. Start the next session with `/sync`.
 
 **Issue status**
 
@@ -15,7 +15,10 @@
 | #8    | 07    | #19     | ad836fa | /about                                                                                         |
 | #9    | 08    | #20     | 0bbb80a | /resume, /contact, /now, /links                                                                |
 | #10   | 09    | #21     | 193fd03 | Photos committed; cover convention; `priority` replaced by `loading="eager"` + `fetchPriority` |
-| #11   | 10    | PR open |         | Quality pass (this PR): results below                                                          |
+| #11   | 10    | #22     | 2867d4d | Quality pass: results below                                                                    |
+| #24   | 12    | #26     | 64db1c3 | 353 and 122 attributed to HackPSU totals, not the FNB Challenge (exact copy)                   |
+| #25   | 13    | #27     | 5a67b43 | Sproat Systems reframed as AI consulting and automation (exact copy)                           |
+| #23   | 11    | this PR |         | Three resume PDFs live; every resume button points at them; CLAUDE.md exception updated        |
 
 **Quality pass (#11)**
 
@@ -34,7 +37,9 @@
 
 1. `/about` mobile Performance passes with no margin (median 96, one run of 94). The LCP element is the header photo; it is small (45 KB), and in Lighthouse's simulated slow 4G it competes with the three preloaded font files. Options for C7: fewer font weights, a lower `images.qualities` value in `next.config.ts`, or a smaller header crop on phones.
 2. Builder wording to check (all in `docs/DECISIONS.md`): meta descriptions, the /hire resume-picker one-liners and "Resume page" fallback label, the 404 line, the about-grass alt text, the /now meta description.
-3. Still owed: resume PDFs (`resumes.yaml` is `[]`, so resume buttons go to `/resume`), `lookingFor` on /ventures, booking URL, project covers and Sprout and Priming screenshots, the now-line on the home page.
+3. Still owed: `lookingFor` on /ventures, booking URL, project covers and Sprout and Priming screenshots, the now-line on the home page.
 4. Vercel previews are behind Vercel Authentication, so pre-merge Lighthouse ran on local production builds; relax Deployment Protection for previews if you want preview scores.
 5. No `links_view` analytics event: custom events need Vercel Pro.
-6. PR #20's local /links Lighthouse note was measured against a stale local server; corrected on PR #21. Production numbers on every issue are valid.
+6. Issue numbers no longer match draft numbers: draft 11 is #23, draft 12 is #24, draft 13 is #25.
+7. The resume PDFs carry the phone number and "University Park, PA" by design (Ben, Nov 7); other place names in them are school and employer towns. Their text also includes the high-school GPA, which the site itself never shows.
+8. PR #20's local /links Lighthouse note was measured against a stale local server; corrected on PR #21. Production numbers on every issue are valid.

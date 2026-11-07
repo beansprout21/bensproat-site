@@ -61,7 +61,8 @@ export function Button(props: ButtonProps) {
         </a>
       );
     }
-    if (href.startsWith("/")) {
+    // Site routes use Link; files under /public (the resume PDFs) are plain anchors.
+    if (href.startsWith("/") && !/\.[a-z0-9]+$/i.test(href)) {
       return (
         <Link href={href} className={classes}>
           {children}
