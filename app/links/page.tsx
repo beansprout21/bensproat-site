@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
-import { getLinks, getProfile, getResumes, resolveImage } from "@/lib/content";
+import {
+  getLinks,
+  getPage,
+  getProfile,
+  getResumes,
+  resolveImage,
+} from "@/lib/content";
 import { Container } from "../_components/container";
 
 const profile = getProfile();
@@ -12,15 +18,13 @@ const HEADSHOT = {
 /** Links that are Ben's own profiles get rel="me". */
 const PROFILE_ICONS = ["linkedin", "github", "devpost", "email"];
 
-// /links duplicates the other pages and is the NFC landing, not a search page.
-export const metadata: Metadata = {
-  ...pageMetadata({
-    title: "Links",
-    description: profile.oneLiner,
-    path: "/links",
-  }),
-  robots: { index: false, follow: true },
-};
+const page = getPage("links");
+
+export const metadata: Metadata = pageMetadata({
+  title: page.meta.title,
+  description: page.meta.description,
+  path: "/links",
+});
 
 /**
  * /links (brief 4.9): the phone-first link page for the NFC card and QR code.

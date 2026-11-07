@@ -2,7 +2,7 @@
 # "Earlier builds" archive table. Case studies come from content/projects/.
 meta:
   title: Projects
-  description: Case studies first, then everything else I have built.
+  description: "Case studies and earlier builds by Ben Sproat: AI products, startups, engineering prototypes and data pipelines."
 title: Projects
 lede: Case studies first, then everything else I have built.
 filters:

@@ -2,8 +2,7 @@ import type { MetadataRoute } from "next";
 import { getProjects } from "@/lib/content";
 import { SITE_URL } from "@/lib/jsonld";
 
-// /links is noindexed (#29), so it stays out. No lastModified: the repo has
-// no trustworthy per-page dates (docs/brief-c5.md 3).
+// No lastModified: the repo has no trustworthy per-page dates (docs/brief-c5.md 3).
 const STATIC_ROUTES = [
   "/",
   "/about",
@@ -12,6 +11,7 @@ const STATIC_ROUTES = [
   "/projects",
   "/resume",
   "/contact",
+  "/links",
   "/now",
 ];
 

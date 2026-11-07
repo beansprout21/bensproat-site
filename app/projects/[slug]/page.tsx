@@ -40,7 +40,7 @@ export async function generateMetadata({
   return project
     ? pageMetadata({
         title: project.title,
-        description: project.oneLineResult,
+        description: project.metaDescription ?? project.oneLineResult,
         path: `/projects/${project.slug}`,
         type: "article",
         ownImage: true,
