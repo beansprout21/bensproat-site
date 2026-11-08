@@ -2,10 +2,16 @@
 # education, experience and skills summary is read from pages/hire.yaml.
 meta:
   title: Resume
-  description: Three versions, one source of truth. Email and site link only, no phone or address.
+  description: "Three resume versions for Ben Sproat: AI product, engineering and founder. One source of truth, each a one-page PDF."
 title: Resume
-lede: Three versions, one source of truth. Email and site link only, no phone or address.
+lede: Three versions, one source of truth.
 downloadLabel: Download PDF
+downloadTag: PDF
+summary:
+  heading: At a glance
+  education: Education
+  experience: Experience
+  skills: Skills
 emptyState:
   before: PDFs are being updated.
   linkLabel: Email me

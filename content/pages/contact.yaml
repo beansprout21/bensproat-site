@@ -8,6 +8,16 @@ title: Contact
 lede: Email is fastest.
 booking: null
 bookingLabel: Book a call
+emailCard:
+  label: Email
+  right: Fastest
+  buttonLabel: Email Ben
+# Kind label on each tile, keyed by the link icon in links.yaml.
+tileKinds:
+  linkedin: Profile
+  github: Code
+  devpost: Hackathons
+  resume: PDF
 linksLine: On a phone? The link page at /links has everything as tap targets.
 footer:
   heading: Let's build something.

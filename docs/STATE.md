@@ -1,6 +1,6 @@
 # STATE
 
-**Objective**: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39 and #41 to #43 merged, #44 in review, then #45. Draft 25 (P2 copy for /ventures and the home now line) is not imported yet: its `P2` label does not exist. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C5b color refresh (drafts 18 to 24) is built; next is draft 25 once it has a valid label. Before that: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39 and #41 to #44 merged, #45 in review (last of drafts 18 to 24). Draft 25 (P2 copy for /ventures `lookingFor` and the home now line) is not imported: its `P2` label does not exist, so Ben or the lead agent picks the label first. Draft 25 (P2 copy for /ventures and the home now line) is not imported yet: its `P2` label does not exist. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
@@ -28,7 +28,8 @@
 | #41   | 20    | #47     | da87411 | LinkedIn moved to /in/bensproat in links, JSON-LD sameAs and the three resume PDFs (sha256-verified copies)                                  |
 | #42   | 21    | #48     | d3cfedc | Framed page titles: `type-title` gets the green frame and offset block; margins keep 16 px clear of the block                                |
 | #43   | 22    | #49     | 801beab | /projects color: square filter buttons, strip cards (`WorkCard variant="strip"`, shared `CardStrip`), green archive table with status badges |
-| #44   | 23    | PR open |         | /about color: green bricks by the title, 7 px green photo borders, strip thread cards, green timeline badges                                 |
+| #44   | 23    | #50     | ab4987e | /about color: green bricks by the title, 7 px green photo borders, strip thread cards, green timeline badges                                 |
+| #45   | 24    | PR open |         | /now, /contact, /resume color: strip cards, check rows, link tiles, At a glance band; /resume lede and description fixed                     |
 
 **Quality pass (#11)**
 
