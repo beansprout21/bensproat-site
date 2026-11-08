@@ -396,6 +396,8 @@ export const ProjectsPageSchema = z.strictObject({
   }),
   archive: z.strictObject({
     heading: text,
+    /** Tag next to the heading, for example "2017 to 2026". */
+    range: text.optional(),
     columns: z.strictObject({
       year: text,
       project: text,
