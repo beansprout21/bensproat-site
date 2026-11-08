@@ -1,6 +1,6 @@
 # STATE
 
-**Objective**: C5b color refresh (drafts 18 to 24) and the draft 25 copy are built. Before that: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39 and #41 to #45 merged; draft 25 is #52 (label `P2` created Nov 8 with Ben's OK), in review. Draft 25 (P2 copy for /ventures and the home now line) is not imported yet: its `P2` label does not exist. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C5b color refresh (drafts 18 to 24) and the draft 25 copy are built. Before that: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39 and #41 to #45 merged; draft 25 is #52 (label `P2` created Nov 8 with Ben's OK), in review. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
