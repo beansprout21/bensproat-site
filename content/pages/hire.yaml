@@ -39,15 +39,21 @@ experience:
       text: Technical co-founder, Priming Labs.
     - dates: 2025 to now
       text: Founder, Sproat Systems.
-    - dates: Summer 2025
+    - dates: 2023 to now
+      text: Volunteer, then technical consultant, Canyon Kids, Bethesda, MD. Set up the sensory gym, then built the practice's website and client systems. My family's pediatric OT practice.
+    - dates: June 2025 (1 week)
       text: Intern, Medical Center Orthotics and Prosthetics, Silver Spring, MD. Observed and assisted in making prosthetic and orthotic devices, including a power knee.
-    - dates: Summer 2024
+    - dates: June 2024 (3 weeks)
       text: Engineering intern, SETTY, Washington, DC. Modeled the energy efficiency of 10+ California homes in EnergyPro 9 and checked them against energy regulations.
     - dates: Summers 2022 to 2026
       text: Counselor, then Lead Counselor, Bretton Woods Recreation Center. Led staff training and adventure camp groups of up to 20 kids.
 education:
   heading: Education
-  text: Penn State University Park, College of Engineering, Schreyer Honors College. Engineering (major to be declared), started August 2026, expected graduation 2030. College of Engineering merit scholarship. AP Scholar with Distinction, 2025 and 2026.
+  items:
+    - dates: 2026 to 2030
+      text: Penn State University Park, College of Engineering, Schreyer Honors College. Engineering (major to be declared), expected graduation 2030. College of Engineering merit scholarship.
+    - dates: 2022 to 2026
+      text: Poolesville High School, Global Ecology Magnet Program, Poolesville, MD. 4.0 unweighted GPA. AP Scholar with Distinction, 2025 and 2026.
 resumePicker:
   heading: Pick the resume that fits
   downloadLabel: Download PDF

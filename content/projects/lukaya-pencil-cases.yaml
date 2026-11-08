@@ -1,0 +1,31 @@
+# Pencil cases for Lukaya, Uganda (docs/issues/29-resume-education-experience-impact.md).
+# Copy from content/pages/about.yaml; nothing beyond it.
+slug: lukaya-pencil-cases
+title: Pencil cases for Lukaya, Uganda
+pillar: impact
+oneLineResult: I led a drive that assembled 700 stocked pencil cases with about 30 contributors for a school in Lukaya, Uganda.
+summary: "Led a supply drive: 700 stocked pencil cases, about 30 contributors, handed out at a school in Lukaya, Uganda, in 2023."
+role: Drive lead
+when: "2023"
+dates:
+  start: "2023-01"
+  end: "2023-12"
+status: archived
+statusText: Complete
+stack:
+  - supply drive
+  - team coordination
+tags: [education, community]
+links: []
+metrics:
+  - value: "700"
+    label: stocked pencil cases
+  - value: ~30
+    label: contributors
+featured: false
+order: 7
+metaDescription: "Pencil cases for Lukaya, Uganda: Ben Sproat led a drive that assembled 700 stocked pencil cases with about 30 contributors in 2023."
+ogEyebrow: "Impact · Drive lead"
+ogLine: "A drive I led assembled 700 stocked pencil cases for a school in Lukaya, Uganda."
+paragraphs:
+  - We handed the cases out at the school in person. While I was there, the school's farmer and engineer taught me about sustainable engineering.
