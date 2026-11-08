@@ -18,6 +18,8 @@
   --color-muted: #15171a;
   --color-accent: #1f7a4a;
   --color-accent-strong: #175e3a;
+  /* Darkest green: the bottom brick's shadow on /about (issue #44) */
+  --color-accent-deep: #0f3d26;
   --color-accent-tint: #eef6f0;
   --color-accent-line: #bfe0cb;
   /* Archive table row stripe and divider on /projects (issue #43) */
