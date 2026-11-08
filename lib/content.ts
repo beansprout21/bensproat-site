@@ -164,6 +164,10 @@ export const ProfileSchema = z.strictObject({
   /** Long form for metadata descriptions and JSON-LD. */
   headline: text,
   email: z.email(),
+  /** Display form, for example "(301) 751-2668". */
+  phone: text,
+  /** tel: link with the country code, for example "tel:+13017512668". */
+  phoneHref: z.string().regex(/^tel:\+\d{8,15}$/, "Expected tel:+<digits>"),
   sameAs: z.array(z.url()),
 });
 
@@ -384,9 +388,10 @@ export const ContactSchema = z.strictObject({
   bookingLabel: text,
   /** Email card: strip label, right-hand strip label and button label. */
   emailCard: z.strictObject({ label: text, right: text, buttonLabel: text }),
+  /** Phone card under the email card: strip label and button label. */
+  phoneCard: z.strictObject({ label: text, buttonLabel: text }),
   /** Mono kind label on each link tile, keyed by the link's icon in links.yaml. */
   tileKinds: z.record(z.string(), text),
-  linksLine: text,
   footer: PageFooterSchema,
 });
 
@@ -438,9 +443,13 @@ export const ResumePageSchema = z.strictObject({
   footer: PageFooterSchema.optional(),
 });
 
-/** /links: metadata only; the links themselves come from links.yaml. */
+/** /links: metadata and its visitor-facing name; the links themselves come from links.yaml. */
 export const LinksPageSchema = z.strictObject({
   meta: MetaSchema,
+  /** What visitors see the page called, for example "All my links". */
+  name: text,
+  /** One line under the name, wherever the page is offered. */
+  description: text,
   footer: PageFooterSchema.optional(),
 });
 

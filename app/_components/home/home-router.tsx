@@ -7,6 +7,7 @@ import type { DoorKey } from "@/lib/content";
 import { Button } from "../button";
 import { Container } from "../container";
 import { DoorCard } from "../door-card";
+import { NewTabNote, newTabProps } from "../external-link";
 import { ArrowOut } from "../icons";
 import { SelectedWorkCard } from "./selected-work-card";
 
@@ -217,9 +218,11 @@ export function HomeRouter({ hero, doors, work }: HomeRouterProps) {
               <li key={item.key}>
                 <a
                   href={item.href}
+                  {...(item.external ? newTabProps() : {})}
                   className="text-[16px] font-semibold text-ink underline underline-offset-4"
                 >
                   {item.title}
+                  {item.external ? <NewTabNote /> : null}
                 </a>
               </li>
             ))}

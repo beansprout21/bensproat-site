@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import { opensInNewTab } from "./external-link";
 import { ArrowOut } from "./icons";
 
 type Variant = "primary" | "secondary" | "text";
@@ -22,7 +23,10 @@ type CommonProps = {
 
 type AnchorButtonProps = CommonProps & {
   href: string;
-  /** Opens in a new tab with the arrow-out icon and a screen-reader note. */
+  /**
+   * Opens in a new tab with the arrow-out icon and a screen-reader note.
+   * Links to other hosts and the resume PDFs always do (issue #54).
+   */
   external?: boolean;
 };
 
@@ -47,7 +51,7 @@ export function Button(props: ButtonProps) {
   const classes = `${base} ${variants[variant]} ${className}`;
 
   if (href !== undefined) {
-    if (external) {
+    if (external || opensInNewTab(href)) {
       return (
         <a
           href={href}

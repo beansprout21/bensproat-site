@@ -33,3 +33,7 @@
   url: mailto:ben.c.sproat@gmail.com
   icon: email
   order: 8
+- label: Phone
+  url: tel:+13017512668
+  icon: phone
+  order: 9

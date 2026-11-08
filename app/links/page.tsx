@@ -9,6 +9,12 @@ import {
   resolveImage,
 } from "@/lib/content";
 import { Container } from "../_components/container";
+import {
+  NewTabNote,
+  newTabProps,
+  opensInNewTab,
+} from "../_components/external-link";
+import { PhoneIcon } from "../_components/icons";
 
 const profile = getProfile();
 const HEADSHOT = {
@@ -27,7 +33,8 @@ export const metadata: Metadata = pageMetadata({
 });
 
 /**
- * /links (brief 4.9): the phone-first link page for the NFC card and QR code.
+ * /links (brief 4.9), shown to visitors as "All my links": the phone-first
+ * link page for the NFC card and QR code.
  * Plain anchors in a single column, so it works without JavaScript; `/card`
  * redirects here with `?src=card` (next.config.ts).
  */
@@ -61,11 +68,14 @@ export default function Page() {
             className="size-24 rounded-full border border-line object-cover"
           />
         ) : null}
-        <h1 className="font-display text-[26px] leading-[1.15] font-semibold tracking-[-0.01em] text-ink">
+        <p className="font-display text-[17px] leading-[1.2] font-semibold text-ink">
           {profile.name}
+        </p>
+        <h1 className="font-display text-[30px] leading-[1.1] font-bold tracking-[-0.02em] text-ink">
+          {page.name}
         </h1>
         <p className="text-[16px] leading-[1.5] text-ink-2">
-          {profile.oneLiner}
+          {page.description}
         </p>
       </div>
       <ul className="mx-auto m-0 flex w-full max-w-[520px] list-none flex-col gap-3 p-0">
@@ -73,10 +83,17 @@ export default function Page() {
           <li key={link.icon}>
             <a
               href={link.href}
-              rel={PROFILE_ICONS.includes(link.icon) ? "me" : undefined}
+              {...(opensInNewTab(link.href)
+                ? newTabProps(PROFILE_ICONS.includes(link.icon))
+                : {
+                    rel: PROFILE_ICONS.includes(link.icon) ? "me" : undefined,
+                  })}
               className="flex min-h-14 w-full flex-col items-center justify-center rounded-card border border-line bg-surface px-6 py-3 text-center no-underline hover:bg-ground-2"
             >
-              <span className="text-[17px] font-semibold text-ink">
+              <span className="inline-flex items-center gap-2 text-[17px] font-semibold text-ink">
+                {link.icon === "phone" ? (
+                  <PhoneIcon className="text-accent" />
+                ) : null}
                 {link.label}
               </span>
               {link.note ? (
@@ -84,6 +101,7 @@ export default function Page() {
                   {link.note}
                 </span>
               ) : null}
+              {opensInNewTab(link.href) ? <NewTabNote /> : null}
             </a>
           </li>
         ))}

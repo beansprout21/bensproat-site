@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { NewTabNote, newTabProps, opensInNewTab } from "./external-link";
 import { ArrowOut } from "./icons";
 
 export type FooterButton = { label: string; href: string; external?: boolean };
@@ -13,11 +14,13 @@ type FooterBlockProps = {
   configs: Record<string, FooterConfig>;
   fallback: FooterConfig;
   headingClass: string;
-  /** The email button, always first. */
-  emailButton: ReactNode;
+  /** The email and phone buttons, always first. */
+  leadButtons: ReactNode;
+  /** Always last, for example the "All my links" button. */
+  tailButtons: ReactNode;
 };
 
-const extraButtonClass =
+export const footerSecondaryClass =
   "inline-flex min-h-[46px] items-center gap-2 rounded-button border border-on-dark-muted px-5 text-[15px] font-semibold text-on-dark no-underline hover:border-on-dark";
 
 /** Footer heading and button row for the current page (brief 1.5, per-page overrides in 4.2 to 4.8). */
@@ -25,7 +28,8 @@ export function FooterBlock({
   configs,
   fallback,
   headingClass,
-  emailButton,
+  leadButtons,
+  tailButtons,
 }: FooterBlockProps) {
   const pathname = usePathname();
   const config = configs[pathname] ?? fallback;
@@ -33,25 +37,24 @@ export function FooterBlock({
     <>
       <h2 className={headingClass}>{config.heading}</h2>
       <div className="flex flex-wrap gap-3">
-        {emailButton}
+        {leadButtons}
         {config.buttons.map((button) =>
-          button.external ? (
+          button.external || opensInNewTab(button.href) ? (
             <a
               key={button.label}
               href={button.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={extraButtonClass}
+              {...newTabProps()}
+              className={footerSecondaryClass}
             >
               {button.label}
               <ArrowOut />
-              <span className="sr-only"> (opens in a new tab)</span>
+              <NewTabNote />
             </a>
-          ) : button.href.startsWith("/") && !button.href.endsWith(".pdf") ? (
+          ) : button.href.startsWith("/") ? (
             <Link
               key={button.label}
               href={button.href}
-              className={extraButtonClass}
+              className={footerSecondaryClass}
             >
               {button.label}
             </Link>
@@ -59,12 +62,13 @@ export function FooterBlock({
             <a
               key={button.label}
               href={button.href}
-              className={extraButtonClass}
+              className={footerSecondaryClass}
             >
               {button.label}
             </a>
           ),
         )}
+        {tailButtons}
       </div>
     </>
   );

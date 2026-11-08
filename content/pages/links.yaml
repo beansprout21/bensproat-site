@@ -1,4 +1,6 @@
 # /links metadata (#35). The tap targets come from content/links.yaml.
 meta:
-  title: Links
-  description: "Every Ben Sproat link in one place: LinkedIn, resume, Sprout, Priming Labs, Sproat Systems and email."
+  title: All my links
+  description: "All my links: every Ben Sproat link in one place, made for phones. LinkedIn, resume, Sprout, Priming Labs, Sproat Systems, email and phone."
+name: All my links
+description: Every link in one place, made for phones.

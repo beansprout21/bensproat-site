@@ -10,7 +10,12 @@ import {
   type PageFooter,
   type PageName,
 } from "@/lib/content";
-import { FooterBlock, type FooterConfig } from "./footer-block";
+import { ExternalLink, NewTabNote, newTabProps } from "./external-link";
+import {
+  FooterBlock,
+  footerSecondaryClass,
+  type FooterConfig,
+} from "./footer-block";
 
 const REPO_URL = "https://github.com/beansprout21/bensproat-site";
 const PROFILE_LINK_ICONS = ["linkedin", "github", "devpost"];
@@ -78,13 +83,23 @@ export function SiteFooter() {
   const profileLinks = getLinks().filter((link) =>
     PROFILE_LINK_ICONS.includes(link.icon),
   );
-  const emailButton = (
-    <a
-      href={`mailto:${profile.email}`}
-      className="inline-flex min-h-[46px] items-center rounded-button bg-on-dark px-5 text-[15px] font-semibold text-ink no-underline hover:bg-white"
-    >
-      {profile.email}
-    </a>
+  const leadClass =
+    "inline-flex min-h-[46px] items-center rounded-button bg-on-dark px-5 text-[15px] font-semibold text-ink no-underline hover:bg-white";
+  const leadButtons = (
+    <>
+      <a href={`mailto:${profile.email}`} className={leadClass}>
+        {profile.email}
+      </a>
+      <a href={profile.phoneHref} className={leadClass}>
+        {profile.phone}
+      </a>
+    </>
+  );
+  const linksPage = getPage("links");
+  const tailButtons = (
+    <Link href="/links" className={footerSecondaryClass}>
+      {linksPage.name}
+    </Link>
   );
 
   return (
@@ -95,7 +110,10 @@ export function SiteFooter() {
             fallback={
               <>
                 <h2 className={headingClass}>{fallback.heading}</h2>
-                <div className="flex flex-wrap gap-3">{emailButton}</div>
+                <div className="flex flex-wrap gap-3">
+                  {leadButtons}
+                  {tailButtons}
+                </div>
               </>
             }
           >
@@ -103,30 +121,35 @@ export function SiteFooter() {
               configs={configs}
               fallback={fallback}
               headingClass={headingClass}
-              emailButton={emailButton}
+              leadButtons={leadButtons}
+              tailButtons={tailButtons}
             />
           </Suspense>
         </div>
         <nav aria-label="Profiles" className="flex flex-wrap gap-x-2 gap-y-1">
           {profileLinks.map((link) => (
-            <a key={link.url} href={link.url} rel="me" className={linkClass}>
+            <ExternalLink
+              key={link.url}
+              href={link.url}
+              me
+              className={linkClass}
+            >
               {link.label}
-            </a>
+            </ExternalLink>
           ))}
           <Link href="/resume" className={linkClass}>
             Resume
-          </Link>
-          <Link href="/links" className={linkClass}>
-            Phone version: /links
           </Link>
         </nav>
         <p className="font-mono text-[12.5px] leading-[1.6] text-on-dark-muted">
           Built by Ben with a team of Claude agents, in public:{" "}
           <a
             href={REPO_URL}
+            {...newTabProps()}
             className="text-on-dark-accent underline underline-offset-4 hover:text-on-dark"
           >
             github.com/beansprout21/bensproat-site
+            <NewTabNote />
           </a>
         </p>
       </div>

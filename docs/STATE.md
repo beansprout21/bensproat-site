@@ -1,6 +1,6 @@
 # STATE
 
-**Objective**: C5b color refresh (drafts 18 to 24) and the draft 25 copy are built. Before that: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39 and #41 to #45 merged; draft 25 is #52 (label `P2` created Nov 8 with Ben's OK), in review. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C5c, the Nov 8 refinement pass (drafts 26 to 29 = #54 to #57), worked in the order 26, 29, 27, 28. Before that: C5b (drafts 18 to 25) and C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39, #41 to #45 and #52 merged. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
@@ -30,7 +30,8 @@
 | #43   | 22    | #49     | 801beab | /projects color: square filter buttons, strip cards (`WorkCard variant="strip"`, shared `CardStrip`), green archive table with status badges |
 | #44   | 23    | #50     | ab4987e | /about color: green bricks by the title, 7 px green photo borders, strip thread cards, green timeline badges                                 |
 | #45   | 24    | #51     | d7f1f3b | /now, /contact, /resume color: strip cards, check rows, link tiles, At a glance band; /resume lede and description fixed                     |
-| #52   | 25    | PR open |         | Copy: "What I'm looking for" on /ventures and the home Now line                                                                              |
+| #52   | 25    | #53     | a5c6ff1 | Copy: "What I'm looking for" on /ventures and the home Now line                                                                              |
+| #54   | 26    | PR open |         | Site-wide: Home in the menu, phone beside email, external and PDF links in new tabs, "All my links"                                          |
 
 **Quality pass (#11)**
 
@@ -55,6 +56,6 @@
 6. C5 trade-offs, settled Nov 7 (#35): /links is indexed again (Lighthouse SEO 100), every meta description is 70 to 160 characters, and the 364 KB default share card is accepted. JSON-LD project descriptions use the lead sentence of each one-line result so the Priming co-founder is not named.
 7. Vercel previews are behind Vercel Authentication, so pre-merge Lighthouse ran on local production builds; relax Deployment Protection for previews if you want preview scores.
 8. No `links_view` analytics event: custom events need Vercel Pro.
-9. Issue numbers no longer match draft numbers: drafts 11 to 13 are #23 to #25, drafts 14 to 16 are #29 to #31, draft 17 is #35, drafts 18 and 19 are #38 and #39, drafts 20 to 24 are #41 to #45, draft 25 is #52.
-10. The resume PDFs carry the phone number and "University Park, PA" by design (Ben, Nov 7); other place names in them are school and employer towns. Their text also includes the high-school GPA, which the site itself never shows.
+9. Issue numbers no longer match draft numbers: drafts 11 to 13 are #23 to #25, drafts 14 to 16 are #29 to #31, draft 17 is #35, drafts 18 and 19 are #38 and #39, drafts 20 to 24 are #41 to #45, draft 25 is #52, drafts 26, 29, 27 and 28 are #54, #55, #56 and #57.
+10. The phone number is public on web pages and in the PDFs since Nov 8 (Ben; CLAUDE.md updated in #54); the PDFs also carry "University Park, PA" by design; other place names in them are school and employer towns. Their text also includes the high-school GPA, which the site itself never shows.
 11. PR #20's local /links Lighthouse note was measured against a stale local server; corrected on PR #21. Production numbers on every issue are valid.
