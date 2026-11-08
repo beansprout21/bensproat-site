@@ -44,6 +44,20 @@ function buildCards(): ProjectCard[] {
     });
 }
 
+const badgeBase =
+  "inline-block rounded-[6px] px-2 py-1 font-mono text-[11px] leading-none font-semibold tracking-[0.06em] uppercase";
+
+/** Archive status badge (issue #43): Finished green, Prototype light green, the rest outlined. */
+function StatusBadge({ status }: { status: string }) {
+  const tone =
+    status === "Finished"
+      ? "bg-accent text-white"
+      : status === "Prototype"
+        ? "bg-accent-line text-ink"
+        : "border-[1.5px] border-ink text-ink";
+  return <span className={`${badgeBase} ${tone}`}>{status}</span>;
+}
+
 export default function Page() {
   const cards = buildCards();
   const { archive } = page;
@@ -76,20 +90,29 @@ export default function Page() {
       </Container>
 
       <section
-        aria-label={archive.heading}
-        className="border-t border-line bg-ground-2"
+        aria-labelledby="archive-heading"
+        className="border-y border-accent-line bg-accent-tint"
       >
         <Container className="flex flex-col gap-6 py-14">
-          <h2 className="type-h2">{archive.heading}</h2>
-          <div className="overflow-x-auto rounded-card border border-line bg-surface">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <h2 id="archive-heading" className="type-h2">
+              {archive.heading}
+            </h2>
+            {archive.range ? (
+              <p className="rounded-[6px] bg-accent-strong px-2.5 py-1 font-mono text-[12px] font-semibold tracking-[0.06em] text-white">
+                {archive.range}
+              </p>
+            ) : null}
+          </div>
+          <div className="overflow-x-auto rounded-card border-[1.5px] border-accent-strong bg-surface">
             <table className="w-full min-w-[640px] border-collapse text-left text-[15px] leading-[1.5]">
               <thead>
-                <tr className="border-b border-line">
+                <tr className="bg-accent-strong">
                   {columns.map((column) => (
                     <th
                       key={column}
                       scope="col"
-                      className="px-4 py-3 font-mono text-[12px] font-medium tracking-[0.06em] text-muted uppercase"
+                      className="px-4 py-3 font-mono text-[12px] font-semibold tracking-[0.08em] text-white uppercase"
                     >
                       {column}
                     </th>
@@ -100,17 +123,17 @@ export default function Page() {
                 {archive.items.map((row) => (
                   <tr
                     key={`${row.year}-${row.project}`}
-                    className="border-b border-line last:border-b-0"
+                    className="border-b border-accent-divider bg-surface last:border-b-0 even:bg-accent-tint-2"
                   >
-                    <td className="px-4 py-3 font-mono text-[13px] whitespace-nowrap text-muted">
+                    <td className="px-4 py-3 font-mono text-[13px] font-semibold whitespace-nowrap text-ink">
                       {row.year}
                     </td>
-                    <td className="px-4 py-3 font-medium text-ink">
+                    <td className="px-4 py-3 font-bold text-ink">
                       {row.project}
                     </td>
-                    <td className="px-4 py-3 text-ink-2">{row.what}</td>
-                    <td className="px-4 py-3 whitespace-nowrap text-ink-2">
-                      {row.status}
+                    <td className="px-4 py-3 text-ink">{row.what}</td>
+                    <td className="px-4 py-3 whitespace-nowrap">
+                      <StatusBadge status={row.status} />
                     </td>
                   </tr>
                 ))}

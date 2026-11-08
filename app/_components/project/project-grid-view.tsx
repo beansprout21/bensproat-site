@@ -4,7 +4,10 @@ import { WorkCard, type WorkCardProps } from "../work-card";
 export type Pillar = "builder" | "founder" | "impact";
 export const PILLARS: Pillar[] = ["builder", "founder", "impact"];
 
-export type ProjectCard = Omit<WorkCardProps, "className" | "style"> & {
+export type ProjectCard = Omit<
+  WorkCardProps,
+  "className" | "style" | "variant" | "strip" | "headingLevel"
+> & {
   slug: string;
   pillar: Pillar;
 };
@@ -18,11 +21,15 @@ type ProjectGridViewProps = {
   active: Pillar | null;
 };
 
-const pillBase =
-  "inline-flex min-h-[44px] items-center rounded-full border px-4 font-mono text-[12.5px] font-medium tracking-[0.06em] uppercase no-underline transition-[color,background-color,border-color]";
+const filterBase =
+  "inline-flex min-h-[44px] items-center gap-2.5 rounded-button px-[18px] font-mono text-[13px] font-semibold tracking-[0.08em] uppercase no-underline transition-[color,background-color,border-color]";
+
+/** Right-hand label on the card strip when the project has a live URL. */
+const LIVE_LABEL = "Live";
 
 /**
- * Filter pills plus the case-study grid (brief 4.5). The pills are real links
+ * Filter buttons plus the case-study grid (brief 4.5, docs/issues/22-projects-color.md).
+ * The filters are real links
  * to `?pillar=`, so they work without JavaScript; the client wrapper reads the
  * search params and passes `active`.
  */
@@ -55,12 +62,20 @@ export function ProjectGridView({
                   href={option.href}
                   scroll={false}
                   aria-current={current ? "page" : undefined}
-                  className={`${pillBase} ${
+                  className={`${filterBase} ${
                     current
-                      ? "border-accent-line bg-accent-tint text-accent-strong"
-                      : "border-line bg-surface text-ink-2 hover:text-ink"
+                      ? "bg-accent-strong text-white"
+                      : "border-[1.5px] border-accent-line bg-accent-tint text-ink hover:border-accent"
                   }`}
                 >
+                  {option.key ? (
+                    <span
+                      aria-hidden="true"
+                      className={`size-[9px] shrink-0 rounded-[2px] ${
+                        current ? "bg-on-dark-accent" : "bg-accent"
+                      }`}
+                    />
+                  ) : null}
                   {option.label}
                 </Link>
               </li>
@@ -69,9 +84,15 @@ export function ProjectGridView({
         </ul>
       </nav>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-5">
-        {visible.map((card) => (
+        {visible.map((card, index) => (
           <WorkCard
             key={card.slug}
+            variant="strip"
+            strip={{
+              number: index + 1,
+              label: filters[card.pillar],
+              right: card.live ? LIVE_LABEL : undefined,
+            }}
             title={card.title}
             summary={card.summary}
             tags={card.tags}

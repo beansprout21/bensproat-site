@@ -12,6 +12,7 @@ filters:
   impact: Impact
 archive:
   heading: Earlier builds
+  range: 2017 to 2026
   columns:
     year: Year
     project: Project

@@ -20,6 +20,9 @@
   --color-accent-strong: #175e3a;
   --color-accent-tint: #eef6f0;
   --color-accent-line: #bfe0cb;
+  /* Archive table row stripe and divider on /projects (issue #43) */
+  --color-accent-tint-2: #f6faf7;
+  --color-accent-divider: #dcebe1;
   --color-on-dark: #f3f2ed;
   --color-on-dark-muted: #f3f2ed;
   --color-on-dark-accent: #8fd4a8;
