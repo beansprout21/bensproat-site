@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { pageMetadata } from "@/lib/metadata";
 import { getPage, getProfile, getResumes } from "@/lib/content";
-import { Button } from "../_components/button";
 import { CardStrip } from "../_components/card-strip";
+import { ResumeCard } from "../_components/resume-card";
 import { Container } from "../_components/container";
-import { formatDate } from "../_components/format-date";
 import {
   EducationBlock,
   ExperienceList,
@@ -79,32 +78,16 @@ export default function Page() {
             {resumes.map((resume, index) => {
               const who = picker.get(resume.audience);
               return (
-                <article
+                <ResumeCard
                   key={resume.id}
-                  className="flex min-w-0 flex-col overflow-hidden rounded-card border-[1.5px] border-accent-strong bg-surface"
-                >
-                  <CardStrip
-                    number={index + 1}
-                    label={resume.label}
-                    right={page.downloadTag}
-                  />
-                  <div className="flex flex-1 flex-col gap-3 p-[22px]">
-                    <h2 className="font-display text-[24px] leading-[1.2] font-bold tracking-[-0.01em] text-ink">
-                      {resume.label}
-                    </h2>
-                    {who ? (
-                      <p className="text-[15px] leading-[1.55] text-ink-2">
-                        {who.text}
-                      </p>
-                    ) : null}
-                    <p className="font-mono text-[12px] tracking-[0.06em] text-ink uppercase">
-                      Updated {formatDate(resume.updated)}
-                    </p>
-                    <div className="mt-auto pt-2">
-                      <Button href={resume.file}>{page.downloadLabel}</Button>
-                    </div>
-                  </div>
-                </article>
+                  number={index + 1}
+                  label={resume.label}
+                  text={who?.text}
+                  updated={resume.updated}
+                  file={resume.file}
+                  downloadLabel={page.downloadLabel}
+                  tag={page.downloadTag}
+                />
               );
             })}
           </div>

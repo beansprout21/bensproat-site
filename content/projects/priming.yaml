@@ -23,7 +23,7 @@ stack:
 tags: [Web app, iOS, Apple Health]
 live:
   label: See Priming live
-  url: https://priminglabs.com
+  url: https://app.priminglabs.com
 links: []
 metrics:
   - value: "57"

@@ -3,6 +3,7 @@ import { SITE_NAME, pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import {
   getHome,
+  getPage,
   getProfile,
   getProjects,
   getResumes,
@@ -10,6 +11,7 @@ import {
 } from "@/lib/content";
 import { buildHomeGraph, serializeJsonLd } from "@/lib/jsonld";
 import { Container } from "./_components/container";
+import { ResumeCard } from "./_components/resume-card";
 import {
   HomeRouter,
   type HomeRouterProps,
@@ -91,6 +93,54 @@ function buildProps(): HomeRouterProps {
   };
 }
 
+/** Resume section (issue #56): the /resume download cards, then a link to the full page. */
+function ResumeSection() {
+  const resumes = getResumes();
+  if (resumes.length === 0) return null;
+  const resumePage = getPage("resume");
+  const picker = new Map(
+    getPage("hire").resumePicker.items.map((item) => [item.audience, item]),
+  );
+  return (
+    <Container
+      as="section"
+      aria-labelledby="resume-heading"
+      className="flex flex-col gap-[26px] py-16"
+    >
+      <div className="flex max-w-[60ch] flex-col gap-2.5">
+        <h2
+          id="resume-heading"
+          className="font-display text-[clamp(28px,3vw,36px)] leading-[1.1] font-bold tracking-[-0.02em] text-ink"
+        >
+          {home.resume.heading}
+        </h2>
+        <p className="text-[17px] leading-[1.5] text-ink">{home.resume.lede}</p>
+      </div>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(260px,100%),1fr))] gap-5">
+        {resumes.map((resume, index) => (
+          <ResumeCard
+            key={resume.id}
+            number={index + 1}
+            label={resume.label}
+            text={picker.get(resume.audience)?.text}
+            updated={resume.updated}
+            file={resume.file}
+            downloadLabel={resumePage.downloadLabel}
+            tag={resumePage.downloadTag}
+            headingLevel={3}
+          />
+        ))}
+      </div>
+      <Link
+        href="/resume"
+        className="inline-flex min-h-[44px] w-fit items-center text-[15px] font-semibold text-ink underline decoration-accent decoration-2 underline-offset-4 hover:text-accent-strong"
+      >
+        {home.resume.fullLinkLabel}
+      </Link>
+    </Container>
+  );
+}
+
 export default function Home() {
   const props = buildProps();
 
@@ -103,6 +153,7 @@ export default function Home() {
         }}
       />
       <HomeRouter {...props} />
+      <ResumeSection />
       {home.now.line ? (
         <section aria-label={home.now.label} className="border-t border-line">
           <Container className="flex flex-wrap items-baseline gap-x-6 gap-y-2.5 py-7">

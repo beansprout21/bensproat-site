@@ -1,5 +1,5 @@
-# Home page copy (docs/issues/19-home-refresh.md). Page order: hero, the doors
-# and their panel, Selected work, the now line. `default` holds the fixed
+# Home page copy (docs/issues/19-home-refresh.md, 27-home-priming-app-and-resume.md).
+# Page order: hero, the doors and their panel, Selected work, Resume, the now line. `default` holds the fixed
 # project order for Selected work and the hero's primary button; nothing on
 # the page reorders. `hero.headlineAccent` must be the exact ending of
 # `hero.headline` (checked by pnpm content:check).
@@ -68,14 +68,18 @@ work:
       kind: Startup
       title: Priming Labs
       text: Technical co-founder. A daily training-readiness app for coaches and sport-performance physical therapists, built with Dr. Jessica Visintainer, PT, DPT. Web app in private beta, iOS app in TestFlight.
-      liveLabel: See Priming live
+      liveLabel: Open Priming
       pageLabel: Project page
     - slug: sproat-systems
       kind: Business
       title: Sproat Systems
       text: "Founder, since 2025. AI consulting and automation: custom AI systems and solutions for healthcare practices and small businesses, plus the websites and CRMs they run on."
-      liveLabel: See Sproat Systems live
+      liveLabel: Visit Sproat Systems
       pageLabel: Project page
+resume:
+  heading: Resume
+  lede: Three versions, one page each. Pick the one that fits.
+  fullLinkLabel: "Full resume: education, experience and skills"
 now:
   label: Now
   line: First year at Penn State, building Priming Labs toward its beta and growing Sproat Systems' AI consulting work.
