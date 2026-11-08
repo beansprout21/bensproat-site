@@ -1,5 +1,5 @@
-# /ventures, "Build with me" (docs/brief-c3.md 4.2). lookingFor.text stays null
-# until Ben writes it; the section is omitted while null.
+# /ventures, "Build with me" (docs/brief-c3.md 4.2). The "What I'm looking for"
+# section is omitted while lookingFor.text is null.
 meta:
   title: Build with me
   description: I build the product. Fast, with proof you can click. Three things I'm building now, and the way I build them.
@@ -46,7 +46,7 @@ howIBuild:
     - title: "Overnight loop: generate, fix, audit"
 lookingFor:
   heading: What I'm looking for
-  text: null
+  text: "Pilot partners for Priming Labs: coaches and sport-performance physical therapists who will test daily readiness checks with their athletes. A bank or credit union ready to pilot Sprout with students. Practices and small businesses that want custom AI systems through Sproat Systems. And a Summer 2027 internship building AI products."
 supportingProof:
   - label: Paying clients since 2025
     detail: Sproat Systems
