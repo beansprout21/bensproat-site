@@ -276,6 +276,8 @@ export const HomeSchema = z.strictObject({
       )
       .min(1),
   }),
+  /** Resume section after Selected work (issue #56). */
+  resume: z.strictObject({ heading: text, lede: text, fullLinkLabel: text }),
   now: z.strictObject({ label: text, line: owedText, linkLabel: text }),
   footer: PageFooterSchema,
 });

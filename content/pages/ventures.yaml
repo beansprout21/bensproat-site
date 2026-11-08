@@ -13,7 +13,7 @@ nowBuilding:
       text: Readiness testing for coaches and physical therapists. Technical co-founder, with Dr. Jessica Visintainer, PT, DPT. Maryland LLC, web app live in private beta, iOS app in TestFlight, Happy Valley LaunchBox Idea TestLab completed.
       links:
         - label: See Priming live
-          href: https://priminglabs.com
+          href: https://app.priminglabs.com
           external: true
         - label: Project page
           href: /projects/priming

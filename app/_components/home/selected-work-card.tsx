@@ -50,13 +50,13 @@ export function SelectedWorkCard({
           </ul>
         ) : null}
         <h3 className="type-h3 text-ink">{title}</h3>
-        <p className="text-[15px] leading-[1.55] text-ink">{text}</p>
-        <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+        <p className="flex-1 text-[15px] leading-[1.55] text-ink">{text}</p>
+        <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-2 pt-1">
           {live ? (
             <Button
               href={live.url}
               external
-              className="min-h-[44px]! px-4! text-[14px]!"
+              className="min-h-[44px]! px-3! text-[14px]!"
             >
               {live.label}
             </Button>

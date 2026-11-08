@@ -32,7 +32,8 @@
 | #45   | 24    | #51     | d7f1f3b | /now, /contact, /resume color: strip cards, check rows, link tiles, At a glance band; /resume lede and description fixed                     |
 | #52   | 25    | #53     | a5c6ff1 | Copy: "What I'm looking for" on /ventures and the home Now line                                                                              |
 | #54   | 26    | #58     | 7cb40bf | Site-wide: Home in the menu, phone beside email, external and PDF links in new tabs, "All my links"                                          |
-| #55   | 29    | PR open |         | /resume lede and contact line, education list with Poolesville High, Canyon Kids, new PDFs (sha256-verified), two Impact projects            |
+| #55   | 29    | #59     | 922f774 | /resume lede and contact line, education list with Poolesville High, Canyon Kids, new PDFs (sha256-verified), two Impact projects            |
+| #56   | 27    | PR open |         | Home: Selected work link rows aligned, Priming live links to app.priminglabs.com, Resume section with the shared `ResumeCard`                |
 
 **Quality pass (#11)**
 
