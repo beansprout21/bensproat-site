@@ -191,8 +191,10 @@ export const NowSchema = z.strictObject({
   /** Page title and meta description; the page falls back to "Now" and the profile one-liner. */
   title: text.optional(),
   description: text.optional(),
-  /** Bullet list rendered after the paragraphs. */
+  /** Bullet list, shown in one card above the paragraphs. */
   items: textList.optional(),
+  /** Strip label on the bullet card, for example "What I'm working on". */
+  cardLabel: text.optional(),
 });
 
 // ---------------------------------------------------------------------------
@@ -380,6 +382,10 @@ export const ContactSchema = z.strictObject({
   /** Booking URL; null until Ben picks a tool. */
   booking: z.url().nullable().default(null),
   bookingLabel: text,
+  /** Email card: strip label, right-hand strip label and button label. */
+  emailCard: z.strictObject({ label: text, right: text, buttonLabel: text }),
+  /** Mono kind label on each link tile, keyed by the link's icon in links.yaml. */
+  tileKinds: z.record(z.string(), text),
   linksLine: text,
   footer: PageFooterSchema,
 });
@@ -418,6 +424,15 @@ export const ResumePageSchema = z.strictObject({
   title: text,
   lede: text,
   downloadLabel: text,
+  /** Right-hand label on each download card's strip. */
+  downloadTag: text,
+  /** "At a glance" band: heading and the three card strip labels. */
+  summary: z.strictObject({
+    heading: text,
+    education: text,
+    experience: text,
+    skills: text,
+  }),
   /** Shown while resumes.yaml is empty: "<before> <linkLabel> <after>" with the link as mailto. */
   emptyState: z.strictObject({ before: text, linkLabel: text, after: text }),
   footer: PageFooterSchema.optional(),
