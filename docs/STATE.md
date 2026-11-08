@@ -1,6 +1,6 @@
 # STATE
 
-**Objective**: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (home refresh, drafts 18 and 19 = #38 and #39) is in progress. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38 merged, #39 in review, then #41 to #45 in order. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
@@ -23,14 +23,15 @@
 | #30   | 15    | #33     | 2d67c06 | Share cards: default plus one per project, built with next/og; fonts in `assets/og-fonts/`                                       |
 | #31   | 16    | #34     | 3a7b62d | JSON-LD graph (WebSite, ProfilePage, Person, Organizations; CreativeWork and breadcrumbs per project); /links out of the sitemap |
 | #35   | 17    | #36     | 89c686b | Every meta description 70 to 160 characters; /links indexed again and back in the sitemap                                        |
-| #38   | 18    | PR open |         | One text color: `ink-2` and `muted` equal `ink`, `on-dark-muted` equals `on-dark`; no gray text left on any route                |
+| #38   | 18    | #40     | a97ac1d | One text color: `ink-2` and `muted` equal `ink`, `on-dark-muted` equals `on-dark`; no gray text left on any route                |
+| #39   | 19    | PR open |         | Home refresh: green accents, square door tiles with a fixed panel, one Selected work section; Proof strip and reorder removed    |
 
 **Quality pass (#11)**
 
 - Lighthouse 13.6 on production after #10, ten routes, mobile and desktop: Accessibility, Best Practices and SEO 100 everywhere; Performance 100 on desktop everywhere and on mobile for the text-only pages; mobile on the photo pages: `/` 97, `/projects` 98, `/links` 99, `/sprout` 99, and `/about` 94 to 98 across five runs (median 96). Full table on PR and issue #11.
 - 375px and 390px: no horizontal overflow on any route; the archive table scrolls inside its own box.
 - No JavaScript: every route serves its H1, copy and links in the prerendered HTML.
-- Keyboard: Tab order on `/` runs skip link, header, hero buttons, proof links, doors, work links, footer; the ring is the 2px accent outline. Fixed: buttons and filter pills animated `outline-color` (Tailwind `transition-colors`), so the ring started in the text color (white on the primary button) and faded in; they now transition only color, background and border.
+- Keyboard: Tab order on `/` runs skip link, header, hero buttons, door tiles, the panel button, work links, footer (since #39); the ring is the 2px accent outline. Fixed: buttons and filter pills animated `outline-color` (Tailwind `transition-colors`), so the ring started in the text color (white on the primary button) and faded in; they now transition only color, background and border.
 - Reduced motion: the global block removes every animation and transition and draws the mark complete.
 - Greps: no U+2014 in `app`, `content`, `lib` or `docs/brief-c3.md`; no phone or street-address pattern in the built HTML; only the five approved client names appear.
 
@@ -47,6 +48,6 @@
 5. C5 trade-offs, settled Nov 7 (#35): /links is indexed again (Lighthouse SEO 100), every meta description is 70 to 160 characters, and the 364 KB default share card is accepted. JSON-LD project descriptions use the lead sentence of each one-line result so the Priming co-founder is not named.
 6. Vercel previews are behind Vercel Authentication, so pre-merge Lighthouse ran on local production builds; relax Deployment Protection for previews if you want preview scores.
 7. No `links_view` analytics event: custom events need Vercel Pro.
-8. Issue numbers no longer match draft numbers: drafts 11 to 13 are #23 to #25, drafts 14 to 16 are #29 to #31, draft 17 is #35.
+8. Issue numbers no longer match draft numbers: drafts 11 to 13 are #23 to #25, drafts 14 to 16 are #29 to #31, draft 17 is #35, drafts 18 and 19 are #38 and #39, drafts 20 to 24 are #41 to #45.
 9. The resume PDFs carry the phone number and "University Park, PA" by design (Ben, Nov 7); other place names in them are school and employer towns. Their text also includes the high-school GPA, which the site itself never shows.
 10. PR #20's local /links Lighthouse note was measured against a stale local server; corrected on PR #21. Production numbers on every issue are valid.
