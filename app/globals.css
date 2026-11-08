@@ -13,14 +13,15 @@
   --color-line: #e4e2dc;
   --color-line-strong: #c9c7c0;
   --color-ink: #15171a;
-  --color-ink-2: #454a52;
-  --color-muted: #5f656e;
+  /* ink-2 and muted equal ink since Nov 7, 2026 (Ben: one text color) */
+  --color-ink-2: #15171a;
+  --color-muted: #15171a;
   --color-accent: #1f7a4a;
   --color-accent-strong: #175e3a;
   --color-accent-tint: #eef6f0;
   --color-accent-line: #bfe0cb;
   --color-on-dark: #f3f2ed;
-  --color-on-dark-muted: #a9adb5;
+  --color-on-dark-muted: #f3f2ed;
   --color-on-dark-accent: #8fd4a8;
 
   --font-display:

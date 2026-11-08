@@ -1,28 +1,29 @@
 # STATE
 
-**Objective**: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5 now waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (home refresh, drafts 18 and 19 = #38 and #39) is in progress. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
-| Issue | Draft | PR  | Commit  | Result                                                                                                                           |
-| ----- | ----- | --- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| #2    | 01    | #12 | b51543b | Design system: fonts, tokens, header, footer, base components                                                                    |
-| #3    | 02    | #13 | e8c0113 | Content model: strict YAML schemas and loaders; content files hold the brief's copy                                              |
-| #4    | 03    | #15 | 315537d | Content verified word for word against the brief (docs-only PR)                                                                  |
-| #5    | 04    | #16 | 58c181e | Home page with the doors interaction                                                                                             |
-| #6    | 05    | #17 | 4a187ea | /projects with filters and archive; /projects/[slug] case-study template                                                         |
-| #7    | 06    | #18 | 0f97f5a | /ventures and /hire; per-page footer buttons                                                                                     |
-| #8    | 07    | #19 | ad836fa | /about                                                                                                                           |
-| #9    | 08    | #20 | 0bbb80a | /resume, /contact, /now, /links                                                                                                  |
-| #10   | 09    | #21 | 193fd03 | Photos committed; cover convention; `priority` replaced by `loading="eager"` + `fetchPriority`                                   |
-| #11   | 10    | #22 | 2867d4d | Quality pass: results below                                                                                                      |
-| #24   | 12    | #26 | 64db1c3 | 353 and 122 attributed to HackPSU totals, not the FNB Challenge (exact copy)                                                     |
-| #25   | 13    | #27 | 5a67b43 | Sproat Systems reframed as AI consulting and automation (exact copy)                                                             |
-| #23   | 11    | #28 | bcf70c5 | Three resume PDFs live; every resume button points at them; CLAUDE.md exception updated                                          |
-| #29   | 14    | #32 | 9f02aa6 | `pageMetadata()`: canonical, Open Graph and Twitter tags on every page; /links noindex                                           |
-| #30   | 15    | #33 | 2d67c06 | Share cards: default plus one per project, built with next/og; fonts in `assets/og-fonts/`                                       |
-| #31   | 16    | #34 | 3a7b62d | JSON-LD graph (WebSite, ProfilePage, Person, Organizations; CreativeWork and breadcrumbs per project); /links out of the sitemap |
-| #35   | 17    | #36 | 89c686b | Every meta description 70 to 160 characters; /links indexed again and back in the sitemap                                        |
+| Issue | Draft | PR      | Commit  | Result                                                                                                                           |
+| ----- | ----- | ------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| #2    | 01    | #12     | b51543b | Design system: fonts, tokens, header, footer, base components                                                                    |
+| #3    | 02    | #13     | e8c0113 | Content model: strict YAML schemas and loaders; content files hold the brief's copy                                              |
+| #4    | 03    | #15     | 315537d | Content verified word for word against the brief (docs-only PR)                                                                  |
+| #5    | 04    | #16     | 58c181e | Home page with the doors interaction                                                                                             |
+| #6    | 05    | #17     | 4a187ea | /projects with filters and archive; /projects/[slug] case-study template                                                         |
+| #7    | 06    | #18     | 0f97f5a | /ventures and /hire; per-page footer buttons                                                                                     |
+| #8    | 07    | #19     | ad836fa | /about                                                                                                                           |
+| #9    | 08    | #20     | 0bbb80a | /resume, /contact, /now, /links                                                                                                  |
+| #10   | 09    | #21     | 193fd03 | Photos committed; cover convention; `priority` replaced by `loading="eager"` + `fetchPriority`                                   |
+| #11   | 10    | #22     | 2867d4d | Quality pass: results below                                                                                                      |
+| #24   | 12    | #26     | 64db1c3 | 353 and 122 attributed to HackPSU totals, not the FNB Challenge (exact copy)                                                     |
+| #25   | 13    | #27     | 5a67b43 | Sproat Systems reframed as AI consulting and automation (exact copy)                                                             |
+| #23   | 11    | #28     | bcf70c5 | Three resume PDFs live; every resume button points at them; CLAUDE.md exception updated                                          |
+| #29   | 14    | #32     | 9f02aa6 | `pageMetadata()`: canonical, Open Graph and Twitter tags on every page; /links noindex                                           |
+| #30   | 15    | #33     | 2d67c06 | Share cards: default plus one per project, built with next/og; fonts in `assets/og-fonts/`                                       |
+| #31   | 16    | #34     | 3a7b62d | JSON-LD graph (WebSite, ProfilePage, Person, Organizations; CreativeWork and breadcrumbs per project); /links out of the sitemap |
+| #35   | 17    | #36     | 89c686b | Every meta description 70 to 160 characters; /links indexed again and back in the sitemap                                        |
+| #38   | 18    | PR open |         | One text color: `ink-2` and `muted` equal `ink`, `on-dark-muted` equals `on-dark`; no gray text left on any route                |
 
 **Quality pass (#11)**
 
