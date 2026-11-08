@@ -373,6 +373,8 @@ export const AboutSchema = z.strictObject({
       )
       .length(3),
   }),
+  /** Experience section: the rows are read from pages/hire.yaml. */
+  experience: z.strictObject({ heading: text, linkLabel: text }),
   timeline: z.strictObject({
     heading: text,
     items: z.array(z.strictObject({ year: text, text })).min(1),

@@ -1,40 +1,40 @@
 # STATE
 
-**Objective**: C5c, the Nov 8 refinement pass (drafts 26 to 29 = #54 to #57): #54, #55 and #56 merged; #57 is blocked on the portrait checksum. Before that: C5b (drafts 18 to 25) and C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39, #41 to #45 and #52 merged. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C5c, the Nov 8 refinement pass (drafts 26 to 29 = #54 to #57): #54, #55 and #56 merged; #57 in review (Ben confirmed the delivered portrait on Nov 8). Before that: C5b (drafts 18 to 25) and C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39, #41 to #45 and #52 merged. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
-| Issue | Draft | PR      | Commit  | Result                                                                                                                                       |
-| ----- | ----- | ------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| #2    | 01    | #12     | b51543b | Design system: fonts, tokens, header, footer, base components                                                                                |
-| #3    | 02    | #13     | e8c0113 | Content model: strict YAML schemas and loaders; content files hold the brief's copy                                                          |
-| #4    | 03    | #15     | 315537d | Content verified word for word against the brief (docs-only PR)                                                                              |
-| #5    | 04    | #16     | 58c181e | Home page with the doors interaction                                                                                                         |
-| #6    | 05    | #17     | 4a187ea | /projects with filters and archive; /projects/[slug] case-study template                                                                     |
-| #7    | 06    | #18     | 0f97f5a | /ventures and /hire; per-page footer buttons                                                                                                 |
-| #8    | 07    | #19     | ad836fa | /about                                                                                                                                       |
-| #9    | 08    | #20     | 0bbb80a | /resume, /contact, /now, /links                                                                                                              |
-| #10   | 09    | #21     | 193fd03 | Photos committed; cover convention; `priority` replaced by `loading="eager"` + `fetchPriority`                                               |
-| #11   | 10    | #22     | 2867d4d | Quality pass: results below                                                                                                                  |
-| #24   | 12    | #26     | 64db1c3 | 353 and 122 attributed to HackPSU totals, not the FNB Challenge (exact copy)                                                                 |
-| #25   | 13    | #27     | 5a67b43 | Sproat Systems reframed as AI consulting and automation (exact copy)                                                                         |
-| #23   | 11    | #28     | bcf70c5 | Three resume PDFs live; every resume button points at them; CLAUDE.md exception updated                                                      |
-| #29   | 14    | #32     | 9f02aa6 | `pageMetadata()`: canonical, Open Graph and Twitter tags on every page; /links noindex                                                       |
-| #30   | 15    | #33     | 2d67c06 | Share cards: default plus one per project, built with next/og; fonts in `assets/og-fonts/`                                                   |
-| #31   | 16    | #34     | 3a7b62d | JSON-LD graph (WebSite, ProfilePage, Person, Organizations; CreativeWork and breadcrumbs per project); /links out of the sitemap             |
-| #35   | 17    | #36     | 89c686b | Every meta description 70 to 160 characters; /links indexed again and back in the sitemap                                                    |
-| #38   | 18    | #40     | a97ac1d | One text color: `ink-2` and `muted` equal `ink`, `on-dark-muted` equals `on-dark`; no gray text left on any route                            |
-| #39   | 19    | #46     | 6d4b87c | Home refresh: green accents, square door tiles with a fixed panel, one Selected work section; Proof strip and reorder removed                |
-| #41   | 20    | #47     | da87411 | LinkedIn moved to /in/bensproat in links, JSON-LD sameAs and the three resume PDFs (sha256-verified copies)                                  |
-| #42   | 21    | #48     | d3cfedc | Framed page titles: `type-title` gets the green frame and offset block; margins keep 16 px clear of the block                                |
-| #43   | 22    | #49     | 801beab | /projects color: square filter buttons, strip cards (`WorkCard variant="strip"`, shared `CardStrip`), green archive table with status badges |
-| #44   | 23    | #50     | ab4987e | /about color: green bricks by the title, 7 px green photo borders, strip thread cards, green timeline badges                                 |
-| #45   | 24    | #51     | d7f1f3b | /now, /contact, /resume color: strip cards, check rows, link tiles, At a glance band; /resume lede and description fixed                     |
-| #52   | 25    | #53     | a5c6ff1 | Copy: "What I'm looking for" on /ventures and the home Now line                                                                              |
-| #54   | 26    | #58     | 7cb40bf | Site-wide: Home in the menu, phone beside email, external and PDF links in new tabs, "All my links"                                          |
-| #55   | 29    | #59     | 922f774 | /resume lede and contact line, education list with Poolesville High, Canyon Kids, new PDFs (sha256-verified), two Impact projects            |
-| #56   | 27    | #60     | c094a16 | Home: Selected work link rows aligned, Priming live links to app.priminglabs.com, Resume section with the shared `ResumeCard`                |
-| #57   | 28    | blocked |         | About first person and portrait: `about-portrait.jpg` hashes to 72da6064..., the issue expects f34e7e78...; nothing built yet                |
+| Issue | Draft | PR      | Commit  | Result                                                                                                                                                    |
+| ----- | ----- | ------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| #2    | 01    | #12     | b51543b | Design system: fonts, tokens, header, footer, base components                                                                                             |
+| #3    | 02    | #13     | e8c0113 | Content model: strict YAML schemas and loaders; content files hold the brief's copy                                                                       |
+| #4    | 03    | #15     | 315537d | Content verified word for word against the brief (docs-only PR)                                                                                           |
+| #5    | 04    | #16     | 58c181e | Home page with the doors interaction                                                                                                                      |
+| #6    | 05    | #17     | 4a187ea | /projects with filters and archive; /projects/[slug] case-study template                                                                                  |
+| #7    | 06    | #18     | 0f97f5a | /ventures and /hire; per-page footer buttons                                                                                                              |
+| #8    | 07    | #19     | ad836fa | /about                                                                                                                                                    |
+| #9    | 08    | #20     | 0bbb80a | /resume, /contact, /now, /links                                                                                                                           |
+| #10   | 09    | #21     | 193fd03 | Photos committed; cover convention; `priority` replaced by `loading="eager"` + `fetchPriority`                                                            |
+| #11   | 10    | #22     | 2867d4d | Quality pass: results below                                                                                                                               |
+| #24   | 12    | #26     | 64db1c3 | 353 and 122 attributed to HackPSU totals, not the FNB Challenge (exact copy)                                                                              |
+| #25   | 13    | #27     | 5a67b43 | Sproat Systems reframed as AI consulting and automation (exact copy)                                                                                      |
+| #23   | 11    | #28     | bcf70c5 | Three resume PDFs live; every resume button points at them; CLAUDE.md exception updated                                                                   |
+| #29   | 14    | #32     | 9f02aa6 | `pageMetadata()`: canonical, Open Graph and Twitter tags on every page; /links noindex                                                                    |
+| #30   | 15    | #33     | 2d67c06 | Share cards: default plus one per project, built with next/og; fonts in `assets/og-fonts/`                                                                |
+| #31   | 16    | #34     | 3a7b62d | JSON-LD graph (WebSite, ProfilePage, Person, Organizations; CreativeWork and breadcrumbs per project); /links out of the sitemap                          |
+| #35   | 17    | #36     | 89c686b | Every meta description 70 to 160 characters; /links indexed again and back in the sitemap                                                                 |
+| #38   | 18    | #40     | a97ac1d | One text color: `ink-2` and `muted` equal `ink`, `on-dark-muted` equals `on-dark`; no gray text left on any route                                         |
+| #39   | 19    | #46     | 6d4b87c | Home refresh: green accents, square door tiles with a fixed panel, one Selected work section; Proof strip and reorder removed                             |
+| #41   | 20    | #47     | da87411 | LinkedIn moved to /in/bensproat in links, JSON-LD sameAs and the three resume PDFs (sha256-verified copies)                                               |
+| #42   | 21    | #48     | d3cfedc | Framed page titles: `type-title` gets the green frame and offset block; margins keep 16 px clear of the block                                             |
+| #43   | 22    | #49     | 801beab | /projects color: square filter buttons, strip cards (`WorkCard variant="strip"`, shared `CardStrip`), green archive table with status badges              |
+| #44   | 23    | #50     | ab4987e | /about color: green bricks by the title, 7 px green photo borders, strip thread cards, green timeline badges                                              |
+| #45   | 24    | #51     | d7f1f3b | /now, /contact, /resume color: strip cards, check rows, link tiles, At a glance band; /resume lede and description fixed                                  |
+| #52   | 25    | #53     | a5c6ff1 | Copy: "What I'm looking for" on /ventures and the home Now line                                                                                           |
+| #54   | 26    | #58     | 7cb40bf | Site-wide: Home in the menu, phone beside email, external and PDF links in new tabs, "All my links"                                                       |
+| #55   | 29    | #59     | 922f774 | /resume lede and contact line, education list with Poolesville High, Canyon Kids, new PDFs (sha256-verified), two Impact projects                         |
+| #56   | 27    | #60     | c094a16 | Home: Selected work link rows aligned, Priming live links to app.priminglabs.com, Resume section with the shared `ResumeCard`                             |
+| #57   | 28    | PR open |         | /about in the first person, 4:5 portrait beside the title (sha256 72da6064..., Ben confirmed), Experience section from hire.yaml; about-field.jpg deleted |
 
 **Quality pass (#11)**
 
@@ -47,7 +47,6 @@
 
 **Blockers**
 
-- #57 (draft 28): `about-portrait.jpg` in `C:\Users\bensp\projects\_site-assets-2026-11-08\` hashes to `72da6064d032d85eecc058050e91b6e3ca53a6f2a0cbd6358edd35a0e47d940e`; the issue expects `f34e7e7808fcd3dcc1b6c7564a76f51a7077bae093e1cd40e57c30b4620f6946`. Ben or the lead agent confirms the file or the hash.
 - For the lead agent: `docs/PLAN.md` still says /resume has "no phone, no address" (sitemap) and allows no personal data beyond the public email (intro); since Nov 8 the phone number is public on web pages (DECISIONS, #54).
 
 **For Ben**

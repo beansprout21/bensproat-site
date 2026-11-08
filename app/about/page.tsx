@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
+import Link from "next/link";
 import { getPage, getProfile, resolveImage } from "@/lib/content";
 import { buildProfilePage, serializeJsonLd } from "@/lib/jsonld";
 import { Bricks } from "../_components/about/bricks";
@@ -15,10 +16,11 @@ export const metadata: Metadata = pageMetadata({
   path: "/about",
 });
 
-/** /about (brief 4.4). Every string comes from content/pages/about.yaml; photos arrive with #10. */
+/** /about (brief 4.4, issue #57). Every string comes from content/pages/about.yaml; experience rows from pages/hire.yaml. */
 export default function Page() {
   const profile = getProfile();
   const { threads, timeline, offKeyboard } = page;
+  const experience = getPage("hire").experience;
   const headerImage = resolveImage(page.header.image);
   const grassImage = resolveImage(offKeyboard.image);
   // The most recent year gets the brighter badge.
@@ -35,34 +37,35 @@ export default function Page() {
         }}
       />
 
-      {headerImage ? (
-        <Container as="section" aria-label="Photo" className="pt-8">
-          <Image
-            src={headerImage}
-            alt={page.header.alt}
-            width={1600}
-            height={1067}
-            sizes="(min-width: 1200px) 1040px, calc(100vw - 40px)"
-            loading="eager"
-            fetchPriority="high"
-            className="h-auto max-h-[520px] w-full rounded-image border-[7px] border-accent-strong object-cover"
-          />
-        </Container>
-      ) : null}
-
       <Container
         as="section"
         aria-label="Introduction"
-        className="flex flex-col gap-4 pt-12 pb-10"
+        className="grid items-start gap-x-12 gap-y-10 pt-14 pb-12 min-[721px]:grid-cols-[minmax(0,1fr)_378px]"
       >
-        <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
-          <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-4">
-            <h1 className="type-title">{page.title}</h1>
-            <p className="type-lede max-w-[60ch] text-ink-2">{page.lede}</p>
-          </div>
-          <Bricks className="max-[720px]:hidden" />
+        <div className="flex min-w-0 flex-col gap-4">
+          <h1 className="type-title">{page.title}</h1>
+          <p className="type-lede max-w-[60ch] text-ink-2">{page.lede}</p>
+          <p className="type-body max-w-[64ch] text-ink-2">{page.bio}</p>
+          <Bricks className="mt-4 max-[720px]:hidden" />
         </div>
-        <p className="type-body max-w-[64ch] text-ink-2">{page.bio}</p>
+        {headerImage ? (
+          <div className="relative w-full max-w-[430px] pr-2.5 pb-2.5 min-[721px]:max-w-[378px] min-[721px]:pr-[18px] min-[721px]:pb-[18px]">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 top-2.5 left-2.5 rounded-image bg-accent-line min-[721px]:top-[18px] min-[721px]:left-[18px]"
+            />
+            <Image
+              src={headerImage}
+              alt={page.header.alt}
+              width={1200}
+              height={1500}
+              sizes="(min-width: 721px) 360px, min(420px, calc(100vw - 50px))"
+              loading="eager"
+              fetchPriority="high"
+              className="relative block aspect-[4/5] h-auto w-full rounded-image border-[7px] border-accent-strong object-cover"
+            />
+          </div>
+        ) : null}
       </Container>
 
       <section
@@ -110,6 +113,37 @@ export default function Page() {
           </div>
         </Container>
       </section>
+
+      <Container
+        as="section"
+        aria-labelledby="experience-heading"
+        className="flex flex-col gap-6 pt-14"
+      >
+        <h2 id="experience-heading" className="type-h2">
+          {page.experience.heading}
+        </h2>
+        <ol className="m-0 flex max-w-[80ch] list-none flex-col gap-4 p-0">
+          {experience.items.map((item) => (
+            <li
+              key={item.dates + item.text}
+              className="grid gap-x-4 gap-y-2 min-[721px]:grid-cols-[190px_1fr]"
+            >
+              <span className="w-fit rounded-[6px] bg-accent-strong px-2.5 py-[5px] font-mono text-[13px] leading-[1.1] font-semibold text-white">
+                {item.dates}
+              </span>
+              <span className="text-[16px] leading-[1.55] text-ink-2">
+                {item.text}
+              </span>
+            </li>
+          ))}
+        </ol>
+        <Link
+          href="/resume"
+          className="inline-flex min-h-[44px] w-fit items-center text-[15px] font-semibold text-ink underline decoration-accent decoration-2 underline-offset-4 hover:text-accent-strong"
+        >
+          {page.experience.linkLabel}
+        </Link>
+      </Container>
 
       <Container
         as="section"

@@ -1,14 +1,15 @@
-# /about (docs/brief-c3.md 4.4). Photos arrive with issue #10; pages omit an
-# image whose file is missing. Nothing from the private list belongs here.
+# /about (docs/brief-c3.md 4.4, docs/issues/28-about-first-person-and-portrait.md).
+# Written in the first person. Pages omit an image whose file is missing.
+# Nothing from the private list belongs here.
 meta:
   title: About
-  description: Building since Lego. Ben Sproat builds things that work, and now he builds them with AI.
+  description: "Building since Lego. I'm Ben Sproat: I build things that work, and now I build them with AI."
 header:
-  image: /images/about-field.jpg
-  alt: Ben Sproat in a field at sunset
+  image: /images/about-portrait.jpg
+  alt: Ben Sproat in a blue button-up shirt against a white wall
 title: Building since Lego.
-lede: Ben Sproat builds things that work, and now he builds them with AI.
-bio: Ben Sproat is a Schreyer Honors engineering student at Penn State who builds AI products. He won the FNB Challenge at HackPSU Fall 2026 with Sprout, co-founded Priming Labs, a readiness app for athletes and their coaches, and runs Sproat Systems, an AI consulting and automation practice that builds custom AI systems for healthcare practices and small businesses.
+lede: I build things that work, and now I build them with AI.
+bio: "I'm an engineering student in Penn State's Schreyer Honors College, and I build AI products. I won the FNB Challenge at HackPSU Fall 2026 with Sprout, I'm the technical co-founder of Priming Labs, and I run Sproat Systems, my AI consulting and automation practice that builds custom AI systems for healthcare practices and small businesses."
 threads:
   heading: Three threads
   items:
@@ -41,6 +42,10 @@ threads:
         - Equipment and website work at Canyon Kids
         - Adaptive camp counseling
         - Teaching AI to 18 friends and family members and every client
+# Experience rows come from content/pages/hire.yaml (one source).
+experience:
+  heading: Experience
+  linkLabel: Full resume
 timeline:
   heading: The short version
   items:
