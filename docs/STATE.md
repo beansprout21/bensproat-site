@@ -1,6 +1,6 @@
 # STATE
 
-**Objective**: C5c, the Nov 8 refinement pass (drafts 26 to 29 = #54 to #57), worked in the order 26, 29, 27, 28. Before that: C5b (drafts 18 to 25) and C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39, #41 to #45 and #52 merged. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C5c, the Nov 8 refinement pass (drafts 26 to 29 = #54 to #57): #54, #55 and #56 merged; #57 is blocked on the portrait checksum. Before that: C5b (drafts 18 to 25) and C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39, #41 to #45 and #52 merged. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
@@ -33,7 +33,8 @@
 | #52   | 25    | #53     | a5c6ff1 | Copy: "What I'm looking for" on /ventures and the home Now line                                                                              |
 | #54   | 26    | #58     | 7cb40bf | Site-wide: Home in the menu, phone beside email, external and PDF links in new tabs, "All my links"                                          |
 | #55   | 29    | #59     | 922f774 | /resume lede and contact line, education list with Poolesville High, Canyon Kids, new PDFs (sha256-verified), two Impact projects            |
-| #56   | 27    | PR open |         | Home: Selected work link rows aligned, Priming live links to app.priminglabs.com, Resume section with the shared `ResumeCard`                |
+| #56   | 27    | #60     | c094a16 | Home: Selected work link rows aligned, Priming live links to app.priminglabs.com, Resume section with the shared `ResumeCard`                |
+| #57   | 28    | blocked |         | About first person and portrait: `about-portrait.jpg` hashes to 72da6064..., the issue expects f34e7e78...; nothing built yet                |
 
 **Quality pass (#11)**
 
@@ -46,7 +47,8 @@
 
 **Blockers**
 
-- None. Nothing was labeled `status:blocked`.
+- #57 (draft 28): `about-portrait.jpg` in `C:\Users\bensp\projects\_site-assets-2026-11-08\` hashes to `72da6064d032d85eecc058050e91b6e3ca53a6f2a0cbd6358edd35a0e47d940e`; the issue expects `f34e7e7808fcd3dcc1b6c7564a76f51a7077bae093e1cd40e57c30b4620f6946`. Ben or the lead agent confirms the file or the hash.
+- For the lead agent: `docs/PLAN.md` still says /resume has "no phone, no address" (sitemap) and allows no personal data beyond the public email (intro); since Nov 8 the phone number is public on web pages (DECISIONS, #54).
 
 **For Ben**
 
