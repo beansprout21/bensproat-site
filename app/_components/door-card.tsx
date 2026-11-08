@@ -1,77 +1,61 @@
-import Link from "next/link";
 import { ArrowOut } from "./icons";
 
 export type DoorCardProps = {
+  /** 1-based position, rendered as "01". */
+  number: number;
   title: string;
-  text: string;
-  href: string;
+  /** The door leads off the site; shows the arrow-out icon. */
   external?: boolean;
-  /** This door is being previewed. */
-  active?: boolean;
-  /** Another door is being previewed. */
-  dimmed?: boolean;
-  /** Pointer entered the card (the home page gates this on hover-capable devices). */
-  onEnter?: () => void;
-  /** Keyboard focus reached the card; previews on every device. */
-  onFocusEnter?: () => void;
-  /** Pointer left or focus moved away. */
-  onLeave?: () => void;
+  selected: boolean;
+  /** id of the panel this tile updates. */
+  controls: string;
+  onToggle: () => void;
 };
 
 const base =
-  "flex min-w-0 flex-col gap-2 rounded-card border p-[22px] no-underline transition-[border-color,background-color,opacity] duration-[180ms] ease-out";
+  "group flex aspect-square min-w-0 flex-col justify-between rounded-card border-[3px] border-accent-strong p-[clamp(14px,2vw,22px)] text-left transition-[transform,background-color,color] duration-[260ms,200ms,200ms] ease-out";
 
 /**
- * A visitor door (brief 1.5 and section 2): the whole card is a plain link.
- * Hover and focus handlers let the home page preview a visitor's order.
+ * A visitor door on the home page (docs/issues/19-home-refresh.md): a square
+ * toggle button. Picking it fills the panel under the tiles; hover and focus
+ * only change its own styles.
  */
 export function DoorCard({
+  number,
   title,
-  text,
-  href,
   external = false,
-  active = false,
-  dimmed = false,
-  onEnter,
-  onFocusEnter,
-  onLeave,
+  selected,
+  controls,
+  onToggle,
 }: DoorCardProps) {
-  const className = `${base} ${
-    active ? "border-accent bg-accent-tint" : "border-line bg-surface"
-  } ${dimmed ? "opacity-[0.72]" : ""}`;
-  const handlers = {
-    onMouseEnter: onEnter,
-    onMouseLeave: onLeave,
-    onFocus: onFocusEnter ?? onEnter,
-    onBlur: onLeave,
-  };
-  const body = (
-    <>
-      <span className="flex items-center gap-2 font-display text-[22px] leading-[1.2] font-semibold tracking-[-0.01em] text-ink">
-        {title}
-        {external ? <ArrowOut className="text-accent" /> : null}
-      </span>
-      <span className="text-[14.5px] leading-[1.5] text-ink-2">{text}</span>
-      {external ? <span className="sr-only"> (opens in a new tab)</span> : null}
-    </>
-  );
-
-  if (external) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={className}
-        {...handlers}
-      >
-        {body}
-      </a>
-    );
-  }
+  const state = selected
+    ? "bg-accent-strong text-white motion-safe:[transform:scale(1.07)]"
+    : "bg-surface text-ink hover:bg-accent-tint";
   return (
-    <Link href={href} className={className} {...handlers}>
-      {body}
-    </Link>
+    <button
+      type="button"
+      aria-pressed={selected}
+      aria-controls={controls}
+      onClick={onToggle}
+      className={`${base} ${state}`}
+    >
+      <span className="flex items-start justify-between gap-2">
+        <span
+          className={`font-mono text-[13px] font-semibold tracking-[0.1em] ${
+            selected ? "text-white" : "text-accent-strong"
+          }`}
+        >
+          {String(number).padStart(2, "0")}
+        </span>
+        {external ? (
+          <ArrowOut
+            className={selected ? "text-white" : "text-accent-strong"}
+          />
+        ) : null}
+      </span>
+      <span className="font-display text-[clamp(19px,2vw,24px)] leading-[1.15] font-bold tracking-[-0.015em]">
+        {title}
+      </span>
+    </button>
   );
 }

@@ -205,14 +205,12 @@ export const DoorKeySchema = z.enum([
   "automation",
 ]);
 
-/** What the home page looks like for one visitor type. */
+/** The home page's fixed project order and hero button. */
 export const HomeStateSchema = z.strictObject({
-  /** Project slugs, first to last, for the proof strip and the work grid. */
+  /** Project slugs, first to last, for Selected work. */
   order: textList.min(1),
-  /** The hero's primary button in this state. */
+  /** The hero's primary button. */
   cta: PageLinkSchema,
-  /** Fills "Proof, ordered for <who>". */
-  who: text,
 });
 
 export const HomeSchema = z.strictObject({
@@ -220,15 +218,44 @@ export const HomeSchema = z.strictObject({
   hero: z.strictObject({
     name: text,
     headline: text,
+    /** The exact ending of `headline`, rendered in the accent color. */
+    headlineAccent: owedText,
     sub: text,
     availability: owedText,
+    /** Pill pinned inside the photo's bottom-left corner. */
+    photoTag: owedText,
     resumeLabel: text,
     emailLabel: text,
   }),
   default: HomeStateSchema,
-  proof: z.strictObject({
-    eyebrowPrefix: text,
-    caption: text,
+  doors: z.strictObject({
+    heading: text,
+    lede: text,
+    /** What the panel under the doors says before a door is picked. */
+    panel: z.strictObject({ label: text, text }),
+    items: z
+      .array(
+        z.strictObject({
+          key: DoorKeySchema,
+          title: text,
+          /** Panel label once this door is picked. */
+          kicker: text,
+          text,
+          ctaLabel: text,
+          href,
+          external: z.boolean().default(false),
+        }),
+      )
+      .min(1),
+  }),
+  work: z.strictObject({
+    /** Mono label above the heading. */
+    label: text,
+    heading: text,
+    allLabel: text,
+    caseStudyLabel: text,
+    pageLabel: text,
+    /** Card copy per project; shown in `default.order`. */
     items: z
       .array(
         z.strictObject({
@@ -241,28 +268,6 @@ export const HomeSchema = z.strictObject({
         }),
       )
       .min(1),
-  }),
-  doors: z.strictObject({
-    heading: text,
-    lede: text,
-    items: z
-      .array(
-        z.strictObject({
-          key: DoorKeySchema,
-          title: text,
-          text,
-          href,
-          external: z.boolean().default(false),
-          state: HomeStateSchema,
-        }),
-      )
-      .min(1),
-  }),
-  work: z.strictObject({
-    heading: text,
-    allLabel: text,
-    caseStudyLabel: text,
-    pageLabel: text,
   }),
   now: z.strictObject({ label: text, line: owedText, linkLabel: text }),
   footer: PageFooterSchema,
@@ -585,16 +590,18 @@ export function validateAllContent(): void {
 
   const home = getHome();
   requireSlugs(slugs, home.default.order, "home.yaml default.order");
-  requireSlugs(
-    slugs,
-    home.proof.items.map((item) => item.slug),
-    "home.yaml proof.items",
-  );
-  for (const door of home.doors.items) {
-    requireSlugs(
-      slugs,
-      door.state.order,
-      `home.yaml doors "${door.key}" order`,
+  const workSlugs = home.work.items.map((item) => item.slug);
+  requireSlugs(slugs, workSlugs, "home.yaml work.items");
+  const missing = home.default.order.filter((key) => !workSlugs.includes(key));
+  if (missing.length > 0) {
+    throw new Error(
+      `Invalid content: home.yaml work.items has no card for ${missing.join(", ")} (default.order)`,
+    );
+  }
+  const { headline, headlineAccent } = home.hero;
+  if (headlineAccent !== null && !headline.endsWith(headlineAccent)) {
+    throw new Error(
+      `Invalid content: home.yaml hero.headlineAccent "${headlineAccent}" must be the exact ending of hero.headline "${headline}"`,
     );
   }
 

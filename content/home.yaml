@@ -1,13 +1,17 @@
-# Home page copy (docs/brief-c3.md, sections 2 and 4.1). Door states carry the
-# order table: project slugs first to last, the hero's primary button and the
-# "who" that fills "Proof, ordered for <who>".
+# Home page copy (docs/issues/19-home-refresh.md). Page order: hero, the doors
+# and their panel, Selected work, the now line. `default` holds the fixed
+# project order for Selected work and the hero's primary button; nothing on
+# the page reorders. `hero.headlineAccent` must be the exact ending of
+# `hero.headline` (checked by pnpm content:check).
 meta:
   title: Ben Sproat
 hero:
   name: Ben Sproat
   headline: I turn ideas into working AI products.
+  headlineAccent: AI products.
   sub: Engineering student, Penn State Schreyer Honors College.
   availability: Available for Summer 2027 internships and projects.
+  photoTag: Penn State / Schreyer Honors
   resumeLabel: Resume (PDF)
   emailLabel: Email Ben
 default:
@@ -15,80 +19,63 @@ default:
   cta:
     label: See the work
     href: /projects
-  who: everyone
-proof:
-  eyebrowPrefix: Proof, ordered for
-  caption: Every claim links to the live product, so you can check it yourself.
-  items:
-    - slug: sprout
-      kind: Win
-      title: FNB Challenge winner, HackPSU Fall 2026
-      text: Sprout, a goals-first AI money coach that hands students to a banker. HackPSU drew 353 participants and 122 projects.
-      liveLabel: Try Sprout live
-      pageLabel: Case study
-    - slug: priming
-      kind: Startup
-      title: Technical co-founder, Priming Labs
-      text: Readiness testing for coaches and physical therapists. Web app live in private beta, iOS app in TestFlight.
-      liveLabel: See Priming live
-      pageLabel: Project page
-    - slug: sproat-systems
-      kind: Business
-      title: Founder, Sproat Systems
-      text: "AI consulting and automation for healthcare practices and small businesses: custom AI systems, plus the websites and CRMs they run on. Since 2025."
-      liveLabel: See Sproat Systems live
-      pageLabel: Project page
 doors:
   heading: What brings you here?
-  lede: Pick a door. The page reorders for you, and the resume stays one click away.
+  lede: Pick a door to see where to start. The resume is always one click away.
+  panel:
+    label: Pick a door
+    text: Each one opens the part of my work that fits why you came.
   items:
     - key: building
       title: Building something?
-      text: "Partners and investors: what I'm building, how I build, and what I'm looking for."
+      kicker: Partners and investors
+      text: What I'm building, how I build, and what I'm looking for.
+      ctaLabel: See what I'm building
       href: /ventures
-      state:
-        order: [priming, sprout, sproat-systems]
-        cta:
-          label: See what I'm building
-          href: /ventures
-        who: partners and investors
     - key: hiring
       title: Hiring?
-      text: "Recruiters and companies: engineering plus AI product skills, availability, case studies and three resume versions."
+      kicker: Recruiters and companies
+      text: Engineering plus AI product skills, availability, case studies and three resume versions.
+      ctaLabel: Go to the hiring page
       href: /hire
-      state:
-        order: [sprout, priming, sproat-systems]
-        cta:
-          label: Download the resume
-          href: /resume
-        who: recruiters and companies
     - key: about
       title: Who's Ben?
+      kicker: Anyone curious
       text: "The story in three pillars: builder, founder, impact. Plus the outdoors."
+      ctaLabel: Read the story
       href: /about
-      state:
-        order: [sprout, priming, sproat-systems]
-        cta:
-          label: Read the story
-          href: /about
-        who: anyone curious
     - key: automation
       title: Need AI for your business?
+      kicker: Practices and small businesses
       text: "Sproat Systems is my AI consulting and automation practice: custom AI systems and solutions for healthcare practices and small businesses."
+      ctaLabel: Visit Sproat Systems
       href: https://sproatsystems.com
       external: true
-      state:
-        order: [sproat-systems, sprout, priming]
-        cta:
-          label: Visit Sproat Systems
-          href: https://sproatsystems.com
-          external: true
-        who: businesses that want AI
 work:
+  label: Every claim links to the live product
   heading: Selected work
   allLabel: All projects
   caseStudyLabel: Case study
   pageLabel: Project page
+  items:
+    - slug: sprout
+      kind: Win
+      title: Sprout, FNB Challenge winner
+      text: A goals-first AI money coach that hands students to a banker. Won at HackPSU Fall 2026, a hackathon of 353 participants and 122 projects. Claude explains the plan, a deterministic engine owns every number, and 3,084 generated users stress-tested it overnight.
+      liveLabel: Try Sprout live
+      pageLabel: Case study
+    - slug: priming
+      kind: Startup
+      title: Priming Labs
+      text: Technical co-founder. A daily training-readiness app for coaches and sport-performance physical therapists, built with Dr. Jessica Visintainer, PT, DPT. Web app in private beta, iOS app in TestFlight.
+      liveLabel: See Priming live
+      pageLabel: Project page
+    - slug: sproat-systems
+      kind: Business
+      title: Sproat Systems
+      text: "Founder, since 2025. AI consulting and automation: custom AI systems and solutions for healthcare practices and small businesses, plus the websites and CRMs they run on."
+      liveLabel: See Sproat Systems live
+      pageLabel: Project page
 now:
   label: Now
   line: null

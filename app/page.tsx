@@ -7,8 +7,6 @@ import {
   getProjects,
   getResumes,
   resolveImage,
-  type DoorKey,
-  type HomeState,
 } from "@/lib/content";
 import { buildHomeGraph, serializeJsonLd } from "@/lib/jsonld";
 import { Container } from "./_components/container";
@@ -17,8 +15,7 @@ import {
   type HomeRouterProps,
 } from "./_components/home/home-router";
 
-// Alt text from brief 1.6. The file itself arrives with issue #10; until it
-// exists under /public the hero omits the figure.
+// Alt text from brief 1.6. The hero omits the photo if the file is missing.
 const HEADSHOT = {
   src: "/images/headshot.jpg",
   alt: "Ben Sproat, smiling, in a navy shirt against a white wall",
@@ -37,90 +34,56 @@ export const metadata: Metadata = pageMetadata({
 });
 
 function buildProps(): HomeRouterProps {
-  const projects = getProjects();
-  const bySlug = new Map(projects.map((project) => [project.slug, project]));
+  const bySlug = new Map(
+    getProjects().map((project) => [project.slug, project]),
+  );
   const resumes = getResumes();
   const defaultResume =
     resumes.find((resume) => resume.audience === "ai-product") ?? resumes[0];
   const headshot = resolveImage(HEADSHOT.src);
 
-  const states: HomeRouterProps["states"] = { default: home.default };
-  for (const door of home.doors.items) {
-    states[door.key as DoorKey] = door.state as HomeState;
-  }
-
   return {
     hero: {
       name: home.hero.name,
       headline: home.hero.headline,
+      headlineAccent: home.hero.headlineAccent,
       sub: home.hero.sub,
       availability: home.hero.availability,
+      cta: home.default.cta,
       resume: {
         label: home.hero.resumeLabel,
         href: defaultResume?.file ?? "/resume",
       },
       email: { label: home.hero.emailLabel, href: `mailto:${profile.email}` },
       photo: headshot ? { ...HEADSHOT, src: headshot } : null,
-    },
-    states,
-    proof: {
-      eyebrowPrefix: home.proof.eyebrowPrefix,
-      caption: home.proof.caption,
-      items: home.proof.items.map((item) => {
-        const project = bySlug.get(item.slug);
-        return {
-          slug: item.slug,
-          kind: item.kind,
-          title: item.title,
-          text: item.text,
-          live: project?.live
-            ? { label: item.liveLabel, url: project.live.url }
-            : null,
-          page: { label: item.pageLabel, href: `/projects/${item.slug}` },
-        };
-      }),
+      photoTag: home.hero.photoTag,
     },
     doors: {
       heading: home.doors.heading,
       lede: home.doors.lede,
-      items: home.doors.items.map((door) => ({
-        key: door.key,
-        title: door.title,
-        text: door.text,
-        href: door.href,
-        external: door.external,
-      })),
+      panel: home.doors.panel,
+      items: home.doors.items,
     },
     work: {
+      label: home.work.label,
       heading: home.work.heading,
       all: { label: home.work.allLabel, href: "/projects" },
+      // Fixed order (default.order); content:check guarantees a card per slug.
       items: home.default.order.flatMap((slug) => {
+        const item = home.work.items.find((card) => card.slug === slug);
         const project = bySlug.get(slug);
-        if (!project) return [];
-        const cover = project.cover ? resolveImage(project.cover) : null;
-        // Same label as the proof strip for the same project ("Case study" for
-        // Sprout, "Project page" otherwise); a full case study has a problem section.
-        const proofLabel = home.proof.items.find(
-          (item) => item.slug === slug,
-        )?.pageLabel;
+        if (!item || !project) return [];
         return [
           {
             slug,
-            title: project.title,
-            summary: project.summary,
+            kind: item.kind,
+            title: item.title,
+            text: item.text,
             tags: project.tags,
-            cover: cover
-              ? { src: cover, alt: `${project.title} screenshot` }
+            live: project.live
+              ? { label: item.liveLabel, url: project.live.url }
               : null,
-            live: project.live ?? null,
-            page: {
-              label:
-                proofLabel ??
-                (project.sections?.problem
-                  ? home.work.caseStudyLabel
-                  : home.work.pageLabel),
-              href: `/projects/${slug}`,
-            },
+            page: { label: item.pageLabel, href: `/projects/${slug}` },
           },
         ];
       }),
