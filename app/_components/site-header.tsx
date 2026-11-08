@@ -1,20 +1,26 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { getProfile } from "@/lib/content";
+import { getPage, getProfile } from "@/lib/content";
 import { ActiveNavLinks } from "./active-nav-links";
 import { Mark } from "./mark";
 import { NavLinkList, type NavItem } from "./nav-link-list";
 
-const NAV: NavItem[] = [
-  { href: "/projects", label: "Work" },
-  { href: "/about", label: "About" },
-  { href: "/now", label: "Now" },
-  { href: "/contact", label: "Contact" },
-];
+/** Header links; "All my links" shows only below 721 px (issue #54). */
+function navItems(): NavItem[] {
+  return [
+    { href: "/", label: "Home" },
+    { href: "/projects", label: "Work" },
+    { href: "/about", label: "About" },
+    { href: "/now", label: "Now" },
+    { href: "/contact", label: "Contact" },
+    { href: "/links", label: getPage("links").name, mobileOnly: true },
+  ];
+}
 
 /** Site header (brief 1.5): mark and name on the left, links and Resume on the right. */
 export function SiteHeader() {
   const profile = getProfile();
+  const nav = navItems();
 
   return (
     <header className="border-b border-line">
@@ -30,8 +36,8 @@ export function SiteHeader() {
           <span>{profile.name}</span>
         </Link>
         <div className="ml-auto flex flex-wrap items-center gap-x-1.5 gap-y-1">
-          <Suspense fallback={<NavLinkList items={NAV} pathname={null} />}>
-            <ActiveNavLinks items={NAV} />
+          <Suspense fallback={<NavLinkList items={nav} pathname={null} />}>
+            <ActiveNavLinks items={nav} />
           </Suspense>
           <Link
             href="/resume"

@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
-import Link from "next/link";
 import { getLinks, getPage, getProfile, getResumes } from "@/lib/content";
 import { Button } from "../_components/button";
 import { CardStrip } from "../_components/card-strip";
 import { Container } from "../_components/container";
-import { ArrowRight } from "../_components/icons";
+import {
+  NewTabNote,
+  newTabProps,
+  opensInNewTab,
+} from "../_components/external-link";
+import { ArrowOut, ArrowRight } from "../_components/icons";
 
 const page = getPage("contact");
 const resumePage = getPage("resume");
+const linksPage = getPage("links");
 const PROFILE_LINK_ICONS = ["linkedin", "github", "devpost"];
 
 export const metadata: Metadata = pageMetadata({
@@ -16,24 +21,6 @@ export const metadata: Metadata = pageMetadata({
   description: page.meta.description,
   path: "/contact",
 });
-
-/** Renders the links line with the "/links" path as a link to the page. */
-function LinksLine({ text }: { text: string }) {
-  const [before, after] = text.split("/links");
-  if (after === undefined) return <>{text}</>;
-  return (
-    <>
-      {before}
-      <Link
-        href="/links"
-        className="font-medium text-ink underline underline-offset-4"
-      >
-        /links
-      </Link>
-      {after}
-    </>
-  );
-}
 
 type Tile = {
   key: string;
@@ -94,30 +81,49 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <div className="w-full max-w-[780px] overflow-hidden rounded-card border-[1.5px] border-accent-strong bg-surface">
+        <CardStrip label={page.phoneCard.label} />
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-4 p-[22px]">
+          <p className="min-w-0 font-display text-[clamp(22px,3vw,30px)] leading-[1.2] font-bold tracking-[-0.01em] text-ink">
+            {profile.phone}
+          </p>
+          <Button href={profile.phoneHref}>{page.phoneCard.buttonLabel}</Button>
+        </div>
+      </div>
       <ul className="m-0 grid w-full max-w-[780px] list-none grid-cols-2 gap-4 p-0 min-[721px]:grid-cols-4">
         {tiles.map((tile) => (
           <li key={tile.key} className="min-w-0">
             <a
               href={tile.href}
-              rel={tile.me ? "me" : undefined}
+              {...(opensInNewTab(tile.href)
+                ? newTabProps(tile.me)
+                : { rel: tile.me ? "me" : undefined })}
               className="group flex h-full min-h-[120px] flex-col justify-between gap-4 rounded-card border-[1.5px] border-accent-strong bg-surface p-[18px] text-ink no-underline transition-[background-color] hover:bg-accent-tint"
             >
               <span className="flex items-center justify-between gap-2">
                 <span className="font-mono text-[12px] font-semibold tracking-[0.08em] uppercase">
                   {tile.kind}
                 </span>
-                <ArrowRight className="text-accent" />
+                {opensInNewTab(tile.href) ? (
+                  <ArrowOut className="text-accent" />
+                ) : (
+                  <ArrowRight className="text-accent" />
+                )}
               </span>
               <span className="font-display text-[22px] leading-[1.15] font-bold tracking-[-0.01em]">
                 {tile.name}
               </span>
+              {opensInNewTab(tile.href) ? <NewTabNote /> : null}
             </a>
           </li>
         ))}
       </ul>
-      <p className="type-body w-full max-w-[780px] rounded-card border-[1.5px] border-accent-line bg-accent-tint px-5 py-4 text-ink-2">
-        <LinksLine text={page.linksLine} />
-      </p>
+      <div className="flex flex-col items-start gap-2.5">
+        <Button href="/links" variant="secondary">
+          {linksPage.name}
+        </Button>
+        <p className="type-body text-ink-2">{linksPage.description}</p>
+      </div>
     </Container>
   );
 }

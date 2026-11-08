@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { PageLink } from "@/lib/content";
-import { ExternalLink } from "./external-link";
+import { ExternalLink, opensInNewTab } from "./external-link";
 
 /** A row of content links: external ones in accent with the arrow, internal ones underlined (brief 1.5). */
 export function LinkRow({
@@ -16,7 +16,7 @@ export function LinkRow({
       className={`flex flex-wrap items-center gap-x-[18px] gap-y-1 ${className}`}
     >
       {links.map((link) =>
-        link.external ? (
+        link.external || opensInNewTab(link.href) ? (
           <ExternalLink
             key={link.href + link.label}
             href={link.href}
