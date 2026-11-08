@@ -1,19 +1,19 @@
 # Resume PDFs (issue #23). Built by the lead agent on Nov 7, 2026; never edited
 # here. The first entry (AI product) is the default for every "Resume (PDF)"
 # button. The PDFs carry Ben's phone number and city line on purpose (Ben,
-# Nov 7, 2026); web pages do not.
+# Nov 7, 2026).
 - id: ai-product
   label: AI product
   audience: ai-product
   file: /resumes/Ben-Sproat-Resume-AI-Product.pdf
-  updated: "2026-11-07"
+  updated: "2026-11-08"
 - id: engineering
   label: Engineering
   audience: engineering
   file: /resumes/Ben-Sproat-Resume-Engineering.pdf
-  updated: "2026-11-07"
+  updated: "2026-11-08"
 - id: founder
   label: Founder
   audience: founder
   file: /resumes/Ben-Sproat-Resume-Founder.pdf
-  updated: "2026-11-07"
+  updated: "2026-11-08"

@@ -114,11 +114,13 @@ export function ExperienceList({
   );
 }
 
-/** The education paragraph, shared by /hire and /resume. */
+/** The education list with mono dates, shared by /hire and /resume (same rows as experience). */
 export function EducationBlock({
   education,
+  variant = "default",
 }: {
   education: Hire["education"];
+  variant?: Variant;
 }) {
-  return <p className="type-body max-w-[60ch] text-ink-2">{education.text}</p>;
+  return <ExperienceList experience={education} variant={variant} />;
 }

@@ -57,6 +57,20 @@ export default function Page() {
       >
         <h1 className="type-title">{page.title}</h1>
         <p className="type-lede max-w-[60ch] text-ink-2">{page.lede}</p>
+        <p className="flex flex-wrap gap-x-5 gap-y-1 font-mono text-[14px] tracking-[0.02em] text-ink">
+          <a
+            href={`mailto:${profile.email}`}
+            className="inline-flex min-h-[44px] items-center underline decoration-accent decoration-2 underline-offset-4 hover:text-accent-strong"
+          >
+            {profile.email}
+          </a>
+          <a
+            href={profile.phoneHref}
+            className="inline-flex min-h-[44px] items-center underline decoration-accent decoration-2 underline-offset-4 hover:text-accent-strong"
+          >
+            {profile.phone}
+          </a>
+        </p>
       </Container>
 
       <Container as="section" aria-label="Downloads" className="pb-14">
@@ -118,7 +132,7 @@ export default function Page() {
           </h2>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(380px,100%),1fr))] items-start gap-5">
             <SummaryCard label={page.summary.education}>
-              <EducationBlock education={hire.education} />
+              <EducationBlock education={hire.education} variant="carded" />
             </SummaryCard>
             <SummaryCard label={page.summary.experience}>
               <ExperienceList experience={hire.experience} variant="carded" />

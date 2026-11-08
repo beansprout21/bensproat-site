@@ -31,7 +31,8 @@
 | #44   | 23    | #50     | ab4987e | /about color: green bricks by the title, 7 px green photo borders, strip thread cards, green timeline badges                                 |
 | #45   | 24    | #51     | d7f1f3b | /now, /contact, /resume color: strip cards, check rows, link tiles, At a glance band; /resume lede and description fixed                     |
 | #52   | 25    | #53     | a5c6ff1 | Copy: "What I'm looking for" on /ventures and the home Now line                                                                              |
-| #54   | 26    | PR open |         | Site-wide: Home in the menu, phone beside email, external and PDF links in new tabs, "All my links"                                          |
+| #54   | 26    | #58     | 7cb40bf | Site-wide: Home in the menu, phone beside email, external and PDF links in new tabs, "All my links"                                          |
+| #55   | 29    | PR open |         | /resume lede and contact line, education list with Poolesville High, Canyon Kids, new PDFs (sha256-verified), two Impact projects            |
 
 **Quality pass (#11)**
 

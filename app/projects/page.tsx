@@ -20,8 +20,10 @@ export const metadata: Metadata = pageMetadata({
 
 function buildCards(): ProjectCard[] {
   const home = getHome();
-  return getProjects()
-    .filter((project) => project.featured)
+  // Every project is listed (the Impact projects are not featured);
+  // featured ones come first, each group in `order`.
+  return [...getProjects()]
+    .sort((a, b) => Number(b.featured) - Number(a.featured))
     .map((project) => {
       const cover = project.cover ? resolveImage(project.cover) : null;
       return {

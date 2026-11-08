@@ -137,6 +137,7 @@ export const ProjectSchema = z.strictObject({
   /** Stat tiles, up to four. */
   metrics: z.array(StatSchema).max(4),
   cover: publicPath.optional(),
+  /** Featured projects come first in the /projects grid; every project is listed. */
   featured: z.boolean(),
   order: z.int(),
   /** Footer heading override for this project's page. */
@@ -328,7 +329,11 @@ export const HireSchema = z.strictObject({
     heading: text,
     items: z.array(z.strictObject({ dates: text, text })).min(1),
   }),
-  education: z.strictObject({ heading: text, text }),
+  /** Schools, newest first, in the same shape as experience. */
+  education: z.strictObject({
+    heading: text,
+    items: z.array(z.strictObject({ dates: text, text })).min(1),
+  }),
   resumePicker: z.strictObject({
     heading: text,
     downloadLabel: text,

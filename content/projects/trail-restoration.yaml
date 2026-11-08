@@ -1,0 +1,33 @@
+# Trail restoration grant (docs/issues/29-resume-education-experience-impact.md).
+# Copy from content/pages/about.yaml; nothing beyond it.
+slug: trail-restoration
+title: Trail restoration grant
+pillar: impact
+oneLineResult: A $1,000 grant I wrote funded 20 volunteers to restore a 0.2-mile trail at John Poole Middle School.
+summary: Wrote a $1,000 grant in 2021; it was awarded the next year, and 20 volunteers restored a 0.2-mile trail at my middle school.
+role: Grant writer
+when: 2021 to 2022
+dates:
+  start: "2021-01"
+  end: "2022-12"
+status: archived
+statusText: Complete
+stack:
+  - grant writing
+  - trail restoration
+tags: [environment, community]
+links: []
+metrics:
+  - value: $1,000
+    label: grant
+  - value: "20"
+    label: volunteers
+  - value: 0.2 mi
+    label: of trail restored
+featured: false
+order: 6
+metaDescription: "Trail restoration grant: a $1,000 grant Ben Sproat wrote funded 20 volunteers to restore a 0.2-mile trail at his middle school."
+ogEyebrow: "Impact · Grant writer"
+ogLine: "A $1,000 grant I wrote funded 20 volunteers to restore a 0.2-mile school trail."
+paragraphs:
+  - Protecting the environment is something I am passionate about. The trail grant was the first time I turned that into a plan, a budget and a day of work with other people.
