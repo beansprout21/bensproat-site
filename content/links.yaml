@@ -1,7 +1,7 @@
 # /links order and labels (docs/brief-c3.md 4.9). The Resume entry points at
 # /resume until a default PDF exists in resumes.yaml.
 - label: LinkedIn
-  url: https://www.linkedin.com/in/benjamin-s-a39622385
+  url: https://www.linkedin.com/in/bensproat
   icon: linkedin
   order: 1
 - label: Resume (PDF)

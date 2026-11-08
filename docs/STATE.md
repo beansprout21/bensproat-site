@@ -1,6 +1,6 @@
 # STATE
 
-**Objective**: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38 merged, #39 in review, then #41 to #45 in order. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38 and #39 merged, #41 in review, then #42 to #45 in order. Draft 25 (P2 copy for /ventures and the home now line) is not imported yet: its `P2` label does not exist. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
@@ -24,7 +24,8 @@
 | #31   | 16    | #34     | 3a7b62d | JSON-LD graph (WebSite, ProfilePage, Person, Organizations; CreativeWork and breadcrumbs per project); /links out of the sitemap |
 | #35   | 17    | #36     | 89c686b | Every meta description 70 to 160 characters; /links indexed again and back in the sitemap                                        |
 | #38   | 18    | #40     | a97ac1d | One text color: `ink-2` and `muted` equal `ink`, `on-dark-muted` equals `on-dark`; no gray text left on any route                |
-| #39   | 19    | PR open |         | Home refresh: green accents, square door tiles with a fixed panel, one Selected work section; Proof strip and reorder removed    |
+| #39   | 19    | #46     | 6d4b87c | Home refresh: green accents, square door tiles with a fixed panel, one Selected work section; Proof strip and reorder removed    |
+| #41   | 20    | PR open |         | LinkedIn moved to /in/bensproat in links, JSON-LD sameAs and the three resume PDFs (sha256-verified copies)                      |
 
 **Quality pass (#11)**
 
