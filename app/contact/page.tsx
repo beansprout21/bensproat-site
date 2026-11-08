@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
-import { getLinks, getPage, getProfile, getResumes } from "@/lib/content";
+import { getDefaultResume, getLinks, getPage, getProfile } from "@/lib/content";
 import { Button } from "../_components/button";
 import { CardStrip } from "../_components/card-strip";
 import { Container } from "../_components/container";
@@ -33,9 +33,7 @@ type Tile = {
 /** /contact (brief 4.8, docs/issues/24-now-contact-resume-color.md). Every string comes from content/pages/contact.yaml, links.yaml and the profile. */
 export default function Page() {
   const profile = getProfile();
-  const resumes = getResumes();
-  const defaultResume =
-    resumes.find((resume) => resume.audience === "ai-product") ?? resumes[0];
+  const defaultResume = getDefaultResume();
   const tiles: Tile[] = getLinks()
     .filter((link) => PROFILE_LINK_ICONS.includes(link.icon))
     .map((link) => ({

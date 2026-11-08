@@ -1,6 +1,6 @@
 # STATE
 
-**Objective**: C5c, the Nov 8 refinement pass (drafts 26 to 29 = #54 to #57): #54, #55 and #56 merged; #57 in review (Ben confirmed the delivered portrait on Nov 8). Before that: C5b (drafts 18 to 25) and C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39, #41 to #45 and #52 merged. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C5c, the Nov 8 refinement pass (drafts 26 to 29 = #54 to #57): #54 to #57 merged. Draft 30 (#63) in review, then draft 31. Before that: C5b (drafts 18 to 25) and C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39, #41 to #45 and #52 merged. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
@@ -34,7 +34,8 @@
 | #54   | 26    | #58     | 7cb40bf | Site-wide: Home in the menu, phone beside email, external and PDF links in new tabs, "All my links"                                                       |
 | #55   | 29    | #59     | 922f774 | /resume lede and contact line, education list with Poolesville High, Canyon Kids, new PDFs (sha256-verified), two Impact projects                         |
 | #56   | 27    | #60     | c094a16 | Home: Selected work link rows aligned, Priming live links to app.priminglabs.com, Resume section with the shared `ResumeCard`                             |
-| #57   | 28    | PR open |         | /about in the first person, 4:5 portrait beside the title (sha256 72da6064..., Ben confirmed), Experience section from hire.yaml; about-field.jpg deleted |
+| #57   | 28    | #62     | 29545b3 | /about in the first person, 4:5 portrait beside the title (sha256 72da6064..., Ben confirmed), Experience section from hire.yaml; about-field.jpg deleted |
+| #63   | 30    | PR open |         | General resume first (default PDF everywhere via `getDefaultResume()`), home Resume button opens /resume, All my links in the header at every width       |
 
 **Quality pass (#11)**
 

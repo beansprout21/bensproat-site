@@ -5,7 +5,7 @@ import { ActiveNavLinks } from "./active-nav-links";
 import { Mark } from "./mark";
 import { NavLinkList, type NavItem } from "./nav-link-list";
 
-/** Header links; "All my links" shows only below 721 px (issue #54). */
+/** Header links, in order; "All my links" shows at every width, before the Resume button (issue #63). */
 function navItems(): NavItem[] {
   return [
     { href: "/", label: "Home" },
@@ -13,7 +13,7 @@ function navItems(): NavItem[] {
     { href: "/about", label: "About" },
     { href: "/now", label: "Now" },
     { href: "/contact", label: "Contact" },
-    { href: "/links", label: getPage("links").name, mobileOnly: true },
+    { href: "/links", label: getPage("links").name },
   ];
 }
 

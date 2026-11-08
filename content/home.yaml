@@ -12,7 +12,7 @@ hero:
   sub: Engineering student, Penn State Schreyer Honors College.
   availability: Available for Summer 2027 internships and projects.
   photoTag: Penn State / Schreyer Honors
-  resumeLabel: Resume (PDF)
+  resumeLabel: Resume
   emailLabel: Email Ben
 default:
   order: [sprout, priming, sproat-systems]
@@ -35,7 +35,7 @@ doors:
     - key: hiring
       title: Hiring?
       kicker: Recruiters and companies
-      text: Engineering plus AI product skills, availability, case studies and three resume versions.
+      text: Engineering plus AI product skills, availability, case studies and four resume versions.
       ctaLabel: Go to the hiring page
       href: /hire
     - key: about
@@ -78,7 +78,7 @@ work:
       pageLabel: Project page
 resume:
   heading: Resume
-  lede: Three versions, one page each. Pick the one that fits.
+  lede: Start with the general resume, or pick the version that fits.
   fullLinkLabel: "Full resume: education, experience and skills"
 now:
   label: Now

@@ -3,8 +3,6 @@ import Link from "next/link";
 export type NavItem = {
   href: string;
   label: string;
-  /** Shown only below 721 px. */
-  mobileOnly?: boolean;
 };
 
 type NavLinkListProps = {
@@ -31,8 +29,6 @@ export function NavLinkList({ items, pathname }: NavLinkListProps) {
             href={item.href}
             aria-current={exact ? "page" : undefined}
             className={`inline-flex min-h-[44px] items-center rounded-button px-3 text-[15px] no-underline ${
-              item.mobileOnly ? "min-[721px]:hidden" : ""
-            } ${
               active
                 ? "font-semibold text-ink"
                 : "font-medium text-ink-2 hover:text-ink"

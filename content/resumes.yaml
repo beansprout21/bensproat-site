@@ -1,7 +1,12 @@
 # Resume PDFs (issue #23). Built by the lead agent on Nov 7, 2026; never edited
-# here. The first entry (AI product) is the default for every "Resume (PDF)"
-# button. The PDFs carry Ben's phone number and city line on purpose (Ben,
+# here. General (added Nov 8, issue #63) is the default for every "Resume (PDF)"
+# button; the three role versions follow. The PDFs carry Ben's phone number and city line on purpose (Ben,
 # Nov 7, 2026).
+- id: general
+  label: General
+  audience: general
+  file: /resumes/Ben-Sproat-Resume-General.pdf
+  updated: "2026-11-08"
 - id: ai-product
   label: AI product
   audience: ai-product

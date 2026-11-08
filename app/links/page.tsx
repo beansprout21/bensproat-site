@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import {
+  getDefaultResume,
   getLinks,
   getPage,
   getProfile,
-  getResumes,
   resolveImage,
 } from "@/lib/content";
 import { Container } from "../_components/container";
@@ -39,9 +39,7 @@ export const metadata: Metadata = pageMetadata({
  * redirects here with `?src=card` (next.config.ts).
  */
 export default function Page() {
-  const resumes = getResumes();
-  const defaultResume =
-    resumes.find((resume) => resume.audience === "ai-product") ?? resumes[0];
+  const defaultResume = getDefaultResume();
   const headshot = resolveImage(HEADSHOT.src);
   const links = getLinks().map((link) => ({
     ...link,

@@ -3,7 +3,6 @@ import { SITE_NAME, pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import {
   getHome,
-  getPage,
   getProfile,
   getProjects,
   getResumes,
@@ -11,7 +10,7 @@ import {
 } from "@/lib/content";
 import { buildHomeGraph, serializeJsonLd } from "@/lib/jsonld";
 import { Container } from "./_components/container";
-import { ResumeCard } from "./_components/resume-card";
+import { ResumeDownloads } from "./_components/resume-card";
 import {
   HomeRouter,
   type HomeRouterProps,
@@ -39,9 +38,6 @@ function buildProps(): HomeRouterProps {
   const bySlug = new Map(
     getProjects().map((project) => [project.slug, project]),
   );
-  const resumes = getResumes();
-  const defaultResume =
-    resumes.find((resume) => resume.audience === "ai-product") ?? resumes[0];
   const headshot = resolveImage(HEADSHOT.src);
 
   return {
@@ -52,10 +48,8 @@ function buildProps(): HomeRouterProps {
       sub: home.hero.sub,
       availability: home.hero.availability,
       cta: home.default.cta,
-      resume: {
-        label: home.hero.resumeLabel,
-        href: defaultResume?.file ?? "/resume",
-      },
+      // Opens the /resume page in the same tab (issue #63).
+      resume: { label: home.hero.resumeLabel, href: "/resume" },
       email: { label: home.hero.emailLabel, href: `mailto:${profile.email}` },
       photo: headshot ? { ...HEADSHOT, src: headshot } : null,
       photoTag: home.hero.photoTag,
@@ -93,14 +87,9 @@ function buildProps(): HomeRouterProps {
   };
 }
 
-/** Resume section (issue #56): the /resume download cards, then a link to the full page. */
+/** Resume section (issues #56, #63): the shared downloads, then a link to the full page. */
 function ResumeSection() {
-  const resumes = getResumes();
-  if (resumes.length === 0) return null;
-  const resumePage = getPage("resume");
-  const picker = new Map(
-    getPage("hire").resumePicker.items.map((item) => [item.audience, item]),
-  );
+  if (getResumes().length === 0) return null;
   return (
     <Container
       as="section"
@@ -116,21 +105,7 @@ function ResumeSection() {
         </h2>
         <p className="text-[17px] leading-[1.5] text-ink">{home.resume.lede}</p>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(260px,100%),1fr))] gap-5">
-        {resumes.map((resume, index) => (
-          <ResumeCard
-            key={resume.id}
-            number={index + 1}
-            label={resume.label}
-            text={picker.get(resume.audience)?.text}
-            updated={resume.updated}
-            file={resume.file}
-            downloadLabel={resumePage.downloadLabel}
-            tag={resumePage.downloadTag}
-            headingLevel={3}
-          />
-        ))}
-      </div>
+      <ResumeDownloads level={3} />
       <Link
         href="/resume"
         className="inline-flex min-h-[44px] w-fit items-center text-[15px] font-semibold text-ink underline decoration-accent decoration-2 underline-offset-4 hover:text-accent-strong"

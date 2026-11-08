@@ -59,6 +59,9 @@ resumePicker:
   downloadLabel: Download PDF
   fallbackLabel: Resume page
   items:
+    - audience: general
+      title: General
+      text: Everything in one page.
     - audience: ai-product
       title: AI product
       text: For AI product and software engineering roles.
