@@ -5,11 +5,17 @@ import { ActiveNavLinks } from "./active-nav-links";
 import { Mark } from "./mark";
 import { NavLinkList, type NavItem } from "./nav-link-list";
 
-/** Header links, in order; "All my links" shows at every width, before the Resume button (issue #63). */
+/**
+ * Header links, in order, before the Resume button (issues #63 and #65).
+ * Page labels come from content: /hire and /ventures use their meta.title,
+ * /links its visitor-facing name. All show at every width.
+ */
 function navItems(): NavItem[] {
   return [
     { href: "/", label: "Home" },
     { href: "/projects", label: "Work" },
+    { href: "/hire", label: getPage("hire").meta.title },
+    { href: "/ventures", label: getPage("ventures").meta.title },
     { href: "/about", label: "About" },
     { href: "/now", label: "Now" },
     { href: "/contact", label: "Contact" },
