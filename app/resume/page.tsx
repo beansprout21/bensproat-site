@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { pageMetadata } from "@/lib/metadata";
 import { getPage, getProfile, getResumes } from "@/lib/content";
 import { CardStrip } from "../_components/card-strip";
-import { ResumeCard } from "../_components/resume-card";
+import { ResumeDownloads } from "../_components/resume-card";
 import { Container } from "../_components/container";
 import {
   EducationBlock,
@@ -39,13 +39,10 @@ function SummaryCard({
   );
 }
 
-/** /resume (brief 4.7). Download cards from resumes.yaml; the summary reuses the /hire fields. */
+/** /resume (brief 4.7, issue #63). General first, then the three versions; the summary reuses the /hire fields. */
 export default function Page() {
   const profile = getProfile();
   const resumes = getResumes();
-  const picker = new Map(
-    hire.resumePicker.items.map((item) => [item.audience, item]),
-  );
 
   return (
     <>
@@ -74,23 +71,7 @@ export default function Page() {
 
       <Container as="section" aria-label="Downloads" className="pb-14">
         {resumes.length > 0 ? (
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(260px,100%),1fr))] gap-5">
-            {resumes.map((resume, index) => {
-              const who = picker.get(resume.audience);
-              return (
-                <ResumeCard
-                  key={resume.id}
-                  number={index + 1}
-                  label={resume.label}
-                  text={who?.text}
-                  updated={resume.updated}
-                  file={resume.file}
-                  downloadLabel={page.downloadLabel}
-                  tag={page.downloadTag}
-                />
-              );
-            })}
-          </div>
+          <ResumeDownloads level={2} />
         ) : (
           <p className="type-body max-w-[60ch] text-ink-2">
             {page.emptyState.before}{" "}

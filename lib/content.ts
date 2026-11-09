@@ -185,7 +185,7 @@ export const LinkSchema = z.strictObject({
 export const ResumeSchema = z.strictObject({
   id: text,
   label: text,
-  audience: z.enum(["ai-product", "engineering", "founder"]),
+  audience: z.enum(["general", "ai-product", "engineering", "founder"]),
   /** Path under /public, for example "/resumes/ai-product.pdf". */
   file: publicPath,
   updated: z.iso.date(),
@@ -344,7 +344,7 @@ export const HireSchema = z.strictObject({
     items: z
       .array(
         z.strictObject({
-          audience: z.enum(["ai-product", "engineering", "founder"]),
+          audience: z.enum(["general", "ai-product", "engineering", "founder"]),
           title: text,
           text,
         }),
@@ -440,6 +440,10 @@ export const ResumePageSchema = z.strictObject({
   downloadLabel: text,
   /** Right-hand label on each download card's strip. */
   downloadTag: text,
+  /** The full-width General card's one-liner (issue #63). */
+  general: z.strictObject({ text }),
+  /** Small heading above the three role versions. */
+  versionsHeading: text,
   /** "At a glance" band: heading and the three card strip labels. */
   summary: z.strictObject({
     heading: text,
@@ -527,6 +531,12 @@ export function getLinks(): Link[] {
 
 export function getResumes(): Resume[] {
   return loadYaml(z.array(ResumeSchema), "resumes.yaml");
+}
+
+/** The resume every "Resume (PDF)" button downloads: General, else the first entry. */
+export function getDefaultResume(): Resume | undefined {
+  const resumes = getResumes();
+  return resumes.find((resume) => resume.audience === "general") ?? resumes[0];
 }
 
 /** now.mdx: frontmatter plus a plain-text body split into paragraphs on blank lines. */

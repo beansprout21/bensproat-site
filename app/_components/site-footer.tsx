@@ -5,8 +5,8 @@ import {
   getLinks,
   getPage,
   getProfile,
+  getDefaultResume,
   getProjects,
-  getResumes,
   type PageFooter,
   type PageName,
 } from "@/lib/content";
@@ -58,10 +58,7 @@ export function SiteFooter() {
   const profile = getProfile();
   const home = getHome();
   const contact = getPage("contact");
-  const resumes = getResumes();
-  const defaultResume =
-    resumes.find((resume) => resume.audience === "ai-product") ?? resumes[0];
-  const resumeHref = defaultResume?.file ?? "/resume";
+  const resumeHref = getDefaultResume()?.file ?? "/resume";
 
   const fallback = footerConfig(home.footer, contact.booking, resumeHref);
   const configs: Record<string, FooterConfig> = { "/": fallback };
