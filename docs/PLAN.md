@@ -62,7 +62,7 @@ Case study order of sections: one-line result, problem, what Ben built and his r
 | C4    | Core pages built to the approved design                     | Ready: `docs/brief-c3.md`, issues #5 to #11 (drafts 04 to 10) |
 | C5    | Search: profile markup, Open Graph images, Search Console   | Ready: `docs/brief-c5.md`, drafts 14 to 16                    |
 | C5b   | Color refresh from the Nov 7 mockups (Ben's picks)          | Ready: drafts 18 to 24 (20 is the LinkedIn address)           |
-| C5c   | Nov 8 refinement pass (Ben's review)                        | Ready: drafts 26 to 31                                        |
+| C5c   | Nov 8 refinement pass (Ben's review)                        | Ready: drafts 26 to 32                                        |
 | C6    | Extras: build log, live metrics, "Ask Ben's agent"          | Planned (the signature interaction and /now moved into C4)    |
 | C7    | QA: Lighthouse, accessibility, NFC and QR tests             | Planned                                                       |
 
