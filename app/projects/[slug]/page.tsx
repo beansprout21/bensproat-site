@@ -60,7 +60,11 @@ function metadataItems(project: Project): MetadataItem[] {
     value: project.statusText ?? STATUS_LABELS[project.status],
   });
   if (project.stack.length > 0) {
-    items.push({ label: "Stack", value: project.stack.join(", ") });
+    // Impact projects list skills, not a tech stack (issue #67).
+    items.push({
+      label: project.pillar === "impact" ? "Skills" : "Stack",
+      value: project.stack.join(", "),
+    });
   }
   return items;
 }
