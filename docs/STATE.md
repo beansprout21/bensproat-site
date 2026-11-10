@@ -1,6 +1,6 @@
 # STATE
 
-**Objective**: C5c, the Nov 8 refinement pass (drafts 26 to 29 = #54 to #57): #54 to #57 and #63 (draft 30) merged; draft 31 (#65) in review. Before that: C5b (drafts 18 to 25) and C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39, #41 to #45 and #52 merged. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
+**Objective**: C5c, the Nov 8 refinement pass (drafts 26 to 29 = #54 to #57): #54 to #57, #63 and #65 merged; draft 32 (#67, Nov 9 polish pass) in review. Before that: C5b (drafts 18 to 25) and C3 and C4 (`docs/brief-c3.md`, #2 to #11), the Nov 7 follow-ups (#23 to #25) and C5 (`docs/brief-c5.md`, #29 to #31, plus #35) are built and merged. C5b (color refresh from the Nov 7 mockups, drafts 18 to 24 = #38, #39, #41 to #45) is in progress: #38, #39, #41 to #45 and #52 merged. C5 also waits on Ben: Search Console setup and the preview checks in brief section 4. Next per `docs/PLAN.md`: C6 extras and C7 QA, once the lead agent drafts them. Start the next session with `/sync`.
 
 **Issue status**
 
@@ -36,7 +36,8 @@
 | #56   | 27    | #60     | c094a16 | Home: Selected work link rows aligned, Priming live links to app.priminglabs.com, Resume section with the shared `ResumeCard`                             |
 | #57   | 28    | #62     | 29545b3 | /about in the first person, 4:5 portrait beside the title (sha256 72da6064..., Ben confirmed), Experience section from hire.yaml; about-field.jpg deleted |
 | #63   | 30    | #64     | 69bf3d4 | General resume first (default PDF everywhere via `getDefaultResume()`), home Resume button opens /resume, All my links in the header at every width       |
-| #65   | 31    | PR open |         | Header: Hire me and Build with me after Work, labels from each page's meta.title; one row at 1280 px                                                      |
+| #65   | 31    | #66     | d1a28e2 | Header: Hire me and Build with me after Work, labels from each page's meta.title; one row at 1280 px                                                      |
+| #67   | 32    | PR open |         | Polish pass: Menu button below 900 px (header 69 px at 375), one set of live-link labels, fuller experience lines, Skills label on Impact pages           |
 
 **Quality pass (#11)**
 
@@ -61,6 +62,6 @@
 6. C5 trade-offs, settled Nov 7 (#35): /links is indexed again (Lighthouse SEO 100), every meta description is 70 to 160 characters, and the 364 KB default share card is accepted. JSON-LD project descriptions use the lead sentence of each one-line result so the Priming co-founder is not named.
 7. Vercel previews are behind Vercel Authentication, so pre-merge Lighthouse ran on local production builds; relax Deployment Protection for previews if you want preview scores.
 8. No `links_view` analytics event: custom events need Vercel Pro.
-9. Issue numbers no longer match draft numbers: drafts 11 to 13 are #23 to #25, drafts 14 to 16 are #29 to #31, draft 17 is #35, drafts 18 and 19 are #38 and #39, drafts 20 to 24 are #41 to #45, draft 25 is #52, drafts 26, 29, 27 and 28 are #54, #55, #56 and #57, drafts 30 and 31 are #63 and #65.
+9. Issue numbers no longer match draft numbers: drafts 11 to 13 are #23 to #25, drafts 14 to 16 are #29 to #31, draft 17 is #35, drafts 18 and 19 are #38 and #39, drafts 20 to 24 are #41 to #45, draft 25 is #52, drafts 26, 29, 27 and 28 are #54, #55, #56 and #57, drafts 30 and 31 are #63 and #65, draft 32 is #67.
 10. The phone number is public on web pages and in the PDFs since Nov 8 (Ben; CLAUDE.md updated in #54); the PDFs also carry "University Park, PA" by design; other place names in them are school and employer towns. Their text also includes the high-school GPA, which the site itself never shows.
 11. PR #20's local /links Lighthouse note was measured against a stale local server; corrected on PR #21. Production numbers on every issue are valid.

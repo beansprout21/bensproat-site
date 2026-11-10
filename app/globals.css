@@ -187,3 +187,22 @@
     stroke-dashoffset: 0 !important;
   }
 }
+
+/*
+  Header without JavaScript (issue #67): the Menu button cannot open, so the
+  links show wrapped under the name at every width and the button is hidden.
+*/
+@media (scripting: none) {
+  .site-nav,
+  .site-nav-items {
+    flex-wrap: wrap;
+  }
+
+  .nav-inline-links {
+    display: contents;
+  }
+
+  .nav-menu-button {
+    display: none;
+  }
+}

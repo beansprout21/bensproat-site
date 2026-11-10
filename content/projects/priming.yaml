@@ -22,7 +22,7 @@ stack:
   - Codemagic
 tags: [Web app, iOS, Apple Health]
 live:
-  label: See Priming live
+  label: Open Priming
   url: https://app.priminglabs.com
 links: []
 metrics:

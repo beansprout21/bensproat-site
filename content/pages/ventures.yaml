@@ -12,7 +12,7 @@ nowBuilding:
     - title: Priming Labs
       text: Readiness testing for coaches and physical therapists. Technical co-founder, with Dr. Jessica Visintainer, PT, DPT. Maryland LLC, web app live in private beta, iOS app in TestFlight, Happy Valley LaunchBox Idea TestLab completed.
       links:
-        - label: See Priming live
+        - label: Open Priming
           href: https://app.priminglabs.com
           external: true
         - label: Project page
@@ -53,6 +53,7 @@ supportingProof:
   - label: Schreyer Honors College
     detail: Penn State, Engineering
   - label: AI data systems
+    detail: Pipelines and an always-on server
     href: /projects/ai-data-systems
 footer:
   heading: Let's talk about building something.
